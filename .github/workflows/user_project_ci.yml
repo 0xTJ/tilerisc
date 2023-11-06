@@ -43,7 +43,7 @@ jobs:
           name: pdk-tarball
           path: /tmp/pdk.tar
 
-  user_project_flow_gf180mcuC:
+  user_project_flow_gf180mcuD:
     timeout-minutes: 720
     runs-on: ubuntu-latest-m
     needs: [pdk]
