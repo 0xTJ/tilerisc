@@ -45,7 +45,7 @@ jobs:
 
   user_project_flow_gf180mcuC:
     timeout-minutes: 720
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-m
     needs: [pdk]
     steps:
       - uses: actions/checkout@v2
