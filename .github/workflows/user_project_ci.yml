@@ -98,7 +98,7 @@ jobs:
 
       - name: Harden using Openlane
         run: |
-          make user_proj_example
+          make tjrpu
           make user_project_wrapper
 
       - name: run precheck
