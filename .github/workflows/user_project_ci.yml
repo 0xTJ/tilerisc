@@ -23,7 +23,7 @@ jobs:
         run: echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
       
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=${{ env.GITHUB_WORKSPACE }}/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=${{ github.workspace }}/openlane" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -63,7 +63,7 @@ jobs:
         run: echo "PDKPATH=${{ env.PDK_ROOT }}/gf180mcuD" >> $GITHUB_ENV
 
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=${{ env.GITHUB_WORKSPACE }}/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=${{ github.workspace }}/openlane" >> $GITHUB_ENV
 
       - name: Download PDK Tarball
         uses: actions/download-artifact@v2
@@ -86,15 +86,15 @@ jobs:
       
       - name: remove existing generated files
         run: |
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/gds
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/verilog/gl
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/mag
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/maglef
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/lef
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/lib
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/sdf
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/sdc
-          rm -rf ${{ env.GITHUB_WORKSPACE }}/spef
+          rm -rf ${{ github.workspace }}/gds
+          rm -rf ${{ github.workspace }}/verilog/gl
+          rm -rf ${{ github.workspace }}/mag
+          rm -rf ${{ github.workspace }}/maglef
+          rm -rf ${{ github.workspace }}/lef
+          rm -rf ${{ github.workspace }}/lib
+          rm -rf ${{ github.workspace }}/sdf
+          rm -rf ${{ github.workspace }}/sdc
+          rm -rf ${{ github.workspace }}/spef
 
       - name: Harden using Openlane
         run: |
@@ -124,7 +124,7 @@ jobs:
         with:
           name: error
           path: |
-            ${{ env.GITHUB_WORKSPACE }}/tilerisc/mpw_precheck_result/logs/*
+            ${{ github.workspace }}/tilerisc/mpw_precheck_result/logs/*
 
       # - name: Run DV RTL tests
       #   run: |
