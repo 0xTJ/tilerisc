@@ -23,7 +23,7 @@ jobs:
         run: echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
       
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=${{ github.workspace }}/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=${{ runner.temp }}/openlane" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -63,7 +63,7 @@ jobs:
         run: echo "PDKPATH=${{ env.PDK_ROOT }}/gf180mcuD" >> $GITHUB_ENV
 
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=${{ github.workspace }}/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=${{ runner.temp }}/openlane" >> $GITHUB_ENV
 
       - name: Download PDK Tarball
         uses: actions/download-artifact@v2
