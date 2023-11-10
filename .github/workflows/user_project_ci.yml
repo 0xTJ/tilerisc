@@ -23,7 +23,7 @@ jobs:
         run: echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
       
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=/home/runner/work/tilerisc/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=${{ env.GITHUB_WORKSPACE }}/openlane" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -63,7 +63,7 @@ jobs:
         run: echo "PDKPATH=${{ env.PDK_ROOT }}/gf180mcuD" >> $GITHUB_ENV
 
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=/home/runner/work/tilerisc/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=${{ env.GITHUB_WORKSPACE }}/openlane" >> $GITHUB_ENV
 
       - name: Download PDK Tarball
         uses: actions/download-artifact@v2
@@ -86,15 +86,15 @@ jobs:
       
       - name: remove existing generated files
         run: |
-          rm -rf /home/runner/work/tilerisc/gds
-          rm -rf /home/runner/work/tilerisc/verilog/gl
-          rm -rf /home/runner/work/tilerisc/mag
-          rm -rf /home/runner/work/tilerisc/maglef
-          rm -rf /home/runner/work/tilerisc/lef
-          rm -rf /home/runner/work/tilerisc/lib
-          rm -rf /home/runner/work/tilerisc/sdf
-          rm -rf /home/runner/work/tilerisc/sdc
-          rm -rf /home/runner/work/tilerisc/spef
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/gds
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/verilog/gl
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/mag
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/maglef
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/lef
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/lib
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/sdf
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/sdc
+          rm -rf ${{ env.GITHUB_WORKSPACE }}/spef
 
       - name: Harden using Openlane
         run: |
@@ -124,7 +124,7 @@ jobs:
         with:
           name: error
           path: |
-            /home/runner/work/tilerisc/tilerisc/mpw_precheck_result/logs/*
+            ${{ env.GITHUB_WORKSPACE }}/tilerisc/mpw_precheck_result/logs/*
 
       # - name: Run DV RTL tests
       #   run: |
