@@ -1,5 +1,9 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
 -v $(USER_PROJECT_VERILOG)/rtl/tjrpu.v
+-v $(USER_PROJECT_VERILOG)/rtl/alu.v
+-v $(USER_PROJECT_VERILOG)/rtl/control.v
+-v $(USER_PROJECT_VERILOG)/rtl/register_file.v
+-v $(USER_PROJECT_VERILOG)/rtl/risc16.v
 
  

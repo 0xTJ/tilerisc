@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1699279584
+timestamp 1699627244
 << metal2 >>
 rect 11032 595560 11256 597000
 rect 33096 595560 33320 597000
@@ -113875,7 +113875,7 @@ rect 597636 -1548 597704 -1492
 rect 597760 -1548 597828 -1492
 rect 597884 -1548 597980 -1492
 rect -1916 -1644 597980 -1548
-use user_proj_example  mprj
+use tjrpu  mprj
 timestamp 0
 transform 1 0 12000 0 1 3000
 box 0 0 560000 348156

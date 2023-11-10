@@ -1,3 +1,7 @@
 // Caravel user project includes		
 $USER_PROJECT_VERILOG/gl/user_project_wrapper.v	     
 $USER_PROJECT_VERILOG/gl/tjrpu.v
+$USER_PROJECT_VERILOG/gl/alu.v
+$USER_PROJECT_VERILOG/gl/control.v
+$USER_PROJECT_VERILOG/gl/register_file.v
+$USER_PROJECT_VERILOG/gl/risc16.v
