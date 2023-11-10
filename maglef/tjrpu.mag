@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 5
-timestamp 1699626953
+timestamp 1699638387
 << obsm1 >>
 rect 672 855 279328 174078
 << metal2 >>
@@ -1532,7 +1532,7 @@ string FIXED_BBOX 0 0 280000 176000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 15913648
-string GDS_FILE /home/thomas/Documents/Projects/tilerisc/openlane/tjrpu/runs/23_11_10_09_34/results/signoff/tjrpu.magic.gds
+string GDS_FILE /home/thomas/Documents/Projects/tilerisc/openlane/tjrpu/runs/23_11_10_12_39/results/signoff/tjrpu.magic.gds
 string GDS_START 271966
 << end >>
 
