@@ -23,7 +23,7 @@ jobs:
         run: echo "PDK_ROOT=/home/runner/work/pdk" >> $GITHUB_ENV
       
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=/home/runner/work/caravel_user_project/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=/home/runner/work/tilerisc/openlane" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -63,7 +63,7 @@ jobs:
         run: echo "PDKPATH=${{ env.PDK_ROOT }}/gf180mcuD" >> $GITHUB_ENV
 
       - name: Export OPENLANE ROOT
-        run: echo "OPENLANE_ROOT=/home/runner/work/caravel_user_project/openlane" >> $GITHUB_ENV
+        run: echo "OPENLANE_ROOT=/home/runner/work/tilerisc/openlane" >> $GITHUB_ENV
 
       - name: Download PDK Tarball
         uses: actions/download-artifact@v2
@@ -86,18 +86,19 @@ jobs:
       
       - name: remove existing generated files
         run: |
-          rm -rf /home/runner/work/caravel_user_project/gds
-          rm -rf /home/runner/work/caravel_user_project/verilog/gl
-          rm -rf /home/runner/work/caravel_user_project/mag
-          rm -rf /home/runner/work/caravel_user_project/maglef
-          rm -rf /home/runner/work/caravel_user_project/lef
-          rm -rf /home/runner/work/caravel_user_project/lib
-          rm -rf /home/runner/work/caravel_user_project/sdf
-          rm -rf /home/runner/work/caravel_user_project/sdc
-          rm -rf /home/runner/work/caravel_user_project/spef
+          rm -rf /home/runner/work/tilerisc/gds
+          rm -rf /home/runner/work/tilerisc/verilog/gl
+          rm -rf /home/runner/work/tilerisc/mag
+          rm -rf /home/runner/work/tilerisc/maglef
+          rm -rf /home/runner/work/tilerisc/lef
+          rm -rf /home/runner/work/tilerisc/lib
+          rm -rf /home/runner/work/tilerisc/sdf
+          rm -rf /home/runner/work/tilerisc/sdc
+          rm -rf /home/runner/work/tilerisc/spef
 
       - name: Harden using Openlane
         run: |
+          make risc16
           make tjrpu
           make user_project_wrapper
 
@@ -123,7 +124,7 @@ jobs:
         with:
           name: error
           path: |
-            /home/runner/work/caravel_user_project/caravel_user_project/mpw_precheck_result/logs/*
+            /home/runner/work/tilerisc/tilerisc/mpw_precheck_result/logs/*
 
       # - name: Run DV RTL tests
       #   run: |
