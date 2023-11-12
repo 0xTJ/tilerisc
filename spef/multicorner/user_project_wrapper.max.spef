@@ -1515,15 +1515,15 @@ wbs_we_i I
 1 la_data_in[0] *419:la_data_in[0] 5.512 
 *END
 
-*D_NET *116 0.00404271
+*D_NET *116 0.00403174
 *CONN
 *P la_data_in[10] I
 *I *419:la_data_in[10] I *D tjrpu
 *CAP
-1 la_data_in[10] 0.00106515
-2 *419:la_data_in[10] 0.00106515
+1 la_data_in[10] 0.0010752
+2 *419:la_data_in[10] 0.0010752
 3 *419:la_data_in[10] la_data_out[10] 0.000390307
-4 *419:la_data_in[10] la_data_out[9] 4.18042e-05
+4 *419:la_data_in[10] la_data_out[9] 1.07369e-05
 5 *419:la_data_in[10] *419:la_oenb[10] 0.000194511
 6 *419:la_data_in[10] *419:la_oenb[9] 0.00128578
 *RES
@@ -1620,50 +1620,45 @@ wbs_we_i I
 1 la_data_in[16] *419:la_data_in[16] 24.6 
 *END
 
-*D_NET *123 0.00666162
+*D_NET *123 0.00763675
 *CONN
 *P la_data_in[17] I
 *I *419:la_data_in[17] I *D tjrpu
 *CAP
-1 la_data_in[17] 0.00122109
-2 *419:la_data_in[17] 0.00122109
+1 la_data_in[17] 0.00104048
+2 *419:la_data_in[17] 0.00104048
 3 *419:la_data_in[17] la_data_out[17] 0.000608066
-4 *419:la_data_in[17] *419:la_data_in[18] 0.000450555
-5 *419:la_data_in[17] *419:la_oenb[16] 0.00301625
+4 *419:la_data_in[17] *419:la_oenb[16] 0.00301625
+5 *419:la_data_in[17] *419:la_oenb[17] 0.00178691
 6 *419:la_data_in[16] *419:la_data_in[17] 0.000144566
 *RES
 1 la_data_in[17] *419:la_data_in[17] 25.224 
 *END
 
-*D_NET *124 0.00475017
+*D_NET *124 0.00688525
 *CONN
 *P la_data_in[18] I
 *I *419:la_data_in[18] I *D tjrpu
 *CAP
-1 la_data_in[18] 0.00179491
-2 *419:la_data_in[18] 0.00179491
-3 *419:la_data_in[18] la_data_out[17] 0.000408705
-4 *419:la_data_in[18] la_data_out[18] 0
-5 *419:la_data_in[18] *419:la_data_in[19] 0.000301087
-6 *419:la_data_in[17] *419:la_data_in[18] 0.000450555
+1 la_data_in[18] 0.00140955
+2 *419:la_data_in[18] 0.00140955
+3 *419:la_data_in[18] la_data_out[18] 0
+4 *419:la_data_in[18] *419:la_data_in[19] 0.000692314
+5 *419:la_data_in[18] *419:la_oenb[17] 0.00337384
 *RES
 1 la_data_in[18] *419:la_data_in[18] 25.848 
 *END
 
-*D_NET *125 0.00713982
+*D_NET *125 0.00585097
 *CONN
 *P la_data_in[19] I
 *I *419:la_data_in[19] I *D tjrpu
 *CAP
-1 la_data_in[19] 0.00117242
-2 *419:la_data_in[19] 0.00117242
-3 *419:la_data_in[19] la_data_out[18] 0
-4 *419:la_data_in[19] la_data_out[19] 0.0011344
-5 *419:la_data_in[19] la_data_out[20] 0.000152069
-6 *419:la_data_in[19] *419:la_data_in[20] 0.000942881
-7 *419:la_data_in[19] *419:la_oenb[17] 0
-8 *419:la_data_in[19] *419:la_oenb[19] 0.00226455
-9 *419:la_data_in[18] *419:la_data_in[19] 0.000301087
+1 la_data_in[19] 0.00153188
+2 *419:la_data_in[19] 0.00153188
+3 *419:la_data_in[19] la_data_out[19] 0.00114321
+4 *419:la_data_in[19] *419:la_data_in[20] 0.000951689
+5 *419:la_data_in[18] *419:la_data_in[19] 0.000692314
 *RES
 1 la_data_in[19] *419:la_data_in[19] 26.472 
 *END
@@ -1679,82 +1674,81 @@ wbs_we_i I
 1 la_data_in[1] *419:la_data_in[1] 6.136 
 *END
 
-*D_NET *127 0.00724361
+*D_NET *127 0.00694297
 *CONN
 *P la_data_in[20] I
 *I *419:la_data_in[20] I *D tjrpu
 *CAP
-1 la_data_in[20] 0.00132655
-2 *419:la_data_in[20] 0.00132655
-3 *419:la_data_in[20] la_data_out[19] 0.00234807
-4 *419:la_data_in[20] la_data_out[21] 4.18042e-05
-5 *419:la_data_in[20] *419:la_oenb[18] 5.3369e-05
-6 *419:la_data_in[20] *419:la_oenb[19] 0.00120438
-7 *419:la_data_in[19] *419:la_data_in[20] 0.000942881
+1 la_data_in[20] 0.00146367
+2 *419:la_data_in[20] 0.00146367
+3 *419:la_data_in[20] la_data_out[19] 0.00236276
+4 *419:la_data_in[20] la_data_out[20] 0
+5 *419:la_data_in[20] la_data_out[21] 4.18042e-05
+6 *419:la_data_in[20] *419:la_oenb[18] 5.13138e-05
+7 *419:la_data_in[20] *419:la_oenb[19] 0.000608066
+8 *419:la_data_in[19] *419:la_data_in[20] 0.000951689
 *RES
 1 la_data_in[20] *419:la_data_in[20] 27.096 
 *END
 
-*D_NET *128 0.00696074
+*D_NET *128 0.0058352
 *CONN
 *P la_data_in[21] I
 *I *419:la_data_in[21] I *D tjrpu
 *CAP
-1 la_data_in[21] 0.00174131
-2 *419:la_data_in[21] 0.00174131
-3 *419:la_data_in[21] la_data_out[20] 0.00253862
-4 *419:la_data_in[21] *419:la_oenb[19] 0.000319666
-5 *419:la_data_in[21] *419:la_oenb[20] 0.00061982
+1 la_data_in[21] 0.00175769
+2 *419:la_data_in[21] 0.00175769
+3 *419:la_data_in[21] la_data_out[22] 0.000589697
+4 *419:la_data_in[21] *419:la_oenb[20] 0.00173012
+5 *419:la_data_in[21] *419:la_oenb[21] 0
 *RES
-1 la_data_in[21] *419:la_data_in[21] 29.592 
+1 la_data_in[21] *419:la_data_in[21] 27.98 
 *END
 
-*D_NET *129 0.0100934
+*D_NET *129 0.00967213
 *CONN
 *P la_data_in[22] I
 *I *419:la_data_in[22] I *D tjrpu
 *CAP
-1 la_data_in[22] 0.00110379
-2 *419:la_data_in[22] 0.00110379
-3 *419:la_data_in[22] la_data_out[21] 0.00286096
-4 *419:la_data_in[22] la_data_out[22] 0.00432912
+1 la_data_in[22] 0.00122758
+2 *419:la_data_in[22] 0.00122758
+3 *419:la_data_in[22] la_data_out[21] 0.00235982
+4 *419:la_data_in[22] la_data_out[22] 0.00434086
 5 *419:la_data_in[22] la_data_out[23] 0.000121159
-6 *419:la_data_in[22] *419:la_data_in[23] 0
-7 *419:la_data_in[22] *419:la_oenb[21] 0.000574547
+6 *419:la_data_in[22] *419:la_oenb[20] 3.93422e-05
+7 *419:la_data_in[22] *419:la_oenb[21] 0.000355787
 *RES
-1 la_data_in[22] *419:la_data_in[22] 28.344 
+1 la_data_in[22] *419:la_data_in[22] 28.448 
 *END
 
-*D_NET *130 0.00545607
+*D_NET *130 0.00553152
 *CONN
 *P la_data_in[23] I
 *I *419:la_data_in[23] I *D tjrpu
 *CAP
-1 la_data_in[23] 0.00178306
-2 *419:la_data_in[23] 0.00178306
-3 *419:la_data_in[23] la_data_out[23] 9.8392e-05
-4 *419:la_data_in[23] *419:la_oenb[21] 0.000257409
-5 *419:la_data_in[23] *419:la_oenb[22] 0.00105019
-6 *419:la_data_in[23] *419:la_oenb[23] 0.000483955
-7 *419:la_data_in[23] *419:la_oenb[24] 0
-8 *419:la_data_in[22] *419:la_data_in[23] 0
+1 la_data_in[23] 0.00210153
+2 *419:la_data_in[23] 0.00210153
+3 *419:la_data_in[23] la_data_out[24] 0
+4 *419:la_data_in[23] *419:la_oenb[22] 0.00132845
+5 *419:la_data_in[23] *419:la_oenb[24] 0
 *RES
-1 la_data_in[23] *419:la_data_in[23] 29.696 
+1 la_data_in[23] *419:la_data_in[23] 28.916 
 *END
 
-*D_NET *131 0.0111324
+*D_NET *131 0.0112084
 *CONN
 *P la_data_in[24] I
 *I *419:la_data_in[24] I *D tjrpu
 *CAP
-1 la_data_in[24] 0.00131921
-2 *419:la_data_in[24] 0.00131921
-3 *419:la_data_in[24] la_data_out[23] 0.00326975
-4 *419:la_data_in[24] la_data_out[24] 0.00471574
+1 la_data_in[24] 0.00137481
+2 *419:la_data_in[24] 0.00137481
+3 *419:la_data_in[24] la_data_out[23] 0.00324625
+4 *419:la_data_in[24] la_data_out[24] 0.00470399
 5 *419:la_data_in[24] la_data_out[25] 0
 6 *419:la_data_in[24] *419:la_data_in[25] 0
-7 *419:la_data_in[24] *419:la_oenb[23] 0.000503377
-8 *419:la_data_in[24] *419:la_oenb[25] 5.12872e-06
+7 *419:la_data_in[24] *419:la_oenb[22] 0
+8 *419:la_data_in[24] *419:la_oenb[23] 0.000503377
+9 *419:la_data_in[24] *419:la_oenb[25] 5.12872e-06
 *RES
 1 la_data_in[24] *419:la_data_in[24] 29.592 
 *END
@@ -1850,13 +1844,13 @@ wbs_we_i I
 1 la_data_in[29] *419:la_data_in[29] 32.816 
 *END
 
-*D_NET *137 0.0020029
+*D_NET *137 0.00157586
 *CONN
 *P la_data_in[2] I
 *I *419:la_data_in[2] I *D tjrpu
 *CAP
-1 la_data_in[2] 0.00100145
-2 *419:la_data_in[2] 0.00100145
+1 la_data_in[2] 0.000787929
+2 *419:la_data_in[2] 0.000787929
 *RES
 1 la_data_in[2] *419:la_data_in[2] 6.76 
 *END
@@ -2141,22 +2135,23 @@ wbs_we_i I
 2 *154:17 *419:la_data_in[45] 4.968 
 *END
 
-*D_NET *155 0.0159589
+*D_NET *155 0.0159615
 *CONN
 *P la_data_in[46] I
 *I *419:la_data_in[46] I *D tjrpu
 *CAP
-1 la_data_in[46] 0.00169828
+1 la_data_in[46] 0.00168935
 2 *419:la_data_in[46] 0
-3 *155:21 0.00169828
+3 *155:21 0.00168935
 4 *155:21 la_data_out[45] 0.00103521
-5 *155:21 *419:la_oenb[43] 0.000799772
-6 *155:21 *419:la_oenb[44] 0.00217906
-7 *155:21 *419:la_oenb[45] 0.00118651
-8 *155:21 *419:la_oenb[46] 0.00500022
-9 *155:21 *419:la_oenb[47] 0.000634083
-10 *155:21 *419:la_oenb[48] 0.0010264
-11 *154:17 *155:21 0.000701122
+5 *155:21 *419:la_data_in[48] 1.71326e-05
+6 *155:21 *419:la_oenb[43] 0.000799772
+7 *155:21 *419:la_oenb[44] 0.00217906
+8 *155:21 *419:la_oenb[45] 0.00118793
+9 *155:21 *419:la_oenb[46] 0.00500022
+10 *155:21 *419:la_oenb[47] 0.000635929
+11 *155:21 *419:la_oenb[48] 0.0010264
+12 *154:17 *155:21 0.000701122
 *RES
 1 la_data_in[46] *155:21 48.184 
 2 *155:21 *419:la_data_in[46] 4.5 
@@ -2177,18 +2172,19 @@ wbs_we_i I
 1 la_data_in[47] *419:la_data_in[47] 45.4 
 *END
 
-*D_NET *157 0.0245709
+*D_NET *157 0.0245675
 *CONN
 *P la_data_in[48] I
 *I *419:la_data_in[48] I *D tjrpu
 *CAP
-1 la_data_in[48] 0.000670261
-2 *419:la_data_in[48] 0.000670261
+1 la_data_in[48] 0.00065999
+2 *419:la_data_in[48] 0.00065999
 3 *419:la_data_in[48] la_data_out[48] 0.0108086
 4 *419:la_data_in[48] *419:la_data_in[50] 0.000559852
 5 *419:la_data_in[48] *419:la_data_in[51] 0.000654607
 6 *419:la_data_in[48] *419:la_oenb[46] 0.000386968
 7 *419:la_data_in[48] *419:la_oenb[47] 0.0108204
+8 *155:21 *419:la_data_in[48] 1.71326e-05
 *RES
 1 la_data_in[48] *419:la_data_in[48] 44.568 
 *END
@@ -2494,43 +2490,41 @@ wbs_we_i I
 1 la_data_in[6] *419:la_data_in[6] 18.308 
 *END
 
-*D_NET *176 0.0035099
+*D_NET *176 0.00326003
 *CONN
 *P la_data_in[7] I
 *I *419:la_data_in[7] I *D tjrpu
 *CAP
-1 la_data_in[7] 0.00119314
-2 *419:la_data_in[7] 0.00119314
+1 la_data_in[7] 0.00105755
+2 *419:la_data_in[7] 0.00105755
 3 *419:la_data_in[7] la_data_out[7] 0.000617599
-4 *419:la_data_in[7] *419:la_oenb[6] 0.000506026
+4 *419:la_data_in[7] *419:la_oenb[6] 0.000527316
 *RES
 1 la_data_in[7] *419:la_data_in[7] 18.984 
 *END
 
-*D_NET *177 0.00257601
+*D_NET *177 0.00252121
 *CONN
 *P la_data_in[8] I
 *I *419:la_data_in[8] I *D tjrpu
 *CAP
-1 la_data_in[8] 0.00128766
-2 *419:la_data_in[8] 0.00128766
-3 *419:la_data_in[8] *419:la_oenb[7] 0
-4 *419:la_data_in[8] *419:la_oenb[8] 6.8199e-07
+1 la_data_in[8] 0.0012606
+2 *419:la_data_in[8] 0.0012606
+3 *419:la_data_in[8] la_data_out[8] 0
 *RES
-1 la_data_in[8] *419:la_data_in[8] 19.608 
+1 la_data_in[8] *419:la_data_in[8] 19.556 
 *END
 
-*D_NET *178 0.00421232
+*D_NET *178 0.00351672
 *CONN
 *P la_data_in[9] I
 *I *419:la_data_in[9] I *D tjrpu
 *CAP
-1 la_data_in[9] 0.000949882
-2 *419:la_data_in[9] 0.000949882
-3 *419:la_data_in[9] la_data_out[8] 0.000134746
+1 la_data_in[9] 0.00119576
+2 *419:la_data_in[9] 0.00119576
+3 *419:la_data_in[9] la_data_out[8] 1.78817e-06
 4 *419:la_data_in[9] la_data_out[9] 0.00111873
-5 *419:la_data_in[9] *419:la_oenb[8] 0.00103521
-6 *419:la_data_in[9] *419:la_oenb[9] 2.38656e-05
+5 *419:la_data_in[9] *419:la_oenb[9] 4.67771e-06
 *RES
 1 la_data_in[9] *419:la_data_in[9] 20.232 
 *END
@@ -2576,13 +2570,13 @@ wbs_we_i I
 1 *419:la_data_out[11] la_data_out[11] 21.688 
 *END
 
-*D_NET *182 0.0034943
+*D_NET *182 0.00319311
 *CONN
 *P la_data_out[12] O
 *I *419:la_data_out[12] O *D tjrpu
 *CAP
-1 la_data_out[12] 0.00174715
-2 *419:la_data_out[12] 0.00174715
+1 la_data_out[12] 0.00159656
+2 *419:la_data_out[12] 0.00159656
 3 la_data_out[12] la_data_out[13] 0
 4 *419:la_data_in[13] la_data_out[12] 0
 *RES
@@ -2653,40 +2647,39 @@ wbs_we_i I
 1 la_data_out[17] 0.00139594
 2 *419:la_data_out[17] 0.00139594
 3 la_data_out[17] *419:la_oenb[16] 0.00169458
-4 *419:la_data_in[17] la_data_out[17] 0.000608066
-5 *419:la_data_in[18] la_data_out[17] 0.000408705
+4 la_data_out[17] *419:la_oenb[17] 0.000408705
+5 *419:la_data_in[17] la_data_out[17] 0.000608066
 *RES
 1 *419:la_data_out[17] la_data_out[17] 25.432 
 *END
 
-*D_NET *188 0.0045511
+*D_NET *188 0.00650587
 *CONN
 *P la_data_out[18] O
 *I *419:la_data_out[18] O *D tjrpu
 *CAP
-1 la_data_out[18] 0.00180288
-2 *419:la_data_out[18] 0.00180288
+1 la_data_out[18] 0.001536
+2 *419:la_data_out[18] 0.001536
 3 la_data_out[18] la_data_out[19] 0
-4 la_data_out[18] *419:la_oenb[17] 0.000501264
-5 la_data_out[18] *419:la_oenb[18] 0.000444069
-6 la_data_out[18] *419:la_oenb[19] 0
-7 *419:la_data_in[18] la_data_out[18] 0
-8 *419:la_data_in[19] la_data_out[18] 0
+4 la_data_out[18] *419:la_oenb[18] 0.00343387
+5 la_data_out[18] *419:la_oenb[19] 0
+6 *419:la_data_in[18] la_data_out[18] 0
 *RES
-1 *419:la_data_out[18] la_data_out[18] 26.056 
+1 *419:la_data_out[18] la_data_out[18] 26.108 
 *END
 
-*D_NET *189 0.00645036
+*D_NET *189 0.00905673
 *CONN
 *P la_data_out[19] O
 *I *419:la_data_out[19] O *D tjrpu
 *CAP
-1 la_data_out[19] 0.00139128
-2 *419:la_data_out[19] 0.00139128
-3 la_data_out[19] *419:la_oenb[20] 0.000185324
-4 la_data_out[18] la_data_out[19] 0
-5 *419:la_data_in[19] la_data_out[19] 0.0011344
-6 *419:la_data_in[20] la_data_out[19] 0.00234807
+1 la_data_out[19] 0.000933161
+2 *419:la_data_out[19] 0.000933161
+3 la_data_out[19] *419:la_oenb[18] 0
+4 la_data_out[19] *419:la_oenb[19] 0.00368443
+5 la_data_out[18] la_data_out[19] 0
+6 *419:la_data_in[19] la_data_out[19] 0.00114321
+7 *419:la_data_in[20] la_data_out[19] 0.00236276
 *RES
 1 *419:la_data_out[19] la_data_out[19] 26.68 
 *END
@@ -2702,79 +2695,85 @@ wbs_we_i I
 1 *419:la_data_out[1] la_data_out[1] 6.344 
 *END
 
-*D_NET *191 0.00932257
+*D_NET *191 0.0074945
 *CONN
 *P la_data_out[20] O
 *I *419:la_data_out[20] O *D tjrpu
 *CAP
-1 la_data_out[20] 0.00138433
-2 *419:la_data_out[20] 0.00138433
-3 la_data_out[20] *419:la_oenb[20] 0.00386322
-4 *419:la_data_in[19] la_data_out[20] 0.000152069
-5 *419:la_data_in[21] la_data_out[20] 0.00253862
+1 la_data_out[20] 0.00134762
+2 *419:la_data_out[20] 0.00134762
+3 la_data_out[20] la_data_out[21] 0
+4 la_data_out[20] *419:la_oenb[19] 0.000413521
+5 la_data_out[20] *419:la_oenb[20] 0.00394675
+6 la_data_out[20] *419:la_oenb[21] 0.000438998
+7 *419:la_data_in[20] la_data_out[20] 0
 *RES
-1 *419:la_data_out[20] la_data_out[20] 28.76 
+1 *419:la_data_out[20] la_data_out[20] 27.304 
 *END
 
-*D_NET *192 0.00669856
+*D_NET *192 0.00641648
 *CONN
 *P la_data_out[21] O
 *I *419:la_data_out[21] O *D tjrpu
 *CAP
-1 la_data_out[21] 0.00149483
-2 *419:la_data_out[21] 0.00149483
-3 la_data_out[21] *419:la_oenb[21] 0.000395993
-4 la_data_out[21] *419:la_oenb[22] 0.000410154
-5 *419:la_data_in[20] la_data_out[21] 4.18042e-05
-6 *419:la_data_in[22] la_data_out[21] 0.00286096
+1 la_data_out[21] 0.0017412
+2 *419:la_data_out[21] 0.0017412
+3 la_data_out[21] *419:la_oenb[20] 0
+4 la_data_out[21] *419:la_oenb[21] 0.000532453
+5 la_data_out[20] la_data_out[21] 0
+6 *419:la_data_in[20] la_data_out[21] 4.18042e-05
+7 *419:la_data_in[22] la_data_out[21] 0.00235982
 *RES
 1 *419:la_data_out[21] la_data_out[21] 27.928 
 *END
 
-*D_NET *193 0.0100395
+*D_NET *193 0.0104215
 *CONN
 *P la_data_out[22] O
 *I *419:la_data_out[22] O *D tjrpu
 *CAP
-1 la_data_out[22] 0.00125158
-2 *419:la_data_out[22] 0.00125158
+1 la_data_out[22] 0.00113602
+2 *419:la_data_out[22] 0.00113602
 3 la_data_out[22] la_data_out[23] 0.000224867
-4 la_data_out[22] *419:la_oenb[21] 0.00292392
-5 la_data_out[22] *419:la_oenb[23] 5.84216e-05
-6 *419:la_data_in[22] la_data_out[22] 0.00432912
+4 la_data_out[22] *419:la_oenb[21] 0.00293566
+5 la_data_out[22] *419:la_oenb[22] 0
+6 la_data_out[22] *419:la_oenb[23] 5.84216e-05
+7 *419:la_data_in[21] la_data_out[22] 0.000589697
+8 *419:la_data_in[22] la_data_out[22] 0.00434086
 *RES
 1 *419:la_data_out[22] la_data_out[22] 28.552 
 *END
 
-*D_NET *194 0.0106688
+*D_NET *194 0.0107344
 *CONN
 *P la_data_out[23] O
 *I *419:la_data_out[23] O *D tjrpu
 *CAP
-1 la_data_out[23] 0.00118452
-2 *419:la_data_out[23] 0.00118452
-3 la_data_out[23] *419:la_oenb[23] 0.00458555
+1 la_data_out[23] 0.00129003
+2 *419:la_data_out[23] 0.00129003
+3 la_data_out[23] *419:la_oenb[23] 0.00456206
 4 la_data_out[23] *419:la_oenb[24] 0
 5 la_data_out[22] la_data_out[23] 0.000224867
 6 *419:la_data_in[22] la_data_out[23] 0.000121159
-7 *419:la_data_in[23] la_data_out[23] 9.8392e-05
-8 *419:la_data_in[24] la_data_out[23] 0.00326975
-9 *419:la_data_in[25] la_data_out[23] 0
+7 *419:la_data_in[24] la_data_out[23] 0.00324625
+8 *419:la_data_in[25] la_data_out[23] 0
 *RES
 1 *419:la_data_out[23] la_data_out[23] 29.176 
 *END
 
-*D_NET *195 0.0089782
+*D_NET *195 0.00893884
 *CONN
 *P la_data_out[24] O
 *I *419:la_data_out[24] O *D tjrpu
 *CAP
-1 la_data_out[24] 0.00187755
-2 *419:la_data_out[24] 0.00187755
-3 la_data_out[24] *419:la_oenb[25] 0.000401654
-4 *419:la_data_in[24] la_data_out[24] 0.00471574
-5 *419:la_data_in[25] la_data_out[24] 0
-6 *419:la_data_in[26] la_data_out[24] 0.000105704
+1 la_data_out[24] 0.00186375
+2 *419:la_data_out[24] 0.00186375
+3 la_data_out[24] *419:la_oenb[22] 0
+4 la_data_out[24] *419:la_oenb[25] 0.000401654
+5 *419:la_data_in[23] la_data_out[24] 0
+6 *419:la_data_in[24] la_data_out[24] 0.00470399
+7 *419:la_data_in[25] la_data_out[24] 0
+8 *419:la_data_in[26] la_data_out[24] 0.000105704
 *RES
 1 *419:la_data_out[24] la_data_out[24] 29.8 
 *END
@@ -3035,13 +3034,13 @@ wbs_we_i I
 1 *419:la_data_out[39] la_data_out[39] 39.16 
 *END
 
-*D_NET *212 0.00181731
+*D_NET *212 0.00182341
 *CONN
 *P la_data_out[3] O
 *I *419:la_data_out[3] O *D tjrpu
 *CAP
-1 la_data_out[3] 0.000908654
-2 *419:la_data_out[3] 0.000908654
+1 la_data_out[3] 0.000911705
+2 *419:la_data_out[3] 0.000911705
 3 la_data_out[3] *419:la_oenb[3] 0
 *RES
 1 *419:la_data_out[3] la_data_out[3] 8.424 
@@ -3491,40 +3490,44 @@ wbs_we_i I
 1 *419:la_data_out[6] la_data_out[6] 18.568 
 *END
 
-*D_NET *240 0.00286099
+*D_NET *240 0.00336104
 *CONN
 *P la_data_out[7] O
 *I *419:la_data_out[7] O *D tjrpu
 *CAP
-1 la_data_out[7] 0.00112169
-2 *419:la_data_out[7] 0.00112169
-3 *419:la_data_in[7] la_data_out[7] 0.000617599
+1 la_data_out[7] 0.00102116
+2 *419:la_data_out[7] 0.00102116
+3 la_data_out[7] *419:la_oenb[7] 0.000701122
+4 *419:la_data_in[7] la_data_out[7] 0.000617599
 *RES
 1 *419:la_data_out[7] la_data_out[7] 19.192 
 *END
 
-*D_NET *241 0.00258254
+*D_NET *241 0.00262115
 *CONN
 *P la_data_out[8] O
 *I *419:la_data_out[8] O *D tjrpu
 *CAP
-1 la_data_out[8] 0.0012239
-2 *419:la_data_out[8] 0.0012239
-3 *419:la_data_in[9] la_data_out[8] 0.000134746
+1 la_data_out[8] 0.00130934
+2 *419:la_data_out[8] 0.00130934
+3 la_data_out[8] *419:la_oenb[7] 6.8199e-07
+4 *419:la_data_in[8] la_data_out[8] 0
+5 *419:la_data_in[9] la_data_out[8] 1.78817e-06
 *RES
-1 *419:la_data_out[8] la_data_out[8] 19.764 
+1 *419:la_data_out[8] la_data_out[8] 19.816 
 *END
 
-*D_NET *242 0.00379167
+*D_NET *242 0.00445781
 *CONN
 *P la_data_out[9] O
 *I *419:la_data_out[9] O *D tjrpu
 *CAP
-1 la_data_out[9] 0.00106005
-2 *419:la_data_out[9] 0.00106005
-3 la_data_out[9] *419:la_oenb[9] 0.000511034
-4 *419:la_data_in[10] la_data_out[9] 4.18042e-05
-5 *419:la_data_in[9] la_data_out[9] 0.00111873
+1 la_data_out[9] 0.000981391
+2 *419:la_data_out[9] 0.000981391
+3 la_data_out[9] *419:la_oenb[8] 0.000172105
+4 la_data_out[9] *419:la_oenb[9] 0.00119345
+5 *419:la_data_in[10] la_data_out[9] 1.07369e-05
+6 *419:la_data_in[9] la_data_out[9] 0.00111873
 *RES
 1 *419:la_data_out[9] la_data_out[9] 20.44 
 *END
@@ -3569,13 +3572,13 @@ wbs_we_i I
 1 la_oenb[11] *419:la_oenb[11] 21.896 
 *END
 
-*D_NET *246 0.00536954
+*D_NET *246 0.00506835
 *CONN
 *P la_oenb[12] I
 *I *419:la_oenb[12] I *D tjrpu
 *CAP
-1 la_oenb[12] 0.00139374
-2 *419:la_oenb[12] 0.00139374
+1 la_oenb[12] 0.00124315
+2 *419:la_oenb[12] 0.00124315
 3 *419:la_oenb[12] *419:la_oenb[13] 0
 4 la_data_out[13] *419:la_oenb[12] 0.000328734
 5 *419:la_data_in[12] *419:la_oenb[12] 0.000155809
@@ -3643,46 +3646,46 @@ wbs_we_i I
 1 la_oenb[16] *419:la_oenb[16] 25.016 
 *END
 
-*D_NET *251 0.00445237
+*D_NET *251 0.00773674
 *CONN
 *P la_oenb[17] I
 *I *419:la_oenb[17] I *D tjrpu
 *CAP
-1 la_oenb[17] 0.00182501
-2 *419:la_oenb[17] 0.00182501
-3 *419:la_oenb[17] *419:la_oenb[18] 0.000301087
-4 la_data_out[18] *419:la_oenb[17] 0.000501264
-5 *419:la_data_in[19] *419:la_oenb[17] 0
+1 la_oenb[17] 0.00108365
+2 *419:la_oenb[17] 0.00108365
+3 la_data_out[17] *419:la_oenb[17] 0.000408705
+4 *419:la_data_in[17] *419:la_oenb[17] 0.00178691
+5 *419:la_data_in[18] *419:la_oenb[17] 0.00337384
 *RES
-1 la_oenb[17] *419:la_oenb[17] 25.796 
+1 la_oenb[17] *419:la_oenb[17] 25.848 
 *END
 
-*D_NET *252 0.00435885
+*D_NET *252 0.00661972
 *CONN
 *P la_oenb[18] I
 *I *419:la_oenb[18] I *D tjrpu
 *CAP
-1 la_oenb[18] 0.00178016
-2 *419:la_oenb[18] 0.00178016
+1 la_oenb[18] 0.00156727
+2 *419:la_oenb[18] 0.00156727
 3 *419:la_oenb[18] *419:la_oenb[19] 0
-4 la_data_out[18] *419:la_oenb[18] 0.000444069
-5 *419:la_data_in[20] *419:la_oenb[18] 5.3369e-05
-6 *419:la_oenb[17] *419:la_oenb[18] 0.000301087
+4 la_data_out[18] *419:la_oenb[18] 0.00343387
+5 la_data_out[19] *419:la_oenb[18] 0
+6 *419:la_data_in[20] *419:la_oenb[18] 5.13138e-05
 *RES
-1 la_oenb[18] *419:la_oenb[18] 26.628 
+1 la_oenb[18] *419:la_oenb[18] 26.212 
 *END
 
-*D_NET *253 0.00646936
+*D_NET *253 0.00718508
 *CONN
 *P la_oenb[19] I
 *I *419:la_oenb[19] I *D tjrpu
 *CAP
-1 la_oenb[19] 0.00134038
-2 *419:la_oenb[19] 0.00134038
+1 la_oenb[19] 0.00123953
+2 *419:la_oenb[19] 0.00123953
 3 la_data_out[18] *419:la_oenb[19] 0
-4 *419:la_data_in[19] *419:la_oenb[19] 0.00226455
-5 *419:la_data_in[20] *419:la_oenb[19] 0.00120438
-6 *419:la_data_in[21] *419:la_oenb[19] 0.000319666
+4 la_data_out[19] *419:la_oenb[19] 0.00368443
+5 la_data_out[20] *419:la_oenb[19] 0.000413521
+6 *419:la_data_in[20] *419:la_oenb[19] 0.000608066
 7 *419:la_oenb[18] *419:la_oenb[19] 0
 *RES
 1 la_oenb[19] *419:la_oenb[19] 26.888 
@@ -3699,73 +3702,80 @@ wbs_we_i I
 1 la_oenb[1] *419:la_oenb[1] 6.552 
 *END
 
-*D_NET *255 0.00768024
+*D_NET *255 0.00794303
 *CONN
 *P la_oenb[20] I
 *I *419:la_oenb[20] I *D tjrpu
 *CAP
-1 la_oenb[20] 0.00150594
-2 *419:la_oenb[20] 0.00150594
-3 la_data_out[19] *419:la_oenb[20] 0.000185324
-4 la_data_out[20] *419:la_oenb[20] 0.00386322
-5 *419:la_data_in[21] *419:la_oenb[20] 0.00061982
+1 la_oenb[20] 0.00106362
+2 *419:la_oenb[20] 0.00106362
+3 *419:la_oenb[20] *419:la_oenb[21] 9.95776e-05
+4 la_data_out[20] *419:la_oenb[20] 0.00394675
+5 la_data_out[21] *419:la_oenb[20] 0
+6 *419:la_data_in[21] *419:la_oenb[20] 0.00173012
+7 *419:la_data_in[22] *419:la_oenb[20] 3.93422e-05
 *RES
-1 la_oenb[20] *419:la_oenb[20] 28.552 
+1 la_oenb[20] *419:la_oenb[20] 27.512 
 *END
 
-*D_NET *256 0.0071032
+*D_NET *256 0.00737137
 *CONN
 *P la_oenb[21] I
 *I *419:la_oenb[21] I *D tjrpu
 *CAP
-1 la_oenb[21] 0.00147567
-2 *419:la_oenb[21] 0.00147567
-3 la_data_out[21] *419:la_oenb[21] 0.000395993
-4 la_data_out[22] *419:la_oenb[21] 0.00292392
-5 *419:la_data_in[22] *419:la_oenb[21] 0.000574547
-6 *419:la_data_in[23] *419:la_oenb[21] 0.000257409
+1 la_oenb[21] 0.00144355
+2 *419:la_oenb[21] 0.00144355
+3 *419:la_oenb[21] *419:la_oenb[22] 0.0001218
+4 la_data_out[20] *419:la_oenb[21] 0.000438998
+5 la_data_out[21] *419:la_oenb[21] 0.000532453
+6 la_data_out[22] *419:la_oenb[21] 0.00293566
+7 *419:la_data_in[21] *419:la_oenb[21] 0
+8 *419:la_data_in[22] *419:la_oenb[21] 0.000355787
+9 *419:la_oenb[20] *419:la_oenb[21] 9.95776e-05
 *RES
 1 la_oenb[21] *419:la_oenb[21] 28.136 
 *END
 
-*D_NET *257 0.00541823
+*D_NET *257 0.00516681
 *CONN
 *P la_oenb[22] I
 *I *419:la_oenb[22] I *D tjrpu
 *CAP
-1 la_oenb[22] 0.00197894
-2 *419:la_oenb[22] 0.00197894
-3 la_data_out[21] *419:la_oenb[22] 0.000410154
-4 *419:la_data_in[23] *419:la_oenb[22] 0.00105019
+1 la_oenb[22] 0.00185828
+2 *419:la_oenb[22] 0.00185828
+3 la_data_out[22] *419:la_oenb[22] 0
+4 la_data_out[24] *419:la_oenb[22] 0
+5 *419:la_data_in[23] *419:la_oenb[22] 0.00132845
+6 *419:la_data_in[24] *419:la_oenb[22] 0
+7 *419:la_oenb[21] *419:la_oenb[22] 0.0001218
 *RES
-1 la_oenb[22] *419:la_oenb[22] 30.32 
+1 la_oenb[22] *419:la_oenb[22] 28.968 
 *END
 
-*D_NET *258 0.00892413
+*D_NET *258 0.00898499
 *CONN
 *P la_oenb[23] I
 *I *419:la_oenb[23] I *D tjrpu
 *CAP
-1 la_oenb[23] 0.001627
-2 *419:la_oenb[23] 0.001627
+1 la_oenb[23] 0.00191115
+2 *419:la_oenb[23] 0.00191115
 3 *419:la_oenb[23] *419:la_oenb[24] 0
 4 la_data_out[22] *419:la_oenb[23] 5.84216e-05
-5 la_data_out[23] *419:la_oenb[23] 0.00458555
+5 la_data_out[23] *419:la_oenb[23] 0.00456206
 6 la_data_out[25] *419:la_oenb[23] 0
-7 *419:la_data_in[23] *419:la_oenb[23] 0.000483955
-8 *419:la_data_in[24] *419:la_oenb[23] 0.000503377
-9 *419:la_data_in[25] *419:la_oenb[23] 3.88283e-05
+7 *419:la_data_in[24] *419:la_oenb[23] 0.000503377
+8 *419:la_data_in[25] *419:la_oenb[23] 3.88283e-05
 *RES
 1 la_oenb[23] *419:la_oenb[23] 29.384 
 *END
 
-*D_NET *259 0.00856502
+*D_NET *259 0.00857521
 *CONN
 *P la_oenb[24] I
 *I *419:la_oenb[24] I *D tjrpu
 *CAP
-1 la_oenb[24] 0.0017043
-2 *419:la_oenb[24] 0.0017043
+1 la_oenb[24] 0.00170939
+2 *419:la_oenb[24] 0.00170939
 3 la_data_out[23] *419:la_oenb[24] 0
 4 la_data_out[25] *419:la_oenb[24] 0.00362441
 5 *419:la_data_in[23] *419:la_oenb[24] 0
@@ -4142,21 +4152,21 @@ wbs_we_i I
 1 la_oenb[44] *419:la_oenb[44] 42.488 
 *END
 
-*D_NET *282 0.0194836
+*D_NET *282 0.0194841
 *CONN
 *P la_oenb[45] I
 *I *419:la_oenb[45] I *D tjrpu
 *CAP
-1 la_oenb[45] 0.00134327
-2 *419:la_oenb[45] 0.00134327
-3 *419:la_oenb[45] *419:la_oenb[47] 0.00351888
+1 la_oenb[45] 0.0013421
+2 *419:la_oenb[45] 0.0013421
+3 *419:la_oenb[45] *419:la_oenb[47] 0.00352031
 4 *419:la_oenb[45] *419:la_oenb[48] 2.79108e-05
 5 la_data_out[44] *419:la_oenb[45] 0.005861
 6 la_data_out[45] *419:la_oenb[45] 0.00112557
 7 *419:la_data_in[43] *419:la_oenb[45] 4.20994e-05
 8 *419:la_data_in[44] *419:la_oenb[45] 0.00449616
 9 *419:la_oenb[44] *419:la_oenb[45] 0.000538925
-10 *155:21 *419:la_oenb[45] 0.00118651
+10 *155:21 *419:la_oenb[45] 0.00118793
 *RES
 1 la_oenb[45] *419:la_oenb[45] 43.112 
 *END
@@ -4166,9 +4176,9 @@ wbs_we_i I
 *P la_oenb[46] I
 *I *419:la_oenb[46] I *D tjrpu
 *CAP
-1 la_oenb[46] 0.00233049
-2 *419:la_oenb[46] 0.00233049
-3 *419:la_oenb[46] *419:la_oenb[47] 2.36742e-05
+1 la_oenb[46] 0.00233028
+2 *419:la_oenb[46] 0.00233028
+3 *419:la_oenb[46] *419:la_oenb[47] 2.41483e-05
 4 *419:la_oenb[46] *419:la_oenb[49] 0.000140491
 5 la_data_out[48] *419:la_oenb[46] 0.00513196
 6 *419:la_data_in[48] *419:la_oenb[46] 0.000386968
@@ -4178,13 +4188,13 @@ wbs_we_i I
 1 la_oenb[46] *419:la_oenb[46] 43.892 
 *END
 
-*D_NET *284 0.0218362
+*D_NET *284 0.0218367
 *CONN
 *P la_oenb[47] I
 *I *419:la_oenb[47] I *D tjrpu
 *CAP
-1 la_oenb[47] 0.00104903
-2 *419:la_oenb[47] 0.00104903
+1 la_oenb[47] 0.00104741
+2 *419:la_oenb[47] 0.00104741
 3 *419:la_oenb[47] *419:la_oenb[48] 0.000341698
 4 *419:la_oenb[47] *419:la_oenb[49] 0.000574547
 5 *419:la_oenb[47] *419:la_oenb[50] 0.000597829
@@ -4192,9 +4202,9 @@ wbs_we_i I
 7 *419:la_data_in[48] *419:la_oenb[47] 0.0108204
 8 *419:la_data_in[50] *419:la_oenb[47] 0.00285215
 9 *419:la_oenb[44] *419:la_oenb[47] 0
-10 *419:la_oenb[45] *419:la_oenb[47] 0.00351888
-11 *419:la_oenb[46] *419:la_oenb[47] 2.36742e-05
-12 *155:21 *419:la_oenb[47] 0.000634083
+10 *419:la_oenb[45] *419:la_oenb[47] 0.00352031
+11 *419:la_oenb[46] *419:la_oenb[47] 2.41483e-05
+12 *155:21 *419:la_oenb[47] 0.000635929
 *RES
 1 la_oenb[47] *419:la_oenb[47] 44.568 
 *END
@@ -4505,55 +4515,55 @@ wbs_we_i I
 2 *302:13 *419:la_oenb[63] 8.92 
 *END
 
-*D_NET *303 0.00326142
+*D_NET *303 0.00309294
 *CONN
 *P la_oenb[6] I
 *I *419:la_oenb[6] I *D tjrpu
 *CAP
-1 la_oenb[6] 0.00115242
-2 *419:la_oenb[6] 0.00115242
+1 la_oenb[6] 0.00105753
+2 *419:la_oenb[6] 0.00105753
 3 la_data_out[6] *419:la_oenb[6] 0.000450555
-4 *419:la_data_in[7] *419:la_oenb[6] 0.000506026
+4 *419:la_data_in[7] *419:la_oenb[6] 0.000527316
 *RES
 1 la_oenb[6] *419:la_oenb[6] 18.776 
 *END
 
-*D_NET *304 0.00252121
+*D_NET *304 0.00301234
 *CONN
 *P la_oenb[7] I
 *I *419:la_oenb[7] I *D tjrpu
 *CAP
-1 la_oenb[7] 0.0012606
-2 *419:la_oenb[7] 0.0012606
-3 *419:la_data_in[8] *419:la_oenb[7] 0
+1 la_oenb[7] 0.00115527
+2 *419:la_oenb[7] 0.00115527
+3 la_data_out[7] *419:la_oenb[7] 0.000701122
+4 la_data_out[8] *419:la_oenb[7] 6.8199e-07
 *RES
-1 la_oenb[7] *419:la_oenb[7] 19.556 
+1 la_oenb[7] *419:la_oenb[7] 19.608 
 *END
 
-*D_NET *305 0.00341027
+*D_NET *305 0.00264313
 *CONN
 *P la_oenb[8] I
 *I *419:la_oenb[8] I *D tjrpu
 *CAP
-1 la_oenb[8] 0.00118719
-2 *419:la_oenb[8] 0.00118719
-3 *419:la_data_in[8] *419:la_oenb[8] 6.8199e-07
-4 *419:la_data_in[9] *419:la_oenb[8] 0.00103521
+1 la_oenb[8] 0.00123551
+2 *419:la_oenb[8] 0.00123551
+3 la_data_out[9] *419:la_oenb[8] 0.000172105
 *RES
-1 la_oenb[8] *419:la_oenb[8] 20.024 
+1 la_oenb[8] *419:la_oenb[8] 19.972 
 *END
 
-*D_NET *306 0.00407841
+*D_NET *306 0.00472468
 *CONN
 *P la_oenb[9] I
 *I *419:la_oenb[9] I *D tjrpu
 *CAP
-1 la_oenb[9] 0.00103161
-2 *419:la_oenb[9] 0.00103161
+1 la_oenb[9] 0.00102313
+2 *419:la_oenb[9] 0.00102313
 3 la_data_out[10] *419:la_oenb[9] 0.000194511
-4 la_data_out[9] *419:la_oenb[9] 0.000511034
+4 la_data_out[9] *419:la_oenb[9] 0.00119345
 5 *419:la_data_in[10] *419:la_oenb[9] 0.00128578
-6 *419:la_data_in[9] *419:la_oenb[9] 2.38656e-05
+6 *419:la_data_in[9] *419:la_oenb[9] 4.67771e-06
 *RES
 1 la_oenb[9] *419:la_oenb[9] 20.648 
 *END
@@ -4728,14 +4738,14 @@ wbs_we_i I
 1 wbs_adr_i[13] *419:wbs_adr_i[13] 25.224 
 *END
 
-*D_NET *321 0.00415014
+*D_NET *321 0.00598687
 *CONN
 *P wbs_adr_i[14] I
 *I *419:wbs_adr_i[14] I *D tjrpu
 *CAP
-1 wbs_adr_i[14] 0.0014537
-2 *419:wbs_adr_i[14] 0.0014537
-3 *419:wbs_adr_i[14] *419:wbs_dat_i[14] 0.000796
+1 wbs_adr_i[14] 0.00134546
+2 *419:wbs_adr_i[14] 0.00134546
+3 *419:wbs_adr_i[14] *419:wbs_dat_i[14] 0.00284922
 4 *419:wbs_adr_i[13] *419:wbs_adr_i[14] 0.000446729
 *RES
 1 wbs_adr_i[14] *419:wbs_adr_i[14] 24.548 
@@ -4750,8 +4760,7 @@ wbs_we_i I
 2 *419:wbs_adr_i[15] 0.00123485
 3 *419:wbs_adr_i[15] wbs_dat_o[14] 0.000608066
 4 *419:wbs_adr_i[15] *419:wbs_adr_i[16] 2.81522e-06
-5 *419:wbs_adr_i[15] *419:wbs_dat_i[14] 0
-6 *419:wbs_adr_i[15] *419:wbs_dat_i[15] 0.00252688
+5 *419:wbs_adr_i[15] *419:wbs_dat_i[15] 0.00252688
 *RES
 1 wbs_adr_i[15] *419:wbs_adr_i[15] 23.976 
 *END
@@ -4813,20 +4822,19 @@ wbs_we_i I
 1 wbs_adr_i[19] *419:wbs_adr_i[19] 21.48 
 *END
 
-*D_NET *327 0.00947422
+*D_NET *327 0.00998167
 *CONN
 *P wbs_adr_i[1] I
 *I *419:wbs_adr_i[1] I *D tjrpu
 *CAP
-1 wbs_adr_i[1] 0.00215939
-2 *419:wbs_adr_i[1] 0.00215939
-3 *419:wbs_adr_i[1] wbs_dat_o[1] 0.00467142
-4 *419:wbs_adr_i[1] *419:wbs_dat_i[1] 0
-5 *419:wbs_adr_i[1] *419:wbs_sel_i[0] 0.000484016
-6 *419:wbs_adr_i[1] *419:wbs_sel_i[1] 0
-7 *419:wbs_adr_i[1] *419:wbs_stb_i 0
+1 wbs_adr_i[1] 0.00227009
+2 *419:wbs_adr_i[1] 0.00227009
+3 *419:wbs_adr_i[1] wbs_dat_o[1] 0.00460903
+4 *419:wbs_adr_i[1] wbs_dat_o[2] 0
+5 *419:wbs_adr_i[1] *419:wbs_sel_i[0] 0.000832459
+6 *419:wbs_adr_i[1] *419:wbs_stb_i 0
 *RES
-1 wbs_adr_i[1] *419:wbs_adr_i[1] 33.336 
+1 wbs_adr_i[1] *419:wbs_adr_i[1] 34.792 
 *END
 
 *D_NET *328 0.00483213
@@ -4957,21 +4965,21 @@ wbs_we_i I
 1 wbs_adr_i[29] *419:wbs_adr_i[29] 6.136 
 *END
 
-*D_NET *338 0.00964235
+*D_NET *338 0.00718424
 *CONN
 *P wbs_adr_i[2] I
 *I *419:wbs_adr_i[2] I *D tjrpu
 *CAP
-1 wbs_adr_i[2] 0.00151421
-2 *419:wbs_adr_i[2] 0.00151421
-3 *419:wbs_adr_i[2] wbs_dat_o[1] 0.00447748
-4 *419:wbs_adr_i[2] wbs_dat_o[2] 0.00141407
-5 *419:wbs_adr_i[2] *419:wbs_dat_i[2] 0.000307084
-6 *419:wbs_adr_i[2] *419:wbs_dat_i[3] 0.000238698
-7 *419:wbs_adr_i[2] *419:wbs_sel_i[0] 0.000176586
+1 wbs_adr_i[2] 0.00206379
+2 *419:wbs_adr_i[2] 0.00206379
+3 *419:wbs_adr_i[2] wbs_dat_o[1] 0.000120026
+4 *419:wbs_adr_i[2] *419:wbs_adr_i[3] 0
+5 *419:wbs_adr_i[2] *419:wbs_dat_i[2] 0.00245059
+6 *419:wbs_adr_i[2] *419:wbs_dat_i[3] 0.000193768
+7 *419:wbs_adr_i[2] *419:wbs_sel_i[0] 0.000292274
 8 *419:wbs_adr_i[2] *419:wbs_sel_i[1] 0
 *RES
-1 wbs_adr_i[2] *419:wbs_adr_i[2] 32.608 
+1 wbs_adr_i[2] *419:wbs_adr_i[2] 32.504 
 *END
 
 *D_NET *339 0.00128493
@@ -4996,44 +5004,44 @@ wbs_we_i I
 1 wbs_adr_i[31] *419:wbs_adr_i[31] 4.992 
 *END
 
-*D_NET *341 0.0135002
+*D_NET *341 0.0135409
 *CONN
 *P wbs_adr_i[3] I
 *I *419:wbs_adr_i[3] I *D tjrpu
 *CAP
-1 wbs_adr_i[3] 0.00105385
-2 *419:wbs_adr_i[3] 0.00105385
+1 wbs_adr_i[3] 0.00107423
+2 *419:wbs_adr_i[3] 0.00107423
 3 *419:wbs_adr_i[3] *419:wbs_dat_i[3] 0.00559371
 4 *419:wbs_adr_i[3] *419:wbs_sel_i[1] 0.000133263
 5 *419:wbs_adr_i[3] *419:wbs_sel_i[2] 0.00566548
+6 *419:wbs_adr_i[2] *419:wbs_adr_i[3] 0
 *RES
 1 wbs_adr_i[3] *419:wbs_adr_i[3] 31.672 
 *END
 
-*D_NET *342 0.0102119
+*D_NET *342 0.0063303
 *CONN
 *P wbs_adr_i[4] I
 *I *419:wbs_adr_i[4] I *D tjrpu
 *CAP
-1 wbs_adr_i[4] 0.00124413
-2 *419:wbs_adr_i[4] 0.00124413
+1 wbs_adr_i[4] 0.00184912
+2 *419:wbs_adr_i[4] 0.00184912
 3 *419:wbs_adr_i[4] wbs_dat_o[3] 0.00172304
-4 *419:wbs_adr_i[4] wbs_dat_o[5] 0
-5 *419:wbs_adr_i[4] *419:wbs_dat_i[4] 0.0007057
-6 *419:wbs_adr_i[4] *419:wbs_dat_i[5] 0
-7 *419:wbs_adr_i[4] *419:wbs_sel_i[3] 0.00529485
+4 *419:wbs_adr_i[4] wbs_dat_o[5] 0.000230765
+5 *419:wbs_adr_i[4] *419:wbs_dat_i[4] 0.000282266
+6 *419:wbs_adr_i[4] *419:wbs_sel_i[3] 0.000395993
 *RES
-1 wbs_adr_i[4] *419:wbs_adr_i[4] 32.504 
+1 wbs_adr_i[4] *419:wbs_adr_i[4] 32.4 
 *END
 
-*D_NET *343 0.0126281
+*D_NET *343 0.012664
 *CONN
 *P wbs_adr_i[5] I
 *I *419:wbs_adr_i[5] I *D tjrpu
 *CAP
-1 wbs_adr_i[5] 0.0011927
-2 *419:wbs_adr_i[5] 0.0011927
-3 *419:wbs_adr_i[5] wbs_dat_o[3] 0.000278013
+1 wbs_adr_i[5] 0.00121718
+2 *419:wbs_adr_i[5] 0.00121718
+3 *419:wbs_adr_i[5] wbs_dat_o[3] 0.000264903
 4 *419:wbs_adr_i[5] wbs_dat_o[4] 0.00506908
 5 *419:wbs_adr_i[5] wbs_dat_o[6] 0
 6 *419:wbs_adr_i[5] *419:wbs_adr_i[6] 0
@@ -5043,17 +5051,17 @@ wbs_we_i I
 1 wbs_adr_i[5] *419:wbs_adr_i[5] 30.216 
 *END
 
-*D_NET *344 0.00632703
+*D_NET *344 0.00632658
 *CONN
 *P wbs_adr_i[6] I
 *I *419:wbs_adr_i[6] I *D tjrpu
 *CAP
-1 wbs_adr_i[6] 0.00174763
-2 *419:wbs_adr_i[6] 0.00174763
+1 wbs_adr_i[6] 0.00175014
+2 *419:wbs_adr_i[6] 0.00175014
 3 *419:wbs_adr_i[6] wbs_dat_o[4] 6.11708e-05
 4 *419:wbs_adr_i[6] wbs_dat_o[5] 0.00190222
 5 *419:wbs_adr_i[6] wbs_dat_o[6] 0.000501736
-6 *419:wbs_adr_i[6] *419:wbs_dat_i[4] 9.13426e-05
+6 *419:wbs_adr_i[6] *419:wbs_dat_i[4] 8.58683e-05
 7 *419:wbs_adr_i[6] *419:wbs_dat_i[5] 0
 8 *419:wbs_adr_i[6] *419:wbs_dat_i[6] 0.000275299
 9 *419:wbs_adr_i[5] *419:wbs_adr_i[6] 0
@@ -5180,34 +5188,32 @@ wbs_we_i I
 1 wbs_dat_i[12] *419:wbs_dat_i[12] 26.68 
 *END
 
-*D_NET *353 0.00681562
+*D_NET *353 0.00648711
 *CONN
 *P wbs_dat_i[13] I
 *I *419:wbs_dat_i[13] I *D tjrpu
 *CAP
-1 wbs_dat_i[13] 0.00122747
-2 *419:wbs_dat_i[13] 0.00122747
+1 wbs_dat_i[13] 0.00123005
+2 *419:wbs_dat_i[13] 0.00123005
 3 *419:wbs_dat_i[13] wbs_dat_o[12] 0.000596312
 4 *419:wbs_dat_i[13] wbs_dat_o[13] 0.00290925
-5 *419:wbs_dat_i[13] *419:wbs_dat_i[14] 0.000674269
+5 *419:wbs_dat_i[13] *419:wbs_dat_i[14] 0.000340608
 6 *419:wbs_dat_i[12] *419:wbs_dat_i[13] 0.000180846
 *RES
 1 wbs_dat_i[13] *419:wbs_dat_i[13] 25.016 
 *END
 
-*D_NET *354 0.00437037
+*D_NET *354 0.0058733
 *CONN
 *P wbs_dat_i[14] I
 *I *419:wbs_dat_i[14] I *D tjrpu
 *CAP
-1 wbs_dat_i[14] 0.00145005
-2 *419:wbs_dat_i[14] 0.00145005
-3 *419:wbs_dat_i[14] wbs_dat_o[13] 0
-4 *419:wbs_adr_i[14] *419:wbs_dat_i[14] 0.000796
-5 *419:wbs_adr_i[15] *419:wbs_dat_i[14] 0
-6 *419:wbs_dat_i[13] *419:wbs_dat_i[14] 0.000674269
+1 wbs_dat_i[14] 0.00134174
+2 *419:wbs_dat_i[14] 0.00134174
+3 *419:wbs_adr_i[14] *419:wbs_dat_i[14] 0.00284922
+4 *419:wbs_dat_i[13] *419:wbs_dat_i[14] 0.000340608
 *RES
-1 wbs_dat_i[14] *419:wbs_dat_i[14] 24.392 
+1 wbs_dat_i[14] *419:wbs_dat_i[14] 24.652 
 *END
 
 *D_NET *355 0.00873129
@@ -5285,15 +5291,15 @@ wbs_we_i I
 1 wbs_dat_i[19] *419:wbs_dat_i[19] 21.376 
 *END
 
-*D_NET *360 0.00934209
+*D_NET *360 0.00938546
 *CONN
 *P wbs_dat_i[1] I
 *I *419:wbs_dat_i[1] I *D tjrpu
 *CAP
-1 wbs_dat_i[1] 0.00236253
-2 *419:wbs_dat_i[1] 0.00236253
-3 *419:wbs_dat_i[1] *419:wbs_sel_i[1] 0.00461703
-4 *419:wbs_adr_i[1] *419:wbs_dat_i[1] 0
+1 wbs_dat_i[1] 0.00238422
+2 *419:wbs_dat_i[1] 0.00238422
+3 *419:wbs_dat_i[1] *419:wbs_sel_i[0] 0
+4 *419:wbs_dat_i[1] *419:wbs_sel_i[1] 0.00461703
 5 *419:wbs_dat_i[0] *419:wbs_dat_i[1] 0
 *RES
 1 wbs_dat_i[1] *419:wbs_dat_i[1] 33.128 
@@ -5426,20 +5432,19 @@ wbs_we_i I
 1 wbs_dat_i[29] *419:wbs_dat_i[29] 5.928 
 *END
 
-*D_NET *371 0.00975618
+*D_NET *371 0.00743638
 *CONN
 *P wbs_dat_i[2] I
 *I *419:wbs_dat_i[2] I *D tjrpu
 *CAP
-1 wbs_dat_i[2] 0.00220796
-2 *419:wbs_dat_i[2] 0.00220796
-3 *419:wbs_dat_i[2] wbs_dat_o[2] 0.00503318
-4 *419:wbs_dat_i[2] wbs_dat_o[3] 0
-5 *419:wbs_dat_i[2] *419:wbs_dat_i[3] 0
-6 *419:wbs_dat_i[2] *419:wbs_sel_i[0] 0
-7 *419:wbs_adr_i[2] *419:wbs_dat_i[2] 0.000307084
+1 wbs_dat_i[2] 0.0014541
+2 *419:wbs_dat_i[2] 0.0014541
+3 *419:wbs_dat_i[2] wbs_dat_o[1] 0.00133382
+4 *419:wbs_dat_i[2] wbs_dat_o[2] 0.000740948
+5 *419:wbs_dat_i[2] wbs_dat_o[3] 2.81522e-06
+6 *419:wbs_adr_i[2] *419:wbs_dat_i[2] 0.00245059
 *RES
-1 wbs_dat_i[2] *419:wbs_dat_i[2] 34.272 
+1 wbs_dat_i[2] *419:wbs_dat_i[2] 32.504 
 *END
 
 *D_NET *372 0.00133342
@@ -5464,48 +5469,50 @@ wbs_we_i I
 1 wbs_dat_i[31] *419:wbs_dat_i[31] 4.992 
 *END
 
-*D_NET *374 0.00936741
+*D_NET *374 0.00939693
 *CONN
 *P wbs_dat_i[3] I
 *I *419:wbs_dat_i[3] I *D tjrpu
 *CAP
-1 wbs_dat_i[3] 0.00172946
-2 *419:wbs_dat_i[3] 0.00172946
+1 wbs_dat_i[3] 0.00176669
+2 *419:wbs_dat_i[3] 0.00176669
 3 *419:wbs_dat_i[3] wbs_dat_o[4] 7.60808e-05
-4 *419:wbs_adr_i[2] *419:wbs_dat_i[3] 0.000238698
-5 *419:wbs_adr_i[3] *419:wbs_dat_i[3] 0.00559371
-6 *419:wbs_dat_i[2] *419:wbs_dat_i[3] 0
+4 *419:wbs_dat_i[3] *419:wbs_dat_i[4] 0
+5 *419:wbs_adr_i[2] *419:wbs_dat_i[3] 0.000193768
+6 *419:wbs_adr_i[3] *419:wbs_dat_i[3] 0.00559371
 *RES
 1 wbs_dat_i[3] *419:wbs_dat_i[3] 31.464 
 *END
 
-*D_NET *375 0.00735337
+*D_NET *375 0.00821499
 *CONN
 *P wbs_dat_i[4] I
 *I *419:wbs_dat_i[4] I *D tjrpu
 *CAP
-1 wbs_dat_i[4] 0.00200886
-2 *419:wbs_dat_i[4] 0.00200886
-3 *419:wbs_dat_i[4] wbs_dat_o[3] 0.00253861
-4 *419:wbs_adr_i[4] *419:wbs_dat_i[4] 0.0007057
-5 *419:wbs_adr_i[6] *419:wbs_dat_i[4] 9.13426e-05
+1 wbs_dat_i[4] 0.00200797
+2 *419:wbs_dat_i[4] 0.00200797
+3 *419:wbs_dat_i[4] *419:wbs_dat_i[5] 0
+4 *419:wbs_dat_i[4] *419:wbs_sel_i[3] 0.00383092
+5 *419:wbs_adr_i[4] *419:wbs_dat_i[4] 0.000282266
+6 *419:wbs_adr_i[6] *419:wbs_dat_i[4] 8.58683e-05
+7 *419:wbs_dat_i[3] *419:wbs_dat_i[4] 0
 *RES
-1 wbs_dat_i[4] *419:wbs_dat_i[4] 30.736 
+1 wbs_dat_i[4] *419:wbs_dat_i[4] 30.84 
 *END
 
-*D_NET *376 0.00895626
+*D_NET *376 0.00896666
 *CONN
 *P wbs_dat_i[5] I
 *I *419:wbs_dat_i[5] I *D tjrpu
 *CAP
-1 wbs_dat_i[5] 0.00184276
-2 *419:wbs_dat_i[5] 0.00184276
+1 wbs_dat_i[5] 0.00185765
+2 *419:wbs_dat_i[5] 0.00185765
 3 *419:wbs_dat_i[5] wbs_dat_o[6] 0.00019231
-4 *419:wbs_dat_i[5] *419:wbs_sel_i[3] 0.000182803
-5 *419:wbs_adr_i[4] *419:wbs_dat_i[5] 0
-6 *419:wbs_adr_i[5] *419:wbs_dat_i[5] 0.00489563
-7 *419:wbs_adr_i[6] *419:wbs_dat_i[5] 0
-8 *419:wbs_adr_i[7] *419:wbs_dat_i[5] 0
+4 *419:wbs_dat_i[5] *419:wbs_sel_i[3] 0.000163404
+5 *419:wbs_adr_i[5] *419:wbs_dat_i[5] 0.00489563
+6 *419:wbs_adr_i[6] *419:wbs_dat_i[5] 0
+7 *419:wbs_adr_i[7] *419:wbs_dat_i[5] 0
+8 *419:wbs_dat_i[4] *419:wbs_dat_i[5] 0
 *RES
 1 wbs_dat_i[5] *419:wbs_dat_i[5] 30.008 
 *END
@@ -5630,18 +5637,17 @@ wbs_we_i I
 1 *419:wbs_dat_o[12] wbs_dat_o[12] 25.432 
 *END
 
-*D_NET *385 0.0063984
+*D_NET *385 0.00639843
 *CONN
 *P wbs_dat_o[13] O
 *I *419:wbs_dat_o[13] O *D tjrpu
 *CAP
-1 wbs_dat_o[13] 0.00131564
-2 *419:wbs_dat_o[13] 0.00131564
+1 wbs_dat_o[13] 0.00131566
+2 *419:wbs_dat_o[13] 0.00131566
 3 wbs_dat_o[13] wbs_dat_o[14] 6.35093e-06
 4 wbs_dat_o[12] wbs_dat_o[13] 0.000288736
 5 *419:wbs_adr_i[13] wbs_dat_o[13] 0.000562783
 6 *419:wbs_dat_i[13] wbs_dat_o[13] 0.00290925
-7 *419:wbs_dat_i[14] wbs_dat_o[13] 0
 *RES
 1 *419:wbs_dat_o[13] wbs_dat_o[13] 24.808 
 *END
@@ -5730,20 +5736,21 @@ wbs_we_i I
 1 *419:wbs_dat_o[19] wbs_dat_o[19] 21.064 
 *END
 
-*D_NET *392 0.0126319
+*D_NET *392 0.0110291
 *CONN
 *P wbs_dat_o[1] O
 *I *419:wbs_dat_o[1] O *D tjrpu
 *CAP
-1 wbs_dat_o[1] 0.0014056
-2 *419:wbs_dat_o[1] 0.0014056
-3 wbs_dat_o[1] *419:wbs_sel_i[0] 0.000539117
-4 wbs_dat_o[1] *419:wbs_sel_i[1] 0
-5 wbs_dat_o[1] *419:wbs_sel_i[2] 0.000132639
-6 *419:wbs_adr_i[1] wbs_dat_o[1] 0.00467142
-7 *419:wbs_adr_i[2] wbs_dat_o[1] 0.00447748
+1 wbs_dat_o[1] 0.00124666
+2 *419:wbs_dat_o[1] 0.00124666
+3 wbs_dat_o[1] wbs_dat_o[2] 0.000920917
+4 wbs_dat_o[1] *419:wbs_sel_i[0] 0.00140867
+5 wbs_dat_o[1] *419:wbs_sel_i[2] 0.000143301
+6 *419:wbs_adr_i[1] wbs_dat_o[1] 0.00460903
+7 *419:wbs_adr_i[2] wbs_dat_o[1] 0.000120026
+8 *419:wbs_dat_i[2] wbs_dat_o[1] 0.00133382
 *RES
-1 *419:wbs_dat_o[1] wbs_dat_o[1] 32.92 
+1 *419:wbs_dat_o[1] wbs_dat_o[1] 33.96 
 *END
 
 *D_NET *393 0.00436698
@@ -5872,19 +5879,20 @@ wbs_we_i I
 1 *419:wbs_dat_o[29] wbs_dat_o[29] 5.72 
 *END
 
-*D_NET *403 0.0105963
+*D_NET *403 0.00669617
 *CONN
 *P wbs_dat_o[2] O
 *I *419:wbs_dat_o[2] O *D tjrpu
 *CAP
-1 wbs_dat_o[2] 0.0018022
-2 *419:wbs_dat_o[2] 0.0018022
-3 wbs_dat_o[2] wbs_dat_o[3] 0.000542895
-4 wbs_dat_o[2] *419:wbs_sel_i[3] 1.78817e-06
-5 *419:wbs_adr_i[2] wbs_dat_o[2] 0.00141407
-6 *419:wbs_dat_i[2] wbs_dat_o[2] 0.00503318
+1 wbs_dat_o[2] 0.00247836
+2 *419:wbs_dat_o[2] 0.00247836
+3 wbs_dat_o[2] wbs_dat_o[3] 7.75876e-05
+4 wbs_dat_o[2] *419:wbs_sel_i[3] 0
+5 wbs_dat_o[1] wbs_dat_o[2] 0.000920917
+6 *419:wbs_adr_i[1] wbs_dat_o[2] 0
+7 *419:wbs_dat_i[2] wbs_dat_o[2] 0.000740948
 *RES
-1 *419:wbs_dat_o[2] wbs_dat_o[2] 34.688 
+1 *419:wbs_dat_o[2] wbs_dat_o[2] 34.896 
 *END
 
 *D_NET *404 0.00116371
@@ -5909,30 +5917,29 @@ wbs_we_i I
 1 *419:wbs_dat_o[31] wbs_dat_o[31] 5.72 
 *END
 
-*D_NET *406 0.00850695
+*D_NET *406 0.00999769
 *CONN
 *P wbs_dat_o[3] O
 *I *419:wbs_dat_o[3] O *D tjrpu
 *CAP
-1 wbs_dat_o[3] 0.00150634
-2 *419:wbs_dat_o[3] 0.00150634
-3 wbs_dat_o[3] *419:wbs_sel_i[3] 0.000411717
-4 wbs_dat_o[2] wbs_dat_o[3] 0.000542895
+1 wbs_dat_o[3] 0.00128136
+2 *419:wbs_dat_o[3] 0.00128136
+3 wbs_dat_o[3] *419:wbs_sel_i[3] 0.00536663
+4 wbs_dat_o[2] wbs_dat_o[3] 7.75876e-05
 5 *419:wbs_adr_i[4] wbs_dat_o[3] 0.00172304
-6 *419:wbs_adr_i[5] wbs_dat_o[3] 0.000278013
-7 *419:wbs_dat_i[2] wbs_dat_o[3] 0
-8 *419:wbs_dat_i[4] wbs_dat_o[3] 0.00253861
+6 *419:wbs_adr_i[5] wbs_dat_o[3] 0.000264903
+7 *419:wbs_dat_i[2] wbs_dat_o[3] 2.81522e-06
 *RES
 1 *419:wbs_dat_o[3] wbs_dat_o[3] 31.984 
 *END
 
-*D_NET *407 0.00890735
+*D_NET *407 0.00894814
 *CONN
 *P wbs_dat_o[4] O
 *I *419:wbs_dat_o[4] O *D tjrpu
 *CAP
-1 wbs_dat_o[4] 0.00185051
-2 *419:wbs_dat_o[4] 0.00185051
+1 wbs_dat_o[4] 0.0018709
+2 *419:wbs_dat_o[4] 0.0018709
 3 wbs_dat_o[4] wbs_dat_o[5] 0
 4 *419:wbs_adr_i[5] wbs_dat_o[4] 0.00506908
 5 *419:wbs_adr_i[6] wbs_dat_o[4] 6.11708e-05
@@ -5942,15 +5949,15 @@ wbs_we_i I
 1 *419:wbs_dat_o[4] wbs_dat_o[4] 30.424 
 *END
 
-*D_NET *408 0.00676404
+*D_NET *408 0.00678982
 *CONN
 *P wbs_dat_o[5] O
 *I *419:wbs_dat_o[5] O *D tjrpu
 *CAP
-1 wbs_dat_o[5] 0.001781
-2 *419:wbs_dat_o[5] 0.001781
+1 wbs_dat_o[5] 0.00167851
+2 *419:wbs_dat_o[5] 0.00167851
 3 wbs_dat_o[4] wbs_dat_o[5] 0
-4 *419:wbs_adr_i[4] wbs_dat_o[5] 0
+4 *419:wbs_adr_i[4] wbs_dat_o[5] 0.000230765
 5 *419:wbs_adr_i[6] wbs_dat_o[5] 0.00190222
 6 *419:wbs_dat_i[6] wbs_dat_o[5] 0.00129982
 *RES
@@ -6020,78 +6027,79 @@ wbs_we_i I
 1 *419:wbs_dat_o[9] wbs_dat_o[9] 27.304 
 *END
 
-*D_NET *413 0.00692685
+*D_NET *413 0.0071594
 *CONN
 *P wbs_sel_i[0] I
 *I *419:wbs_sel_i[0] I *D tjrpu
 *CAP
-1 wbs_sel_i[0] 0.00258849
-2 *419:wbs_sel_i[0] 0.00258849
-3 *419:wbs_sel_i[0] *419:wbs_stb_i 0.000550158
-4 wbs_dat_o[1] *419:wbs_sel_i[0] 0.000539117
-5 *419:wbs_adr_i[1] *419:wbs_sel_i[0] 0.000484016
-6 *419:wbs_adr_i[2] *419:wbs_sel_i[0] 0.000176586
-7 *419:wbs_dat_i[2] *419:wbs_sel_i[0] 0
+1 wbs_sel_i[0] 0.00225915
+2 *419:wbs_sel_i[0] 0.00225915
+3 *419:wbs_sel_i[0] *419:wbs_sel_i[1] 0
+4 *419:wbs_sel_i[0] *419:wbs_stb_i 0.000107703
+5 wbs_dat_o[1] *419:wbs_sel_i[0] 0.00140867
+6 *419:wbs_adr_i[1] *419:wbs_sel_i[0] 0.000832459
+7 *419:wbs_adr_i[2] *419:wbs_sel_i[0] 0.000292274
+8 *419:wbs_dat_i[1] *419:wbs_sel_i[0] 0
 *RES
-1 wbs_sel_i[0] *419:wbs_sel_i[0] 35 
+1 wbs_sel_i[0] *419:wbs_sel_i[0] 33.648 
 *END
 
-*D_NET *414 0.00955778
+*D_NET *414 0.0095642
 *CONN
 *P wbs_sel_i[1] I
 *I *419:wbs_sel_i[1] I *D tjrpu
 *CAP
-1 wbs_sel_i[1] 0.00226307
-2 *419:wbs_sel_i[1] 0.00226307
+1 wbs_sel_i[1] 0.00226628
+2 *419:wbs_sel_i[1] 0.00226628
 3 *419:wbs_sel_i[1] *419:wbs_sel_i[2] 0.000281345
-4 wbs_dat_o[1] *419:wbs_sel_i[1] 0
-5 *419:wbs_adr_i[1] *419:wbs_sel_i[1] 0
-6 *419:wbs_adr_i[2] *419:wbs_sel_i[1] 0
-7 *419:wbs_adr_i[3] *419:wbs_sel_i[1] 0.000133263
-8 *419:wbs_dat_i[1] *419:wbs_sel_i[1] 0.00461703
+4 *419:wbs_adr_i[2] *419:wbs_sel_i[1] 0
+5 *419:wbs_adr_i[3] *419:wbs_sel_i[1] 0.000133263
+6 *419:wbs_dat_i[1] *419:wbs_sel_i[1] 0.00461703
+7 *419:wbs_sel_i[0] *419:wbs_sel_i[1] 0
 *RES
 1 wbs_sel_i[1] *419:wbs_sel_i[1] 32.712 
 *END
 
-*D_NET *415 0.00965154
+*D_NET *415 0.00965208
 *CONN
 *P wbs_sel_i[2] I
 *I *419:wbs_sel_i[2] I *D tjrpu
 *CAP
-1 wbs_sel_i[2] 0.00178604
-2 *419:wbs_sel_i[2] 0.00178604
-3 wbs_dat_o[1] *419:wbs_sel_i[2] 0.000132639
+1 wbs_sel_i[2] 0.00178097
+2 *419:wbs_sel_i[2] 0.00178097
+3 wbs_dat_o[1] *419:wbs_sel_i[2] 0.000143301
 4 *419:wbs_adr_i[3] *419:wbs_sel_i[2] 0.00566548
 5 *419:wbs_sel_i[1] *419:wbs_sel_i[2] 0.000281345
 *RES
 1 wbs_sel_i[2] *419:wbs_sel_i[2] 31.88 
 *END
 
-*D_NET *416 0.00958764
+*D_NET *416 0.0121587
 *CONN
 *P wbs_sel_i[3] I
 *I *419:wbs_sel_i[3] I *D tjrpu
 *CAP
-1 wbs_sel_i[3] 0.00184824
-2 *419:wbs_sel_i[3] 0.00184824
-3 wbs_dat_o[2] *419:wbs_sel_i[3] 1.78817e-06
-4 wbs_dat_o[3] *419:wbs_sel_i[3] 0.000411717
-5 *419:wbs_adr_i[4] *419:wbs_sel_i[3] 0.00529485
-6 *419:wbs_dat_i[5] *419:wbs_sel_i[3] 0.000182803
+1 wbs_sel_i[3] 0.00120087
+2 *419:wbs_sel_i[3] 0.00120087
+3 wbs_dat_o[2] *419:wbs_sel_i[3] 0
+4 wbs_dat_o[3] *419:wbs_sel_i[3] 0.00536663
+5 *419:wbs_adr_i[4] *419:wbs_sel_i[3] 0.000395993
+6 *419:wbs_dat_i[4] *419:wbs_sel_i[3] 0.00383092
+7 *419:wbs_dat_i[5] *419:wbs_sel_i[3] 0.000163404
 *RES
-1 wbs_sel_i[3] *419:wbs_sel_i[3] 32.92 
+1 wbs_sel_i[3] *419:wbs_sel_i[3] 31.152 
 *END
 
-*D_NET *417 0.00678906
+*D_NET *417 0.00641411
 *CONN
 *P wbs_stb_i I
 *I *419:wbs_stb_i I *D tjrpu
 *CAP
-1 wbs_stb_i 0.00311945
-2 *419:wbs_stb_i 0.00311945
+1 wbs_stb_i 0.00315321
+2 *419:wbs_stb_i 0.00315321
 3 *419:wbs_adr_i[1] *419:wbs_stb_i 0
 4 *419:wbs_cyc_i *419:wbs_stb_i 0
-5 *419:wbs_sel_i[0] *419:wbs_stb_i 0.000550158
+5 *419:wbs_sel_i[0] *419:wbs_stb_i 0.000107703
 *RES
 1 wbs_stb_i *419:wbs_stb_i 36.56 
 *END

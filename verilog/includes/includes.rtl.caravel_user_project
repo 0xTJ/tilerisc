@@ -1,9 +1,12 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
 -v $(USER_PROJECT_VERILOG)/rtl/tjrpu.v
--v $(USER_PROJECT_VERILOG)/rtl/alu.v
--v $(USER_PROJECT_VERILOG)/rtl/control.v
--v $(USER_PROJECT_VERILOG)/rtl/register_file.v
--v $(USER_PROJECT_VERILOG)/rtl/risc16.v
+-v $(USER_PROJECT_VERILOG)/rtl/gpu.v
 
- 
+# STD CELLS - they need to be below the defines.v files 
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_io/verilog/gf180mcu_fd_io.v
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilog/primitives.v
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilog/gf180mcu_fd_sc_mcu7t5v0.v
+
+# STD CELLS - they need to be below the defines.v files 
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_ip_sram/verilog/gf180mcu_fd_ip_sram__sram512x8m8wm1.v

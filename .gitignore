@@ -6,5 +6,9 @@
 *.lst
 *.vcd
 *.gtkw
-*.nl.v
-dependencies/
+/env
+/venv
+/caravel
+/dependencies
+/mgmt_core_wrapper
+/logs
