@@ -98,7 +98,6 @@ jobs:
 
       - name: Harden using Openlane
         run: |
-          make risc16
           make tjrpu
           make user_project_wrapper
 
