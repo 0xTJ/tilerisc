@@ -181,13 +181,19 @@ clean-targets=$(blocks:%=clean-%)
 .PHONY: $(clean-targets)
 $(clean-targets): clean-% :
 	rm -f ./verilog/gl/$*.v
+	rm -f ./verilog/gl/$*.nl.v
 	rm -f ./spef/$*.spef
+	rm -f ./spef/multicorner/$*.*.spef
 	rm -f ./sdc/$*.sdc
 	rm -f ./sdf/$*.sdf
+	rm -f ./sdf/multicorner/*/$*.*.sdf
 	rm -f ./gds/$*.gds
 	rm -f ./mag/$*.mag
 	rm -f ./lef/$*.lef
-	rm -f ./maglef/*.maglef
+	rm -f ./maglef/$*.mag
+	rm -f ./lib/$*.lib
+	rm -f ./def/$*.def
+	rm -rf ./signoff/$*
 
 make_what=setup $(blocks) $(dv-targets-rtl) $(dv-targets-gl) $(dv-targets-gl-sdf) $(clean-targets)
 .PHONY: what
