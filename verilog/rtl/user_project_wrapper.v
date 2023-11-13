@@ -106,6 +106,6 @@ tjrpu mprj (
     .irq(user_irq)
 );
 
-endmodule	// tjrpu
+endmodule
 
 `default_nettype wire
