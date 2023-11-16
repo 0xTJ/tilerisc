@@ -193,6 +193,7 @@ $(clean-targets): clean-% :
 	rm -f ./maglef/$*.mag
 	rm -f ./lib/$*.lib
 	rm -f ./def/$*.def
+	rm -f ./spi/lvs/$*.spice
 	rm -rf ./signoff/$*
 
 make_what=setup $(blocks) $(dv-targets-rtl) $(dv-targets-gl) $(dv-targets-gl-sdf) $(clean-targets)

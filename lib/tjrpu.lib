@@ -25,6 +25,10 @@ library (tjrpu) {
   nom_temperature                : 25.0;
   nom_voltage                    : 5.00;
 
+  lu_table_template(template_1) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("0.00100,  0.00264,  0.00840,  0.01941,  0.03655,  0.06060,  0.09225,  0.13210,  0.18080,  0.23880");
+  }
   type ("io_in") {
     base_type : array;
     data_type : bit;
@@ -74,6 +78,230 @@ library (tjrpu) {
     bit_from : 63;
     bit_to : 0;
   }
+  type ("line_a_buf_b_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_b_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_b_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_b_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_d_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_d_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_d_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_d_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_g_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_g_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_g_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_g_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_r_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_r_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_r_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_a_buf_r_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_b_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_b_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_b_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_b_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_d_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_d_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_d_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_d_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_g_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_g_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_g_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_g_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_r_a") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_r_d") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_r_q") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("line_b_buf_r_wen") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
   type ("wbs_adr_i") {
     base_type : array;
     data_type : bit;
@@ -105,9 +333,361 @@ library (tjrpu) {
 
   cell ("tjrpu") {
     interface_timing : true;
+    pin("line_a_buf_b_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.38004,8.39655,8.45105,8.55315,8.71286,8.93666,9.23143,9.60243,10.05543,10.59617");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("0.00953,0.02517,0.07126,0.14537,0.24990,0.39212,0.57826,0.81311,1.09957,1.44115");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.98994,-11.97344,-11.91893,-11.81683,-11.65713,-11.43332,-11.13855,-10.76755,-10.31455,-9.77381");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("7.85793,7.87358,7.91966,7.99378,8.09830,8.24052,8.42666,8.66151,8.94797,9.28955");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+    }
+    pin("line_a_buf_b_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.37988,8.39638,8.45088,8.55299,8.71269,8.93649,9.23126,9.60226,10.05526,10.59601");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("0.00953,0.02517,0.07126,0.14537,0.24990,0.39212,0.57826,0.81311,1.09957,1.44115");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.98994,-11.97344,-11.91893,-11.81683,-11.65713,-11.43332,-11.13855,-10.76755,-10.31455,-9.77381");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("7.85777,7.87341,7.91949,7.99361,8.09813,8.24035,8.42649,8.66134,8.94780,9.28938");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+    }
+    pin("line_a_buf_d_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.37515,8.39163,8.44612,8.54821,8.70789,8.93168,9.22647,9.59747,10.05047,10.59126");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10606,0.19542,0.37466,0.65866,1.05600,1.57822,2.23800,3.04200,3.99843");
+	}
+	cell_fall(template_1) {
+          values("0.00953,0.02517,0.07125,0.14537,0.24989,0.39211,0.57825,0.81311,1.09954,1.44115");
+	}
+	fall_transition(template_1) {
+          values("0.07935,0.09635,0.14958,0.24686,0.40278,0.63212,0.94034,1.33100,1.80739,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.98995,-11.97347,-11.91898,-11.81689,-11.65721,-11.43342,-11.13863,-10.76763,-10.31463,-9.77384");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10606,0.19542,0.37466,0.65866,1.05600,1.57822,2.23800,3.04200,3.99843");
+	}
+	cell_fall(template_1) {
+          values("7.85096,7.86660,7.91268,7.98680,8.09131,8.23354,8.41968,8.65454,8.94097,9.28258");
+	}
+	fall_transition(template_1) {
+          values("0.07935,0.09635,0.14958,0.24686,0.40278,0.63212,0.94034,1.33100,1.80739,2.37700");
+	}
+      }
+    }
+    pin("line_a_buf_g_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.47903,8.49543,8.54970,8.65088,8.80979,9.03336,9.32757,9.69857,10.15157,10.69194");
+	}
+	rise_transition(template_1) {
+          values("0.08352,0.10824,0.19672,0.37508,0.65810,1.05663,1.57863,2.23800,3.04200,4.00115");
+	}
+	cell_fall(template_1) {
+          values("0.00952,0.02514,0.07108,0.14519,0.24957,0.39178,0.57788,0.81290,1.09890,1.44090");
+	}
+	fall_transition(template_1) {
+          values("0.08022,0.09711,0.15015,0.24718,0.40301,0.63209,0.94028,1.33100,1.80721,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.99001,-11.97361,-11.91933,-11.81815,-11.65924,-11.43567,-11.14146,-10.77046,-10.31746,-9.77709");
+	}
+	rise_transition(template_1) {
+          values("0.08352,0.10824,0.19672,0.37508,0.65810,1.05663,1.57863,2.23800,3.04200,4.00115");
+	}
+	cell_fall(template_1) {
+          values("7.94187,7.95750,8.00343,8.07755,8.18193,8.32414,8.51024,8.74525,9.03125,9.37325");
+	}
+	fall_transition(template_1) {
+          values("0.08022,0.09711,0.15015,0.24718,0.40301,0.63209,0.94028,1.33100,1.80721,2.37700");
+	}
+      }
+    }
+    pin("line_a_buf_r_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.37942,8.39592,8.45042,8.55253,8.71223,8.93604,9.23081,9.60181,10.05481,10.59555");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("0.00953,0.02517,0.07126,0.14537,0.24990,0.39212,0.57826,0.81311,1.09957,1.44115");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.98994,-11.97344,-11.91893,-11.81683,-11.65713,-11.43332,-11.13855,-10.76755,-10.31455,-9.77381");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("7.85731,7.87295,7.91903,7.99315,8.09768,8.23989,8.42603,8.66088,8.94734,9.28893");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+    }
+    pin("line_b_buf_b_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.38050,8.39700,8.45151,8.55361,8.71332,8.93712,9.23189,9.60289,10.05589,10.59663");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("0.00953,0.02517,0.07126,0.14537,0.24990,0.39212,0.57826,0.81311,1.09957,1.44115");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.98994,-11.97344,-11.91893,-11.81683,-11.65713,-11.43332,-11.13855,-10.76755,-10.31455,-9.77381");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("7.85839,7.87403,7.92012,7.99424,8.09876,8.24098,8.42712,8.66197,8.94843,9.29001");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+    }
+    pin("line_b_buf_d_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.37129,8.38779,8.44230,8.54440,8.70411,8.92791,9.22268,9.59368,10.04668,10.58742");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("0.00953,0.02517,0.07126,0.14537,0.24990,0.39212,0.57826,0.81311,1.09957,1.44115");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.98994,-11.97344,-11.91893,-11.81683,-11.65713,-11.43332,-11.13855,-10.76755,-10.31455,-9.77381");
+	}
+	rise_transition(template_1) {
+          values("0.08078,0.10605,0.19543,0.37465,0.65868,1.05600,1.57826,2.23800,3.04200,3.99852");
+	}
+	cell_fall(template_1) {
+          values("7.84782,7.86346,7.90955,7.98366,8.08819,8.23040,8.41654,8.65140,8.93785,9.27944");
+	}
+	fall_transition(template_1) {
+          values("0.07934,0.09634,0.14957,0.24686,0.40277,0.63212,0.94034,1.33100,1.80742,2.37700");
+	}
+      }
+    }
+    pin("line_b_buf_g_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_cen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_clk") {
+      direction : output;
+      capacitance : 0.0000;
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("8.43389,8.45029,8.50463,8.60625,8.76552,8.98916,9.28374,9.65474,10.10774,10.64845");
+	}
+	rise_transition(template_1) {
+          values("0.08207,0.10710,0.19602,0.37488,0.65836,1.05629,1.57829,2.23800,3.04200,3.99947");
+	}
+	cell_fall(template_1) {
+          values("0.00951,0.02511,0.07110,0.14529,0.24968,0.39197,0.57807,0.81316,1.09916,1.44116");
+	}
+	fall_transition(template_1) {
+          values("0.07960,0.09653,0.14977,0.24695,0.40292,0.63218,0.94030,1.33100,1.80703,2.37700");
+	}
+      }
+      timing() {
+        related_pin : "wb_clk_i";
+        timing_type : falling_edge;
+	cell_rise(template_1) {
+          values("-11.99001,-11.97361,-11.91926,-11.81765,-11.65837,-11.43473,-11.14016,-10.76916,-10.31616,-9.77545");
+	}
+	rise_transition(template_1) {
+          values("0.08207,0.10710,0.19602,0.37488,0.65836,1.05629,1.57829,2.23800,3.04200,3.99947");
+	}
+	cell_fall(template_1) {
+          values("7.90421,7.91981,7.96580,8.03999,8.14438,8.28667,8.47277,8.70786,8.99385,9.33586");
+	}
+	fall_transition(template_1) {
+          values("0.07960,0.09653,0.14977,0.24695,0.40292,0.63218,0.94030,1.33100,1.80703,2.37700");
+	}
+      }
+    }
+    pin("line_b_buf_r_gwen") {
+      direction : output;
+      capacitance : 0.0000;
+    }
     pin("wb_clk_i") {
       direction : input;
-      capacitance : 0.0000;
+      capacitance : 0.0224;
     }
     pin("wb_rst_i") {
       direction : input;
@@ -1141,6 +1721,1190 @@ library (tjrpu) {
     }
     pin("la_oenb[0]") {
       direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_b_a") {
+      bus_type : line_a_buf_b_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_b_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_b_d") {
+      bus_type : line_a_buf_b_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_b_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_b_q") {
+      bus_type : line_a_buf_b_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_a_buf_b_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_b_wen") {
+      bus_type : line_a_buf_b_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_b_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_b_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_d_a") {
+      bus_type : line_a_buf_d_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_d_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_d_d") {
+      bus_type : line_a_buf_d_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_d_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_d_q") {
+      bus_type : line_a_buf_d_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_a_buf_d_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_d_wen") {
+      bus_type : line_a_buf_d_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_d_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_d_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_g_a") {
+      bus_type : line_a_buf_g_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_g_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_g_d") {
+      bus_type : line_a_buf_g_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_g_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_g_q") {
+      bus_type : line_a_buf_g_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_a_buf_g_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_g_wen") {
+      bus_type : line_a_buf_g_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_g_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_g_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_r_a") {
+      bus_type : line_a_buf_r_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_r_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_r_d") {
+      bus_type : line_a_buf_r_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_r_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_r_q") {
+      bus_type : line_a_buf_r_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_a_buf_r_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_a_buf_r_wen") {
+      bus_type : line_a_buf_r_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_a_buf_r_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_a_buf_r_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_b_a") {
+      bus_type : line_b_buf_b_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_b_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_b_d") {
+      bus_type : line_b_buf_b_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_b_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_b_q") {
+      bus_type : line_b_buf_b_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_b_buf_b_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_b_wen") {
+      bus_type : line_b_buf_b_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_b_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_b_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_d_a") {
+      bus_type : line_b_buf_d_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_d_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_d_d") {
+      bus_type : line_b_buf_d_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_d_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_d_q") {
+      bus_type : line_b_buf_d_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_b_buf_d_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_d_wen") {
+      bus_type : line_b_buf_d_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_d_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_d_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_g_a") {
+      bus_type : line_b_buf_g_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_g_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_g_d") {
+      bus_type : line_b_buf_g_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_g_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_g_q") {
+      bus_type : line_b_buf_g_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_b_buf_g_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_g_wen") {
+      bus_type : line_b_buf_g_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_g_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_g_wen[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_r_a") {
+      bus_type : line_b_buf_r_a;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_r_a[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_a[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_r_d") {
+      bus_type : line_b_buf_r_d;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_r_d[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_d[0]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_r_q") {
+      bus_type : line_b_buf_r_q;
+      direction : input;
+      capacitance : 0.0000;
+    pin("line_b_buf_r_q[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_q[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+    bus("line_b_buf_r_wen") {
+      bus_type : line_b_buf_r_wen;
+      direction : output;
+      capacitance : 0.0000;
+    pin("line_b_buf_r_wen[7]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[6]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[5]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[4]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[3]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[2]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[1]") {
+      direction : output;
+      capacitance : 0.0000;
+    }
+    pin("line_b_buf_r_wen[0]") {
+      direction : output;
       capacitance : 0.0000;
     }
     }

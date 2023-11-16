@@ -2050,6 +2050,2462 @@ MACRO tjrpu
         RECT 1264.480 0.000 1265.040 4.000 ;
     END
   END la_oenb[9]
+  PIN line_a_buf_b_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1324.960 1756.000 1325.520 1760.000 ;
+    END
+  END line_a_buf_b_a[0]
+  PIN line_a_buf_b_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1326.080 1756.000 1326.640 1760.000 ;
+    END
+  END line_a_buf_b_a[1]
+  PIN line_a_buf_b_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1327.200 1756.000 1327.760 1760.000 ;
+    END
+  END line_a_buf_b_a[2]
+  PIN line_a_buf_b_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1273.440 1756.000 1274.000 1760.000 ;
+    END
+  END line_a_buf_b_a[3]
+  PIN line_a_buf_b_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1274.560 1756.000 1275.120 1760.000 ;
+    END
+  END line_a_buf_b_a[4]
+  PIN line_a_buf_b_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1275.680 1756.000 1276.240 1760.000 ;
+    END
+  END line_a_buf_b_a[5]
+  PIN line_a_buf_b_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1276.800 1756.000 1277.360 1760.000 ;
+    END
+  END line_a_buf_b_a[6]
+  PIN line_a_buf_b_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1328.320 1756.000 1328.880 1760.000 ;
+    END
+  END line_a_buf_b_a[7]
+  PIN line_a_buf_b_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1277.920 1756.000 1278.480 1760.000 ;
+    END
+  END line_a_buf_b_cen
+  PIN line_a_buf_b_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1329.440 1756.000 1330.000 1760.000 ;
+    END
+  END line_a_buf_b_clk
+  PIN line_a_buf_b_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1387.680 1756.000 1388.240 1760.000 ;
+    END
+  END line_a_buf_b_d[0]
+  PIN line_a_buf_b_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1372.000 1756.000 1372.560 1760.000 ;
+    END
+  END line_a_buf_b_d[1]
+  PIN line_a_buf_b_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1368.640 1756.000 1369.200 1760.000 ;
+    END
+  END line_a_buf_b_d[2]
+  PIN line_a_buf_b_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1341.760 1756.000 1342.320 1760.000 ;
+    END
+  END line_a_buf_b_d[3]
+  PIN line_a_buf_b_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1272.320 1756.000 1272.880 1760.000 ;
+    END
+  END line_a_buf_b_d[4]
+  PIN line_a_buf_b_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1245.440 1756.000 1246.000 1760.000 ;
+    END
+  END line_a_buf_b_d[5]
+  PIN line_a_buf_b_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1242.080 1756.000 1242.640 1760.000 ;
+    END
+  END line_a_buf_b_d[6]
+  PIN line_a_buf_b_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1220.800 1756.000 1221.360 1760.000 ;
+    END
+  END line_a_buf_b_d[7]
+  PIN line_a_buf_b_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1307.040 1756.000 1307.600 1760.000 ;
+    END
+  END line_a_buf_b_gwen
+  PIN line_a_buf_b_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1385.440 1756.000 1386.000 1760.000 ;
+    END
+  END line_a_buf_b_q[0]
+  PIN line_a_buf_b_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1373.120 1756.000 1373.680 1760.000 ;
+    END
+  END line_a_buf_b_q[1]
+  PIN line_a_buf_b_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1367.520 1756.000 1368.080 1760.000 ;
+    END
+  END line_a_buf_b_q[2]
+  PIN line_a_buf_b_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1344.000 1756.000 1344.560 1760.000 ;
+    END
+  END line_a_buf_b_q[3]
+  PIN line_a_buf_b_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1270.080 1756.000 1270.640 1760.000 ;
+    END
+  END line_a_buf_b_q[4]
+  PIN line_a_buf_b_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1246.560 1756.000 1247.120 1760.000 ;
+    END
+  END line_a_buf_b_q[5]
+  PIN line_a_buf_b_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1240.960 1756.000 1241.520 1760.000 ;
+    END
+  END line_a_buf_b_q[6]
+  PIN line_a_buf_b_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1223.040 1756.000 1223.600 1760.000 ;
+    END
+  END line_a_buf_b_q[7]
+  PIN line_a_buf_b_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1386.560 1756.000 1387.120 1760.000 ;
+    END
+  END line_a_buf_b_wen[0]
+  PIN line_a_buf_b_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1370.880 1756.000 1371.440 1760.000 ;
+    END
+  END line_a_buf_b_wen[1]
+  PIN line_a_buf_b_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1369.760 1756.000 1370.320 1760.000 ;
+    END
+  END line_a_buf_b_wen[2]
+  PIN line_a_buf_b_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1342.880 1756.000 1343.440 1760.000 ;
+    END
+  END line_a_buf_b_wen[3]
+  PIN line_a_buf_b_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1271.200 1756.000 1271.760 1760.000 ;
+    END
+  END line_a_buf_b_wen[4]
+  PIN line_a_buf_b_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1244.320 1756.000 1244.880 1760.000 ;
+    END
+  END line_a_buf_b_wen[5]
+  PIN line_a_buf_b_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1243.200 1756.000 1243.760 1760.000 ;
+    END
+  END line_a_buf_b_wen[6]
+  PIN line_a_buf_b_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1221.920 1756.000 1222.480 1760.000 ;
+    END
+  END line_a_buf_b_wen[7]
+  PIN line_a_buf_d_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 955.360 1756.000 955.920 1760.000 ;
+    END
+  END line_a_buf_d_a[0]
+  PIN line_a_buf_d_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 956.480 1756.000 957.040 1760.000 ;
+    END
+  END line_a_buf_d_a[1]
+  PIN line_a_buf_d_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 957.600 1756.000 958.160 1760.000 ;
+    END
+  END line_a_buf_d_a[2]
+  PIN line_a_buf_d_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 903.840 1756.000 904.400 1760.000 ;
+    END
+  END line_a_buf_d_a[3]
+  PIN line_a_buf_d_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 904.960 1756.000 905.520 1760.000 ;
+    END
+  END line_a_buf_d_a[4]
+  PIN line_a_buf_d_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 906.080 1756.000 906.640 1760.000 ;
+    END
+  END line_a_buf_d_a[5]
+  PIN line_a_buf_d_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 907.200 1756.000 907.760 1760.000 ;
+    END
+  END line_a_buf_d_a[6]
+  PIN line_a_buf_d_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 958.720 1756.000 959.280 1760.000 ;
+    END
+  END line_a_buf_d_a[7]
+  PIN line_a_buf_d_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 908.320 1756.000 908.880 1760.000 ;
+    END
+  END line_a_buf_d_cen
+  PIN line_a_buf_d_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 959.840 1756.000 960.400 1760.000 ;
+    END
+  END line_a_buf_d_clk
+  PIN line_a_buf_d_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1018.080 1756.000 1018.640 1760.000 ;
+    END
+  END line_a_buf_d_d[0]
+  PIN line_a_buf_d_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1002.400 1756.000 1002.960 1760.000 ;
+    END
+  END line_a_buf_d_d[1]
+  PIN line_a_buf_d_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 999.040 1756.000 999.600 1760.000 ;
+    END
+  END line_a_buf_d_d[2]
+  PIN line_a_buf_d_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 972.160 1756.000 972.720 1760.000 ;
+    END
+  END line_a_buf_d_d[3]
+  PIN line_a_buf_d_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 902.720 1756.000 903.280 1760.000 ;
+    END
+  END line_a_buf_d_d[4]
+  PIN line_a_buf_d_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 875.840 1756.000 876.400 1760.000 ;
+    END
+  END line_a_buf_d_d[5]
+  PIN line_a_buf_d_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 872.480 1756.000 873.040 1760.000 ;
+    END
+  END line_a_buf_d_d[6]
+  PIN line_a_buf_d_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 851.200 1756.000 851.760 1760.000 ;
+    END
+  END line_a_buf_d_d[7]
+  PIN line_a_buf_d_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 937.440 1756.000 938.000 1760.000 ;
+    END
+  END line_a_buf_d_gwen
+  PIN line_a_buf_d_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1015.840 1756.000 1016.400 1760.000 ;
+    END
+  END line_a_buf_d_q[0]
+  PIN line_a_buf_d_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1003.520 1756.000 1004.080 1760.000 ;
+    END
+  END line_a_buf_d_q[1]
+  PIN line_a_buf_d_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 997.920 1756.000 998.480 1760.000 ;
+    END
+  END line_a_buf_d_q[2]
+  PIN line_a_buf_d_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 974.400 1756.000 974.960 1760.000 ;
+    END
+  END line_a_buf_d_q[3]
+  PIN line_a_buf_d_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 900.480 1756.000 901.040 1760.000 ;
+    END
+  END line_a_buf_d_q[4]
+  PIN line_a_buf_d_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 876.960 1756.000 877.520 1760.000 ;
+    END
+  END line_a_buf_d_q[5]
+  PIN line_a_buf_d_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 871.360 1756.000 871.920 1760.000 ;
+    END
+  END line_a_buf_d_q[6]
+  PIN line_a_buf_d_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 853.440 1756.000 854.000 1760.000 ;
+    END
+  END line_a_buf_d_q[7]
+  PIN line_a_buf_d_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1016.960 1756.000 1017.520 1760.000 ;
+    END
+  END line_a_buf_d_wen[0]
+  PIN line_a_buf_d_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1001.280 1756.000 1001.840 1760.000 ;
+    END
+  END line_a_buf_d_wen[1]
+  PIN line_a_buf_d_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1000.160 1756.000 1000.720 1760.000 ;
+    END
+  END line_a_buf_d_wen[2]
+  PIN line_a_buf_d_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 973.280 1756.000 973.840 1760.000 ;
+    END
+  END line_a_buf_d_wen[3]
+  PIN line_a_buf_d_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 901.600 1756.000 902.160 1760.000 ;
+    END
+  END line_a_buf_d_wen[4]
+  PIN line_a_buf_d_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 874.720 1756.000 875.280 1760.000 ;
+    END
+  END line_a_buf_d_wen[5]
+  PIN line_a_buf_d_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 873.600 1756.000 874.160 1760.000 ;
+    END
+  END line_a_buf_d_wen[6]
+  PIN line_a_buf_d_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 852.320 1756.000 852.880 1760.000 ;
+    END
+  END line_a_buf_d_wen[7]
+  PIN line_a_buf_g_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1694.560 1756.000 1695.120 1760.000 ;
+    END
+  END line_a_buf_g_a[0]
+  PIN line_a_buf_g_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1695.680 1756.000 1696.240 1760.000 ;
+    END
+  END line_a_buf_g_a[1]
+  PIN line_a_buf_g_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1696.800 1756.000 1697.360 1760.000 ;
+    END
+  END line_a_buf_g_a[2]
+  PIN line_a_buf_g_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1643.040 1756.000 1643.600 1760.000 ;
+    END
+  END line_a_buf_g_a[3]
+  PIN line_a_buf_g_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1644.160 1756.000 1644.720 1760.000 ;
+    END
+  END line_a_buf_g_a[4]
+  PIN line_a_buf_g_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1645.280 1756.000 1645.840 1760.000 ;
+    END
+  END line_a_buf_g_a[5]
+  PIN line_a_buf_g_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1646.400 1756.000 1646.960 1760.000 ;
+    END
+  END line_a_buf_g_a[6]
+  PIN line_a_buf_g_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1697.920 1756.000 1698.480 1760.000 ;
+    END
+  END line_a_buf_g_a[7]
+  PIN line_a_buf_g_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1647.520 1756.000 1648.080 1760.000 ;
+    END
+  END line_a_buf_g_cen
+  PIN line_a_buf_g_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1699.040 1756.000 1699.600 1760.000 ;
+    END
+  END line_a_buf_g_clk
+  PIN line_a_buf_g_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1757.280 1756.000 1757.840 1760.000 ;
+    END
+  END line_a_buf_g_d[0]
+  PIN line_a_buf_g_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1741.600 1756.000 1742.160 1760.000 ;
+    END
+  END line_a_buf_g_d[1]
+  PIN line_a_buf_g_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1738.240 1756.000 1738.800 1760.000 ;
+    END
+  END line_a_buf_g_d[2]
+  PIN line_a_buf_g_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1711.360 1756.000 1711.920 1760.000 ;
+    END
+  END line_a_buf_g_d[3]
+  PIN line_a_buf_g_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1641.920 1756.000 1642.480 1760.000 ;
+    END
+  END line_a_buf_g_d[4]
+  PIN line_a_buf_g_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1615.040 1756.000 1615.600 1760.000 ;
+    END
+  END line_a_buf_g_d[5]
+  PIN line_a_buf_g_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1611.680 1756.000 1612.240 1760.000 ;
+    END
+  END line_a_buf_g_d[6]
+  PIN line_a_buf_g_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1590.400 1756.000 1590.960 1760.000 ;
+    END
+  END line_a_buf_g_d[7]
+  PIN line_a_buf_g_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1676.640 1756.000 1677.200 1760.000 ;
+    END
+  END line_a_buf_g_gwen
+  PIN line_a_buf_g_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1755.040 1756.000 1755.600 1760.000 ;
+    END
+  END line_a_buf_g_q[0]
+  PIN line_a_buf_g_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1742.720 1756.000 1743.280 1760.000 ;
+    END
+  END line_a_buf_g_q[1]
+  PIN line_a_buf_g_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1737.120 1756.000 1737.680 1760.000 ;
+    END
+  END line_a_buf_g_q[2]
+  PIN line_a_buf_g_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1713.600 1756.000 1714.160 1760.000 ;
+    END
+  END line_a_buf_g_q[3]
+  PIN line_a_buf_g_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1639.680 1756.000 1640.240 1760.000 ;
+    END
+  END line_a_buf_g_q[4]
+  PIN line_a_buf_g_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1616.160 1756.000 1616.720 1760.000 ;
+    END
+  END line_a_buf_g_q[5]
+  PIN line_a_buf_g_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1610.560 1756.000 1611.120 1760.000 ;
+    END
+  END line_a_buf_g_q[6]
+  PIN line_a_buf_g_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1592.640 1756.000 1593.200 1760.000 ;
+    END
+  END line_a_buf_g_q[7]
+  PIN line_a_buf_g_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1756.160 1756.000 1756.720 1760.000 ;
+    END
+  END line_a_buf_g_wen[0]
+  PIN line_a_buf_g_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1740.480 1756.000 1741.040 1760.000 ;
+    END
+  END line_a_buf_g_wen[1]
+  PIN line_a_buf_g_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1739.360 1756.000 1739.920 1760.000 ;
+    END
+  END line_a_buf_g_wen[2]
+  PIN line_a_buf_g_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1712.480 1756.000 1713.040 1760.000 ;
+    END
+  END line_a_buf_g_wen[3]
+  PIN line_a_buf_g_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1640.800 1756.000 1641.360 1760.000 ;
+    END
+  END line_a_buf_g_wen[4]
+  PIN line_a_buf_g_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1613.920 1756.000 1614.480 1760.000 ;
+    END
+  END line_a_buf_g_wen[5]
+  PIN line_a_buf_g_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1612.800 1756.000 1613.360 1760.000 ;
+    END
+  END line_a_buf_g_wen[6]
+  PIN line_a_buf_g_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1591.520 1756.000 1592.080 1760.000 ;
+    END
+  END line_a_buf_g_wen[7]
+  PIN line_a_buf_r_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2064.160 1756.000 2064.720 1760.000 ;
+    END
+  END line_a_buf_r_a[0]
+  PIN line_a_buf_r_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2065.280 1756.000 2065.840 1760.000 ;
+    END
+  END line_a_buf_r_a[1]
+  PIN line_a_buf_r_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2066.400 1756.000 2066.960 1760.000 ;
+    END
+  END line_a_buf_r_a[2]
+  PIN line_a_buf_r_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2012.640 1756.000 2013.200 1760.000 ;
+    END
+  END line_a_buf_r_a[3]
+  PIN line_a_buf_r_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2013.760 1756.000 2014.320 1760.000 ;
+    END
+  END line_a_buf_r_a[4]
+  PIN line_a_buf_r_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2014.880 1756.000 2015.440 1760.000 ;
+    END
+  END line_a_buf_r_a[5]
+  PIN line_a_buf_r_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2016.000 1756.000 2016.560 1760.000 ;
+    END
+  END line_a_buf_r_a[6]
+  PIN line_a_buf_r_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2067.520 1756.000 2068.080 1760.000 ;
+    END
+  END line_a_buf_r_a[7]
+  PIN line_a_buf_r_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2017.120 1756.000 2017.680 1760.000 ;
+    END
+  END line_a_buf_r_cen
+  PIN line_a_buf_r_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2068.640 1756.000 2069.200 1760.000 ;
+    END
+  END line_a_buf_r_clk
+  PIN line_a_buf_r_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2126.880 1756.000 2127.440 1760.000 ;
+    END
+  END line_a_buf_r_d[0]
+  PIN line_a_buf_r_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2111.200 1756.000 2111.760 1760.000 ;
+    END
+  END line_a_buf_r_d[1]
+  PIN line_a_buf_r_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2107.840 1756.000 2108.400 1760.000 ;
+    END
+  END line_a_buf_r_d[2]
+  PIN line_a_buf_r_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2080.960 1756.000 2081.520 1760.000 ;
+    END
+  END line_a_buf_r_d[3]
+  PIN line_a_buf_r_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2011.520 1756.000 2012.080 1760.000 ;
+    END
+  END line_a_buf_r_d[4]
+  PIN line_a_buf_r_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1984.640 1756.000 1985.200 1760.000 ;
+    END
+  END line_a_buf_r_d[5]
+  PIN line_a_buf_r_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1981.280 1756.000 1981.840 1760.000 ;
+    END
+  END line_a_buf_r_d[6]
+  PIN line_a_buf_r_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1960.000 1756.000 1960.560 1760.000 ;
+    END
+  END line_a_buf_r_d[7]
+  PIN line_a_buf_r_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2046.240 1756.000 2046.800 1760.000 ;
+    END
+  END line_a_buf_r_gwen
+  PIN line_a_buf_r_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2124.640 1756.000 2125.200 1760.000 ;
+    END
+  END line_a_buf_r_q[0]
+  PIN line_a_buf_r_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2112.320 1756.000 2112.880 1760.000 ;
+    END
+  END line_a_buf_r_q[1]
+  PIN line_a_buf_r_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2106.720 1756.000 2107.280 1760.000 ;
+    END
+  END line_a_buf_r_q[2]
+  PIN line_a_buf_r_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2083.200 1756.000 2083.760 1760.000 ;
+    END
+  END line_a_buf_r_q[3]
+  PIN line_a_buf_r_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2009.280 1756.000 2009.840 1760.000 ;
+    END
+  END line_a_buf_r_q[4]
+  PIN line_a_buf_r_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1985.760 1756.000 1986.320 1760.000 ;
+    END
+  END line_a_buf_r_q[5]
+  PIN line_a_buf_r_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1980.160 1756.000 1980.720 1760.000 ;
+    END
+  END line_a_buf_r_q[6]
+  PIN line_a_buf_r_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1962.240 1756.000 1962.800 1760.000 ;
+    END
+  END line_a_buf_r_q[7]
+  PIN line_a_buf_r_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2125.760 1756.000 2126.320 1760.000 ;
+    END
+  END line_a_buf_r_wen[0]
+  PIN line_a_buf_r_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2110.080 1756.000 2110.640 1760.000 ;
+    END
+  END line_a_buf_r_wen[1]
+  PIN line_a_buf_r_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2108.960 1756.000 2109.520 1760.000 ;
+    END
+  END line_a_buf_r_wen[2]
+  PIN line_a_buf_r_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2082.080 1756.000 2082.640 1760.000 ;
+    END
+  END line_a_buf_r_wen[3]
+  PIN line_a_buf_r_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 2010.400 1756.000 2010.960 1760.000 ;
+    END
+  END line_a_buf_r_wen[4]
+  PIN line_a_buf_r_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1983.520 1756.000 1984.080 1760.000 ;
+    END
+  END line_a_buf_r_wen[5]
+  PIN line_a_buf_r_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1982.400 1756.000 1982.960 1760.000 ;
+    END
+  END line_a_buf_r_wen[6]
+  PIN line_a_buf_r_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1961.120 1756.000 1961.680 1760.000 ;
+    END
+  END line_a_buf_r_wen[7]
+  PIN line_b_buf_b_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1140.160 1756.000 1140.720 1760.000 ;
+    END
+  END line_b_buf_b_a[0]
+  PIN line_b_buf_b_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1141.280 1756.000 1141.840 1760.000 ;
+    END
+  END line_b_buf_b_a[1]
+  PIN line_b_buf_b_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1142.400 1756.000 1142.960 1760.000 ;
+    END
+  END line_b_buf_b_a[2]
+  PIN line_b_buf_b_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1088.640 1756.000 1089.200 1760.000 ;
+    END
+  END line_b_buf_b_a[3]
+  PIN line_b_buf_b_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1089.760 1756.000 1090.320 1760.000 ;
+    END
+  END line_b_buf_b_a[4]
+  PIN line_b_buf_b_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1090.880 1756.000 1091.440 1760.000 ;
+    END
+  END line_b_buf_b_a[5]
+  PIN line_b_buf_b_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1092.000 1756.000 1092.560 1760.000 ;
+    END
+  END line_b_buf_b_a[6]
+  PIN line_b_buf_b_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1143.520 1756.000 1144.080 1760.000 ;
+    END
+  END line_b_buf_b_a[7]
+  PIN line_b_buf_b_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1093.120 1756.000 1093.680 1760.000 ;
+    END
+  END line_b_buf_b_cen
+  PIN line_b_buf_b_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1144.640 1756.000 1145.200 1760.000 ;
+    END
+  END line_b_buf_b_clk
+  PIN line_b_buf_b_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1202.880 1756.000 1203.440 1760.000 ;
+    END
+  END line_b_buf_b_d[0]
+  PIN line_b_buf_b_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1187.200 1756.000 1187.760 1760.000 ;
+    END
+  END line_b_buf_b_d[1]
+  PIN line_b_buf_b_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1183.840 1756.000 1184.400 1760.000 ;
+    END
+  END line_b_buf_b_d[2]
+  PIN line_b_buf_b_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1156.960 1756.000 1157.520 1760.000 ;
+    END
+  END line_b_buf_b_d[3]
+  PIN line_b_buf_b_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1087.520 1756.000 1088.080 1760.000 ;
+    END
+  END line_b_buf_b_d[4]
+  PIN line_b_buf_b_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1060.640 1756.000 1061.200 1760.000 ;
+    END
+  END line_b_buf_b_d[5]
+  PIN line_b_buf_b_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1057.280 1756.000 1057.840 1760.000 ;
+    END
+  END line_b_buf_b_d[6]
+  PIN line_b_buf_b_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1036.000 1756.000 1036.560 1760.000 ;
+    END
+  END line_b_buf_b_d[7]
+  PIN line_b_buf_b_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1122.240 1756.000 1122.800 1760.000 ;
+    END
+  END line_b_buf_b_gwen
+  PIN line_b_buf_b_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1200.640 1756.000 1201.200 1760.000 ;
+    END
+  END line_b_buf_b_q[0]
+  PIN line_b_buf_b_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1188.320 1756.000 1188.880 1760.000 ;
+    END
+  END line_b_buf_b_q[1]
+  PIN line_b_buf_b_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1182.720 1756.000 1183.280 1760.000 ;
+    END
+  END line_b_buf_b_q[2]
+  PIN line_b_buf_b_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1159.200 1756.000 1159.760 1760.000 ;
+    END
+  END line_b_buf_b_q[3]
+  PIN line_b_buf_b_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1085.280 1756.000 1085.840 1760.000 ;
+    END
+  END line_b_buf_b_q[4]
+  PIN line_b_buf_b_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1061.760 1756.000 1062.320 1760.000 ;
+    END
+  END line_b_buf_b_q[5]
+  PIN line_b_buf_b_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1056.160 1756.000 1056.720 1760.000 ;
+    END
+  END line_b_buf_b_q[6]
+  PIN line_b_buf_b_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1038.240 1756.000 1038.800 1760.000 ;
+    END
+  END line_b_buf_b_q[7]
+  PIN line_b_buf_b_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1201.760 1756.000 1202.320 1760.000 ;
+    END
+  END line_b_buf_b_wen[0]
+  PIN line_b_buf_b_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1186.080 1756.000 1186.640 1760.000 ;
+    END
+  END line_b_buf_b_wen[1]
+  PIN line_b_buf_b_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1184.960 1756.000 1185.520 1760.000 ;
+    END
+  END line_b_buf_b_wen[2]
+  PIN line_b_buf_b_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1158.080 1756.000 1158.640 1760.000 ;
+    END
+  END line_b_buf_b_wen[3]
+  PIN line_b_buf_b_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1086.400 1756.000 1086.960 1760.000 ;
+    END
+  END line_b_buf_b_wen[4]
+  PIN line_b_buf_b_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1059.520 1756.000 1060.080 1760.000 ;
+    END
+  END line_b_buf_b_wen[5]
+  PIN line_b_buf_b_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1058.400 1756.000 1058.960 1760.000 ;
+    END
+  END line_b_buf_b_wen[6]
+  PIN line_b_buf_b_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1037.120 1756.000 1037.680 1760.000 ;
+    END
+  END line_b_buf_b_wen[7]
+  PIN line_b_buf_d_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 770.560 1756.000 771.120 1760.000 ;
+    END
+  END line_b_buf_d_a[0]
+  PIN line_b_buf_d_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 771.680 1756.000 772.240 1760.000 ;
+    END
+  END line_b_buf_d_a[1]
+  PIN line_b_buf_d_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 772.800 1756.000 773.360 1760.000 ;
+    END
+  END line_b_buf_d_a[2]
+  PIN line_b_buf_d_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 719.040 1756.000 719.600 1760.000 ;
+    END
+  END line_b_buf_d_a[3]
+  PIN line_b_buf_d_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 720.160 1756.000 720.720 1760.000 ;
+    END
+  END line_b_buf_d_a[4]
+  PIN line_b_buf_d_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 721.280 1756.000 721.840 1760.000 ;
+    END
+  END line_b_buf_d_a[5]
+  PIN line_b_buf_d_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 722.400 1756.000 722.960 1760.000 ;
+    END
+  END line_b_buf_d_a[6]
+  PIN line_b_buf_d_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 773.920 1756.000 774.480 1760.000 ;
+    END
+  END line_b_buf_d_a[7]
+  PIN line_b_buf_d_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 723.520 1756.000 724.080 1760.000 ;
+    END
+  END line_b_buf_d_cen
+  PIN line_b_buf_d_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 775.040 1756.000 775.600 1760.000 ;
+    END
+  END line_b_buf_d_clk
+  PIN line_b_buf_d_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 833.280 1756.000 833.840 1760.000 ;
+    END
+  END line_b_buf_d_d[0]
+  PIN line_b_buf_d_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 817.600 1756.000 818.160 1760.000 ;
+    END
+  END line_b_buf_d_d[1]
+  PIN line_b_buf_d_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 814.240 1756.000 814.800 1760.000 ;
+    END
+  END line_b_buf_d_d[2]
+  PIN line_b_buf_d_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 787.360 1756.000 787.920 1760.000 ;
+    END
+  END line_b_buf_d_d[3]
+  PIN line_b_buf_d_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 717.920 1756.000 718.480 1760.000 ;
+    END
+  END line_b_buf_d_d[4]
+  PIN line_b_buf_d_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 691.040 1756.000 691.600 1760.000 ;
+    END
+  END line_b_buf_d_d[5]
+  PIN line_b_buf_d_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 687.680 1756.000 688.240 1760.000 ;
+    END
+  END line_b_buf_d_d[6]
+  PIN line_b_buf_d_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 666.400 1756.000 666.960 1760.000 ;
+    END
+  END line_b_buf_d_d[7]
+  PIN line_b_buf_d_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 752.640 1756.000 753.200 1760.000 ;
+    END
+  END line_b_buf_d_gwen
+  PIN line_b_buf_d_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 831.040 1756.000 831.600 1760.000 ;
+    END
+  END line_b_buf_d_q[0]
+  PIN line_b_buf_d_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 818.720 1756.000 819.280 1760.000 ;
+    END
+  END line_b_buf_d_q[1]
+  PIN line_b_buf_d_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 813.120 1756.000 813.680 1760.000 ;
+    END
+  END line_b_buf_d_q[2]
+  PIN line_b_buf_d_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 789.600 1756.000 790.160 1760.000 ;
+    END
+  END line_b_buf_d_q[3]
+  PIN line_b_buf_d_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 715.680 1756.000 716.240 1760.000 ;
+    END
+  END line_b_buf_d_q[4]
+  PIN line_b_buf_d_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 692.160 1756.000 692.720 1760.000 ;
+    END
+  END line_b_buf_d_q[5]
+  PIN line_b_buf_d_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 686.560 1756.000 687.120 1760.000 ;
+    END
+  END line_b_buf_d_q[6]
+  PIN line_b_buf_d_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 668.640 1756.000 669.200 1760.000 ;
+    END
+  END line_b_buf_d_q[7]
+  PIN line_b_buf_d_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 832.160 1756.000 832.720 1760.000 ;
+    END
+  END line_b_buf_d_wen[0]
+  PIN line_b_buf_d_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 816.480 1756.000 817.040 1760.000 ;
+    END
+  END line_b_buf_d_wen[1]
+  PIN line_b_buf_d_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 815.360 1756.000 815.920 1760.000 ;
+    END
+  END line_b_buf_d_wen[2]
+  PIN line_b_buf_d_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 788.480 1756.000 789.040 1760.000 ;
+    END
+  END line_b_buf_d_wen[3]
+  PIN line_b_buf_d_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 716.800 1756.000 717.360 1760.000 ;
+    END
+  END line_b_buf_d_wen[4]
+  PIN line_b_buf_d_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 689.920 1756.000 690.480 1760.000 ;
+    END
+  END line_b_buf_d_wen[5]
+  PIN line_b_buf_d_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 688.800 1756.000 689.360 1760.000 ;
+    END
+  END line_b_buf_d_wen[6]
+  PIN line_b_buf_d_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 667.520 1756.000 668.080 1760.000 ;
+    END
+  END line_b_buf_d_wen[7]
+  PIN line_b_buf_g_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1509.760 1756.000 1510.320 1760.000 ;
+    END
+  END line_b_buf_g_a[0]
+  PIN line_b_buf_g_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1510.880 1756.000 1511.440 1760.000 ;
+    END
+  END line_b_buf_g_a[1]
+  PIN line_b_buf_g_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1512.000 1756.000 1512.560 1760.000 ;
+    END
+  END line_b_buf_g_a[2]
+  PIN line_b_buf_g_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1458.240 1756.000 1458.800 1760.000 ;
+    END
+  END line_b_buf_g_a[3]
+  PIN line_b_buf_g_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1459.360 1756.000 1459.920 1760.000 ;
+    END
+  END line_b_buf_g_a[4]
+  PIN line_b_buf_g_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1460.480 1756.000 1461.040 1760.000 ;
+    END
+  END line_b_buf_g_a[5]
+  PIN line_b_buf_g_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1461.600 1756.000 1462.160 1760.000 ;
+    END
+  END line_b_buf_g_a[6]
+  PIN line_b_buf_g_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1513.120 1756.000 1513.680 1760.000 ;
+    END
+  END line_b_buf_g_a[7]
+  PIN line_b_buf_g_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1462.720 1756.000 1463.280 1760.000 ;
+    END
+  END line_b_buf_g_cen
+  PIN line_b_buf_g_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1514.240 1756.000 1514.800 1760.000 ;
+    END
+  END line_b_buf_g_clk
+  PIN line_b_buf_g_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1572.480 1756.000 1573.040 1760.000 ;
+    END
+  END line_b_buf_g_d[0]
+  PIN line_b_buf_g_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1556.800 1756.000 1557.360 1760.000 ;
+    END
+  END line_b_buf_g_d[1]
+  PIN line_b_buf_g_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1553.440 1756.000 1554.000 1760.000 ;
+    END
+  END line_b_buf_g_d[2]
+  PIN line_b_buf_g_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1526.560 1756.000 1527.120 1760.000 ;
+    END
+  END line_b_buf_g_d[3]
+  PIN line_b_buf_g_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1457.120 1756.000 1457.680 1760.000 ;
+    END
+  END line_b_buf_g_d[4]
+  PIN line_b_buf_g_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1430.240 1756.000 1430.800 1760.000 ;
+    END
+  END line_b_buf_g_d[5]
+  PIN line_b_buf_g_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1426.880 1756.000 1427.440 1760.000 ;
+    END
+  END line_b_buf_g_d[6]
+  PIN line_b_buf_g_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1405.600 1756.000 1406.160 1760.000 ;
+    END
+  END line_b_buf_g_d[7]
+  PIN line_b_buf_g_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1491.840 1756.000 1492.400 1760.000 ;
+    END
+  END line_b_buf_g_gwen
+  PIN line_b_buf_g_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1570.240 1756.000 1570.800 1760.000 ;
+    END
+  END line_b_buf_g_q[0]
+  PIN line_b_buf_g_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1557.920 1756.000 1558.480 1760.000 ;
+    END
+  END line_b_buf_g_q[1]
+  PIN line_b_buf_g_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1552.320 1756.000 1552.880 1760.000 ;
+    END
+  END line_b_buf_g_q[2]
+  PIN line_b_buf_g_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1528.800 1756.000 1529.360 1760.000 ;
+    END
+  END line_b_buf_g_q[3]
+  PIN line_b_buf_g_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1454.880 1756.000 1455.440 1760.000 ;
+    END
+  END line_b_buf_g_q[4]
+  PIN line_b_buf_g_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1431.360 1756.000 1431.920 1760.000 ;
+    END
+  END line_b_buf_g_q[5]
+  PIN line_b_buf_g_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1425.760 1756.000 1426.320 1760.000 ;
+    END
+  END line_b_buf_g_q[6]
+  PIN line_b_buf_g_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1407.840 1756.000 1408.400 1760.000 ;
+    END
+  END line_b_buf_g_q[7]
+  PIN line_b_buf_g_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1571.360 1756.000 1571.920 1760.000 ;
+    END
+  END line_b_buf_g_wen[0]
+  PIN line_b_buf_g_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1555.680 1756.000 1556.240 1760.000 ;
+    END
+  END line_b_buf_g_wen[1]
+  PIN line_b_buf_g_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1554.560 1756.000 1555.120 1760.000 ;
+    END
+  END line_b_buf_g_wen[2]
+  PIN line_b_buf_g_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1527.680 1756.000 1528.240 1760.000 ;
+    END
+  END line_b_buf_g_wen[3]
+  PIN line_b_buf_g_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1456.000 1756.000 1456.560 1760.000 ;
+    END
+  END line_b_buf_g_wen[4]
+  PIN line_b_buf_g_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1429.120 1756.000 1429.680 1760.000 ;
+    END
+  END line_b_buf_g_wen[5]
+  PIN line_b_buf_g_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1428.000 1756.000 1428.560 1760.000 ;
+    END
+  END line_b_buf_g_wen[6]
+  PIN line_b_buf_g_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1406.720 1756.000 1407.280 1760.000 ;
+    END
+  END line_b_buf_g_wen[7]
+  PIN line_b_buf_r_a[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1879.360 1756.000 1879.920 1760.000 ;
+    END
+  END line_b_buf_r_a[0]
+  PIN line_b_buf_r_a[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1880.480 1756.000 1881.040 1760.000 ;
+    END
+  END line_b_buf_r_a[1]
+  PIN line_b_buf_r_a[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1881.600 1756.000 1882.160 1760.000 ;
+    END
+  END line_b_buf_r_a[2]
+  PIN line_b_buf_r_a[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1827.840 1756.000 1828.400 1760.000 ;
+    END
+  END line_b_buf_r_a[3]
+  PIN line_b_buf_r_a[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1828.960 1756.000 1829.520 1760.000 ;
+    END
+  END line_b_buf_r_a[4]
+  PIN line_b_buf_r_a[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1830.080 1756.000 1830.640 1760.000 ;
+    END
+  END line_b_buf_r_a[5]
+  PIN line_b_buf_r_a[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1831.200 1756.000 1831.760 1760.000 ;
+    END
+  END line_b_buf_r_a[6]
+  PIN line_b_buf_r_a[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1882.720 1756.000 1883.280 1760.000 ;
+    END
+  END line_b_buf_r_a[7]
+  PIN line_b_buf_r_cen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1832.320 1756.000 1832.880 1760.000 ;
+    END
+  END line_b_buf_r_cen
+  PIN line_b_buf_r_clk
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.897600 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1883.840 1756.000 1884.400 1760.000 ;
+    END
+  END line_b_buf_r_clk
+  PIN line_b_buf_r_d[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1942.080 1756.000 1942.640 1760.000 ;
+    END
+  END line_b_buf_r_d[0]
+  PIN line_b_buf_r_d[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1926.400 1756.000 1926.960 1760.000 ;
+    END
+  END line_b_buf_r_d[1]
+  PIN line_b_buf_r_d[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1923.040 1756.000 1923.600 1760.000 ;
+    END
+  END line_b_buf_r_d[2]
+  PIN line_b_buf_r_d[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1896.160 1756.000 1896.720 1760.000 ;
+    END
+  END line_b_buf_r_d[3]
+  PIN line_b_buf_r_d[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1826.720 1756.000 1827.280 1760.000 ;
+    END
+  END line_b_buf_r_d[4]
+  PIN line_b_buf_r_d[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1799.840 1756.000 1800.400 1760.000 ;
+    END
+  END line_b_buf_r_d[5]
+  PIN line_b_buf_r_d[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1796.480 1756.000 1797.040 1760.000 ;
+    END
+  END line_b_buf_r_d[6]
+  PIN line_b_buf_r_d[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1775.200 1756.000 1775.760 1760.000 ;
+    END
+  END line_b_buf_r_d[7]
+  PIN line_b_buf_r_gwen
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1861.440 1756.000 1862.000 1760.000 ;
+    END
+  END line_b_buf_r_gwen
+  PIN line_b_buf_r_q[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1939.840 1756.000 1940.400 1760.000 ;
+    END
+  END line_b_buf_r_q[0]
+  PIN line_b_buf_r_q[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1927.520 1756.000 1928.080 1760.000 ;
+    END
+  END line_b_buf_r_q[1]
+  PIN line_b_buf_r_q[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1921.920 1756.000 1922.480 1760.000 ;
+    END
+  END line_b_buf_r_q[2]
+  PIN line_b_buf_r_q[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1898.400 1756.000 1898.960 1760.000 ;
+    END
+  END line_b_buf_r_q[3]
+  PIN line_b_buf_r_q[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1824.480 1756.000 1825.040 1760.000 ;
+    END
+  END line_b_buf_r_q[4]
+  PIN line_b_buf_r_q[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1800.960 1756.000 1801.520 1760.000 ;
+    END
+  END line_b_buf_r_q[5]
+  PIN line_b_buf_r_q[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1795.360 1756.000 1795.920 1760.000 ;
+    END
+  END line_b_buf_r_q[6]
+  PIN line_b_buf_r_q[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1777.440 1756.000 1778.000 1760.000 ;
+    END
+  END line_b_buf_r_q[7]
+  PIN line_b_buf_r_wen[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1940.960 1756.000 1941.520 1760.000 ;
+    END
+  END line_b_buf_r_wen[0]
+  PIN line_b_buf_r_wen[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1925.280 1756.000 1925.840 1760.000 ;
+    END
+  END line_b_buf_r_wen[1]
+  PIN line_b_buf_r_wen[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1924.160 1756.000 1924.720 1760.000 ;
+    END
+  END line_b_buf_r_wen[2]
+  PIN line_b_buf_r_wen[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1897.280 1756.000 1897.840 1760.000 ;
+    END
+  END line_b_buf_r_wen[3]
+  PIN line_b_buf_r_wen[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1825.600 1756.000 1826.160 1760.000 ;
+    END
+  END line_b_buf_r_wen[4]
+  PIN line_b_buf_r_wen[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1798.720 1756.000 1799.280 1760.000 ;
+    END
+  END line_b_buf_r_wen[5]
+  PIN line_b_buf_r_wen[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1797.600 1756.000 1798.160 1760.000 ;
+    END
+  END line_b_buf_r_wen[6]
+  PIN line_b_buf_r_wen[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.360800 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 1776.320 1756.000 1776.880 1760.000 ;
+    END
+  END line_b_buf_r_wen[7]
   PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
@@ -2209,6 +4665,8 @@ MACRO tjrpu
   PIN wb_clk_i
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 4.738000 ;
+    ANTENNADIFFAREA 0.410400 ;
     PORT
       LAYER Metal2 ;
         RECT 54.880 0.000 55.440 4.000 ;
@@ -3089,9 +5547,74 @@ MACRO tjrpu
   END wbs_we_i
   OBS
       LAYER Metal1 ;
-        RECT 6.720 8.550 2793.280 1740.780 ;
+        RECT 6.720 8.550 2793.280 1748.170 ;
       LAYER Metal2 ;
-        RECT 8.540 4.300 2791.460 1740.670 ;
+        RECT 8.540 1755.700 666.100 1756.580 ;
+        RECT 669.500 1755.700 686.260 1756.580 ;
+        RECT 693.020 1755.700 715.380 1756.580 ;
+        RECT 724.380 1755.700 752.340 1756.580 ;
+        RECT 753.500 1755.700 770.260 1756.580 ;
+        RECT 775.900 1755.700 787.060 1756.580 ;
+        RECT 790.460 1755.700 812.820 1756.580 ;
+        RECT 819.580 1755.700 830.740 1756.580 ;
+        RECT 834.140 1755.700 850.900 1756.580 ;
+        RECT 854.300 1755.700 871.060 1756.580 ;
+        RECT 877.820 1755.700 900.180 1756.580 ;
+        RECT 909.180 1755.700 937.140 1756.580 ;
+        RECT 938.300 1755.700 955.060 1756.580 ;
+        RECT 960.700 1755.700 971.860 1756.580 ;
+        RECT 975.260 1755.700 997.620 1756.580 ;
+        RECT 1004.380 1755.700 1015.540 1756.580 ;
+        RECT 1018.940 1755.700 1035.700 1756.580 ;
+        RECT 1039.100 1755.700 1055.860 1756.580 ;
+        RECT 1062.620 1755.700 1084.980 1756.580 ;
+        RECT 1093.980 1755.700 1121.940 1756.580 ;
+        RECT 1123.100 1755.700 1139.860 1756.580 ;
+        RECT 1145.500 1755.700 1156.660 1756.580 ;
+        RECT 1160.060 1755.700 1182.420 1756.580 ;
+        RECT 1189.180 1755.700 1200.340 1756.580 ;
+        RECT 1203.740 1755.700 1220.500 1756.580 ;
+        RECT 1223.900 1755.700 1240.660 1756.580 ;
+        RECT 1247.420 1755.700 1269.780 1756.580 ;
+        RECT 1278.780 1755.700 1306.740 1756.580 ;
+        RECT 1307.900 1755.700 1324.660 1756.580 ;
+        RECT 1330.300 1755.700 1341.460 1756.580 ;
+        RECT 1344.860 1755.700 1367.220 1756.580 ;
+        RECT 1373.980 1755.700 1385.140 1756.580 ;
+        RECT 1388.540 1755.700 1405.300 1756.580 ;
+        RECT 1408.700 1755.700 1425.460 1756.580 ;
+        RECT 1432.220 1755.700 1454.580 1756.580 ;
+        RECT 1463.580 1755.700 1491.540 1756.580 ;
+        RECT 1492.700 1755.700 1509.460 1756.580 ;
+        RECT 1515.100 1755.700 1526.260 1756.580 ;
+        RECT 1529.660 1755.700 1552.020 1756.580 ;
+        RECT 1558.780 1755.700 1569.940 1756.580 ;
+        RECT 1573.340 1755.700 1590.100 1756.580 ;
+        RECT 1593.500 1755.700 1610.260 1756.580 ;
+        RECT 1617.020 1755.700 1639.380 1756.580 ;
+        RECT 1648.380 1755.700 1676.340 1756.580 ;
+        RECT 1677.500 1755.700 1694.260 1756.580 ;
+        RECT 1699.900 1755.700 1711.060 1756.580 ;
+        RECT 1714.460 1755.700 1736.820 1756.580 ;
+        RECT 1743.580 1755.700 1754.740 1756.580 ;
+        RECT 1758.140 1755.700 1774.900 1756.580 ;
+        RECT 1778.300 1755.700 1795.060 1756.580 ;
+        RECT 1801.820 1755.700 1824.180 1756.580 ;
+        RECT 1833.180 1755.700 1861.140 1756.580 ;
+        RECT 1862.300 1755.700 1879.060 1756.580 ;
+        RECT 1884.700 1755.700 1895.860 1756.580 ;
+        RECT 1899.260 1755.700 1921.620 1756.580 ;
+        RECT 1928.380 1755.700 1939.540 1756.580 ;
+        RECT 1942.940 1755.700 1959.700 1756.580 ;
+        RECT 1963.100 1755.700 1979.860 1756.580 ;
+        RECT 1986.620 1755.700 2008.980 1756.580 ;
+        RECT 2017.980 1755.700 2045.940 1756.580 ;
+        RECT 2047.100 1755.700 2063.860 1756.580 ;
+        RECT 2069.500 1755.700 2080.660 1756.580 ;
+        RECT 2084.060 1755.700 2106.420 1756.580 ;
+        RECT 2113.180 1755.700 2124.340 1756.580 ;
+        RECT 2127.740 1755.700 2791.460 1756.580 ;
+        RECT 8.540 4.300 2791.460 1755.700 ;
         RECT 8.540 3.500 54.580 4.300 ;
         RECT 55.740 3.500 63.540 4.300 ;
         RECT 64.700 3.500 72.500 4.300 ;
@@ -3395,7 +5918,7 @@ MACRO tjrpu
         RECT 2734.780 3.500 2742.580 4.300 ;
         RECT 2743.740 3.500 2791.460 4.300 ;
       LAYER Metal3 ;
-        RECT 4.000 1717.820 2796.000 1740.620 ;
+        RECT 4.000 1717.820 2796.000 1747.060 ;
         RECT 4.300 1716.660 2795.700 1717.820 ;
         RECT 4.000 1645.020 2796.000 1716.660 ;
         RECT 4.300 1643.860 2795.700 1645.020 ;
