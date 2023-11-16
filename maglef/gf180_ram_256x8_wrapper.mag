@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 5
-timestamp 1700139190
+timestamp 1700157470
 << obsm1 >>
 rect 500 500 43686 34588
 << metal2 >>
@@ -169,7 +169,7 @@ string FIXED_BBOX 0 0 44486 35188
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 2585266
-string GDS_FILE /home/thomas/Documents/Projects/tilerisc/openlane/gf180_ram_256x8_wrapper/runs/23_11_16_07_52/results/signoff/gf180_ram_256x8_wrapper.magic.gds
+string GDS_FILE /home/thomas/Documents/Projects/tilerisc/openlane/gf180_ram_256x8_wrapper/runs/23_11_16_12_57/results/signoff/gf180_ram_256x8_wrapper.magic.gds
 string GDS_START 2452566
 << end >>
 
