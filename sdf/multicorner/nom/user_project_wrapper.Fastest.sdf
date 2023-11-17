@@ -1,7 +1,7 @@
 (DELAYFILE
  (SDFVERSION "3.0")
  (DESIGN "user_project_wrapper")
- (DATE "Thu Nov 16 18:08:07 2023")
+ (DATE "Fri Nov 17 15:09:39 2023")
  (VENDOR "Parallax")
  (PROGRAM "STA")
  (VERSION "2.4.0")
@@ -43,14 +43,14 @@
     (INTERCONNECT mprj.clkbuf_1_1__f_wb_clk_i.Z mprj._343_.I (0.003:0.003:0.003) (0.003:0.003:0.003))
     (INTERCONNECT mprj.clkbuf_1_1__f_wb_clk_i.Z mprj._346_.I (0.002:0.002:0.002) (0.002:0.002:0.002))
     (INTERCONNECT mprj.clkbuf_1_1__f_wb_clk_i.Z mprj._347_.I (0.002:0.002:0.002) (0.002:0.002:0.002))
-    (INTERCONNECT mprj.output1.Z line_a_buf_b.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output2.Z line_a_buf_d.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output3.Z line_a_buf_g.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output4.Z line_a_buf_r.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output5.Z line_b_buf_b.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output6.Z line_b_buf_d.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output7.Z line_b_buf_g.RAM.CLK (0.000:0.000:0.000))
-    (INTERCONNECT mprj.output8.Z line_b_buf_r.RAM.CLK (0.000:0.000:0.000))
+    (INTERCONNECT mprj.output1.Z line_a_buf_b.RAM.CLK (0.005:0.005:0.005) (0.005:0.005:0.005))
+    (INTERCONNECT mprj.output2.Z line_a_buf_d.RAM.CLK (0.046:0.046:0.046) (0.046:0.046:0.046))
+    (INTERCONNECT mprj.output3.Z line_a_buf_g.RAM.CLK (0.085:0.085:0.085) (0.084:0.084:0.084))
+    (INTERCONNECT mprj.output4.Z line_a_buf_r.RAM.CLK (0.154:0.154:0.154) (0.153:0.153:0.153))
+    (INTERCONNECT mprj.output5.Z line_b_buf_b.RAM.CLK (0.044:0.044:0.044) (0.043:0.043:0.043))
+    (INTERCONNECT mprj.output6.Z line_b_buf_d.RAM.CLK (0.082:0.082:0.082) (0.082:0.082:0.082))
+    (INTERCONNECT mprj.output7.Z line_b_buf_g.RAM.CLK (0.054:0.054:0.054) (0.054:0.054:0.054))
+    (INTERCONNECT mprj.output8.Z line_b_buf_r.RAM.CLK (0.196:0.196:0.196) (0.195:0.195:0.195))
     (INTERCONNECT mprj.tjrpu_10.ZN io_oeb[1] (0.000:0.000:0.000))
     (INTERCONNECT mprj.tjrpu_100.ZN la_data_out[56] (0.000:0.000:0.000))
     (INTERCONNECT mprj.tjrpu_101.ZN la_data_out[57] (0.000:0.000:0.000))
@@ -498,7 +498,7 @@
   (INSTANCE mprj.output1)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.105:0.105:0.105) (0.126:0.126:0.126))
+    (IOPATH I Z (0.449:0.449:0.449) (0.361:0.361:0.361))
    )
   )
  )
@@ -507,7 +507,7 @@
   (INSTANCE mprj.output2)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.105:0.105:0.105) (0.126:0.126:0.126))
+    (IOPATH I Z (1.240:1.240:1.240) (0.847:0.847:0.847))
    )
   )
  )
@@ -516,7 +516,7 @@
   (INSTANCE mprj.output3)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.106:0.106:0.106) (0.126:0.126:0.126))
+    (IOPATH I Z (1.678:1.678:1.678) (1.109:1.109:1.109))
    )
   )
  )
@@ -525,7 +525,7 @@
   (INSTANCE mprj.output4)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.121:0.121:0.121) (0.144:0.144:0.144))
+    (IOPATH I Z (1.906:1.906:1.906) (1.243:1.243:1.243))
    )
   )
  )
@@ -534,7 +534,7 @@
   (INSTANCE mprj.output5)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.105:0.105:0.105) (0.126:0.126:0.126))
+    (IOPATH I Z (1.326:1.326:1.326) (0.905:0.905:0.905))
    )
   )
  )
@@ -543,7 +543,7 @@
   (INSTANCE mprj.output6)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.105:0.105:0.105) (0.126:0.126:0.126))
+    (IOPATH I Z (1.756:1.756:1.756) (1.165:1.165:1.165))
    )
   )
  )
@@ -552,7 +552,7 @@
   (INSTANCE mprj.output7)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.105:0.105:0.105) (0.126:0.126:0.126))
+    (IOPATH I Z (1.283:1.283:1.283) (0.874:0.874:0.874))
    )
   )
  )
@@ -561,7 +561,7 @@
   (INSTANCE mprj.output8)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.120:0.120:0.120) (0.142:0.142:0.142))
+    (IOPATH I Z (2.512:2.512:2.512) (1.606:1.606:1.606))
    )
   )
  )

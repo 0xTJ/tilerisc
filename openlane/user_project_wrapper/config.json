@@ -30,7 +30,11 @@
 		"tjrpu",
 		"dir::../../spef/multicorner/tjrpu.min.spef",
 		"dir::../../spef/multicorner/tjrpu.nom.spef",
-		"dir::../../spef/multicorner/tjrpu.max.spef"
+		"dir::../../spef/multicorner/tjrpu.max.spef",
+		"gf180_ram_256x8_wrapper",
+		"dir::../../spef/multicorner/gf180_ram_256x8_wrapper.min.spef",
+		"dir::../../spef/multicorner/gf180_ram_256x8_wrapper.nom.spef",
+		"dir::../../spef/multicorner/gf180_ram_256x8_wrapper.max.spef"
 	],
 	"FP_PDN_MACRO_HOOKS": [
 		"mprj vdd vss vdd vss,",
