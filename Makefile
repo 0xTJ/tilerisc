@@ -13,6 +13,7 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
+
 MAKEFLAGS+=--warn-undefined-variables
 
 export CARAVEL_ROOT?=$(PWD)/caravel
@@ -78,7 +79,7 @@ endif
 
 ifeq ($(PDK),gf180mcuD)
 
-	MPW_TAG ?= gfmpw-1b
+	MPW_TAG ?= gfmpw-1c
 	CARAVEL_NAME := caravel
 	CARAVEL_REPO := https://github.com/efabless/caravel-gf180mcu
 	CARAVEL_TAG := $(MPW_TAG)
