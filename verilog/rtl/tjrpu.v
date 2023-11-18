@@ -130,11 +130,6 @@ assign wbs_dat_o = 32'b0;
 assign irq = 3'b000;
 
 gpu gpu (
-`ifdef USE_POWER_PINS
-    .vdd                (vdd),
-    .vss                (vss),
-`endif
-
     .wb_clk_i           (wb_clk_i),
 
     .line_a_buf_r_clk   (line_a_buf_r_clk),

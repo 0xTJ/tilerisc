@@ -14,11 +14,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 module gpu (
-`ifdef USE_POWER_PINS
-	.vdd(vdd),	// User area 1 5.0 V power
-	.vss(vss),	// User area 1 digital ground
-`endif
-
     input wire wb_clk_i,
 
     output wire                         line_a_buf_r_clk,
@@ -192,24 +187,23 @@ end
 endmodule
 
 module gpu_core (
-    inout vdd,		// User area 5.0V supply
-    inout vss,		// User area ground
-
     input wire clk
 );
 
 endmodule
-
 
 module interp_tri (
     input wire [9:0] y,
 
     input wire [9:0] A_x,
     input wire [9:0] A_y,
+    input wire [9:0] A_z,
     input wire [9:0] B_x,
     input wire [9:0] B_y,
+    input wire [9:0] B_z,
     input wire [9:0] C_x,
     input wire [9:0] C_y,
+    input wire [9:0] C_z,
     input wire bflip,
     input wire signed [14:0] delta_t,
 
@@ -265,5 +259,91 @@ assign x_end    = A_x - t_mul_A_x + t_mul_B_x;
 // Pass out values to be used on the next line
 assign active_out = active_in_actual && !is_last_line;
 assign t_out = t_in_actual + delta_t;
+
+endmodule
+
+`define FIXED_BITS 16
+`define FIXED_BITS_START 0
+`define FIXED_BITS_END (`FIXED_BITS_START + `FIXED_BITS - 1)
+`define FIXED_BITS_RANGE `FIXED_BITS_END:`FIXED_BITS_START
+`define FIXED_FRAC 14
+
+`define V3_BITS 48
+`define V3_BITS_START 0
+`define V3_BITS_END 47
+`define V3_BITS_RANGE 47:0
+`define V3_BITS_X_START 0
+`define V3_BITS_X_END 15
+`define V3_BITS_X_RANGE 15:0
+`define V3_BITS_Y_START 16
+`define V3_BITS_Y_END 31
+`define V3_BITS_Y_RANGE 31:16
+`define V3_BITS_Z_START 32
+`define V3_BITS_Z_END 47
+`define V3_BITS_Z_RANGE 47:32
+
+module add (
+    input  wire signed [`FIXED_BITS_RANGE] a,
+    input  wire signed [`FIXED_BITS_RANGE] b,
+    output reg  signed [`FIXED_BITS_RANGE] y
+);
+
+wire signed [16:0] a_ext, b_ext;
+reg  signed [16:0] y_ext;
+
+assign a_ext = {1'b0, a};
+assign b_ext = {1'b0, b};
+
+always @(a_ext or b_ext) begin
+    y_ext = a_ext + b_ext;
+    // TODO: This assumes no overflow
+    y = y_ext[15:0];
+end
+
+endmodule
+
+module mul (
+    input  wire signed [`FIXED_BITS_RANGE] a,
+    input  wire signed [`FIXED_BITS_RANGE] b,
+    output reg  signed [`FIXED_BITS_RANGE] y
+);
+
+wire signed [31:0] a_ext, b_ext;
+reg  signed [31:0] y_ext;
+
+assign a_ext = {16'h0000, a};
+assign b_ext = {16'h0000, b};
+
+always @(a_ext or b_ext) begin
+    y_ext = (a_ext * b_ext) >> `FIXED_FRAC;
+    // TODO: This assumes no overflow
+    y = y_ext[15:0];
+end
+
+endmodule
+
+module dot (
+    input  wire signed [`V3_BITS_RANGE] a,
+    input  wire signed [`V3_BITS_RANGE] b,
+    output reg  signed [`FIXED_BITS_RANGE] y
+);
+
+wire signed [`FIXED_BITS_RANGE] a_x, a_y, a_z;
+wire signed [`FIXED_BITS_RANGE] b_x, b_y, b_z;
+wire signed [`FIXED_BITS_RANGE] tmp_x, tmp_y, tmp_z, tmp_x_y;
+
+assign a_x = a[`V3_BITS_X_RANGE];
+assign a_y = a[`V3_BITS_Y_RANGE];
+assign a_z = a[`V3_BITS_Z_RANGE];
+assign b_x = b[`V3_BITS_X_RANGE];
+assign b_y = b[`V3_BITS_Y_RANGE];
+assign b_z = b[`V3_BITS_Z_RANGE];
+
+mul mul_x (.a (a_x), .b (b_x), .y (tmp_x));
+mul mul_y (.a (a_y), .b (b_y), .y (tmp_y));
+mul mul_z (.a (a_z), .b (b_z), .y (tmp_z));
+
+add add_x_y (.a (tmp_x), .b (tmp_y), .y (tmp_x_y));
+add add_x_y_z (.a (tmp_x_y), .b (tmp_z), .y (y));
 
 endmodule
