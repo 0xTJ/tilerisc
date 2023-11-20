@@ -248,7 +248,7 @@ precheck:
 	fi
 	@echo "Installing Precheck.."
 	@git clone --depth=1 --branch $(MPW_TAG) https://github.com/efabless/mpw_precheck.git $(PRECHECK_ROOT)
-	@docker pull efabless/mpw_precheck:latest
+#	@docker pull efabless/mpw_precheck:latest
 
 .PHONY: run-precheck
 run-precheck: check-pdk check-precheck

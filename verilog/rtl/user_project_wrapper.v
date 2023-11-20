@@ -94,6 +94,11 @@ tjrpu mprj (
     .wbs_ack_o(wbs_ack_o),
     .wbs_dat_o(wbs_dat_o),
 
+    // Decoded Core Wishbone Slaves
+
+    .tri_wbs_stb_i (tri_wbs_stb_i),
+    .tri_wbs_ack_o (tri_wbs_ack_o),
+
     // Logic Analyzer
 
     .la_data_in(la_data_in),
@@ -109,246 +114,46 @@ tjrpu mprj (
     // IRQ
     .irq(user_irq),
 
-    .line_a_buf_r_clk   (line_a_buf_r_clk),
-    .line_a_buf_r_a     (line_a_buf_r_a),
-    .line_a_buf_r_d     (line_a_buf_r_d),
-    .line_a_buf_r_q     (line_a_buf_r_q),
-    .line_a_buf_r_gwen  (line_a_buf_r_gwen),
-    .line_a_buf_r_cen   (line_a_buf_r_cen),
-    .line_a_buf_r_wen   (line_a_buf_r_wen),
-
-    .line_a_buf_g_clk   (line_a_buf_g_clk),
-    .line_a_buf_g_a     (line_a_buf_g_a),
-    .line_a_buf_g_d     (line_a_buf_g_d),
-    .line_a_buf_g_q     (line_a_buf_g_q),
-    .line_a_buf_g_gwen  (line_a_buf_g_gwen),
-    .line_a_buf_g_cen   (line_a_buf_g_cen),
-    .line_a_buf_g_wen   (line_a_buf_g_wen),
-
-    .line_a_buf_b_clk   (line_a_buf_b_clk),
-    .line_a_buf_b_a     (line_a_buf_b_a),
-    .line_a_buf_b_d     (line_a_buf_b_d),
-    .line_a_buf_b_q     (line_a_buf_b_q),
-    .line_a_buf_b_gwen  (line_a_buf_b_gwen),
-    .line_a_buf_b_cen   (line_a_buf_b_cen),
-    .line_a_buf_b_wen   (line_a_buf_b_wen),
-
-    .line_a_buf_d_clk   (line_a_buf_d_clk),
-    .line_a_buf_d_a     (line_a_buf_d_a),
-    .line_a_buf_d_d     (line_a_buf_d_d),
-    .line_a_buf_d_q     (line_a_buf_d_q),
-    .line_a_buf_d_gwen  (line_a_buf_d_gwen),
-    .line_a_buf_d_cen   (line_a_buf_d_cen),
-    .line_a_buf_d_wen   (line_a_buf_d_wen),
-
-    .line_b_buf_r_clk   (line_b_buf_r_clk),
-    .line_b_buf_r_a     (line_b_buf_r_a),
-    .line_b_buf_r_d     (line_b_buf_r_d),
-    .line_b_buf_r_q     (line_b_buf_r_q),
-    .line_b_buf_r_gwen  (line_b_buf_r_gwen),
-    .line_b_buf_r_cen   (line_b_buf_r_cen),
-    .line_b_buf_r_wen   (line_b_buf_r_wen),
-
-    .line_b_buf_g_clk   (line_b_buf_g_clk),
-    .line_b_buf_g_a     (line_b_buf_g_a),
-    .line_b_buf_g_d     (line_b_buf_g_d),
-    .line_b_buf_g_q     (line_b_buf_g_q),
-    .line_b_buf_g_gwen  (line_b_buf_g_gwen),
-    .line_b_buf_g_cen   (line_b_buf_g_cen),
-    .line_b_buf_g_wen   (line_b_buf_g_wen),
-
-    .line_b_buf_b_clk   (line_b_buf_b_clk),
-    .line_b_buf_b_a     (line_b_buf_b_a),
-    .line_b_buf_b_d     (line_b_buf_b_d),
-    .line_b_buf_b_q     (line_b_buf_b_q),
-    .line_b_buf_b_gwen  (line_b_buf_b_gwen),
-    .line_b_buf_b_cen   (line_b_buf_b_cen),
-    .line_b_buf_b_wen   (line_b_buf_b_wen),
-
-    .line_b_buf_d_clk   (line_b_buf_d_clk),
-    .line_b_buf_d_a     (line_b_buf_d_a),
-    .line_b_buf_d_d     (line_b_buf_d_d),
-    .line_b_buf_d_q     (line_b_buf_d_q),
-    .line_b_buf_d_gwen  (line_b_buf_d_gwen),
-    .line_b_buf_d_cen   (line_b_buf_d_cen),
-    .line_b_buf_d_wen   (line_b_buf_d_wen)
+    .gpu_clk (user_clock2),
+    .y (y),
+    .x_start (x_start),
+    .x_end (x_end)
 );
 
-wire                        line_a_buf_r_clk;
-wire [(RAM_A_BITS - 1):0]   line_a_buf_r_a;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_r_d;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_r_q;
-wire                        line_a_buf_r_gwen;
-wire                        line_a_buf_r_cen;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_r_wen;
+wire [63:0] tri_wbs_stb_i;
+wire [63:0] tri_wbs_ack_o;
 
-wire                        line_a_buf_g_clk;
-wire [(RAM_A_BITS - 1):0]   line_a_buf_g_a;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_g_d;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_g_q;
-wire                        line_a_buf_g_gwen;
-wire                        line_a_buf_g_cen;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_g_wen;
+// wire [31:0] tri_wbs_dat_o [63:0];
+wire [(64 * 8) - 1:0]  y;
+wire [(64 * 8) - 1:0]  x_start;
+wire [(64 * 8) - 1:0]  x_end;
 
-wire                        line_a_buf_b_clk;
-wire [(RAM_A_BITS - 1):0]   line_a_buf_b_a;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_b_d;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_b_q;
-wire                        line_a_buf_b_gwen;
-wire                        line_a_buf_b_cen;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_b_wen;
-
-wire                        line_a_buf_d_clk;
-wire [(RAM_A_BITS - 1):0]   line_a_buf_d_a;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_d_d;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_d_q;
-wire                        line_a_buf_d_gwen;
-wire                        line_a_buf_d_cen;
-wire [(RAM_D_BITS - 1):0]   line_a_buf_d_wen;
-
-wire                        line_b_buf_r_clk;
-wire [(RAM_A_BITS - 1):0]   line_b_buf_r_a;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_r_d;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_r_q;
-wire                        line_b_buf_r_gwen;
-wire                        line_b_buf_r_cen;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_r_wen;
-
-wire                        line_b_buf_g_clk;
-wire [(RAM_A_BITS - 1):0]   line_b_buf_g_a;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_g_d;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_g_q;
-wire                        line_b_buf_g_gwen;
-wire                        line_b_buf_g_cen;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_g_wen;
-
-wire                        line_b_buf_b_clk;
-wire [(RAM_A_BITS - 1):0]   line_b_buf_b_a;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_b_d;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_b_q;
-wire                        line_b_buf_b_gwen;
-wire                        line_b_buf_b_cen;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_b_wen;
-
-wire                        line_b_buf_d_clk;
-wire [(RAM_A_BITS - 1):0]   line_b_buf_d_a;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_d_d;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_d_q;
-wire                        line_b_buf_d_gwen;
-wire                        line_b_buf_d_cen;
-wire [(RAM_D_BITS - 1):0]   line_b_buf_d_wen;
-
-gf180_ram_256x8_wrapper line_a_buf_r (
+genvar i;
+generate
+    for (i=0; i<64; i=i+1) begin
+        interp_tri trip (
 `ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
+            .vdd (vdd),
+            .vss (vss),
 `endif
-    .CLK    (line_a_buf_r_clk),
-    .A      (line_a_buf_r_a),
-    .D      (line_a_buf_r_d),
-    .Q      (line_a_buf_r_q),
-    .GWEN   (line_a_buf_r_gwen),
-    .CEN    (line_a_buf_r_cen),
-    .WEN    (line_a_buf_r_wen)
-);
 
-gf180_ram_256x8_wrapper line_a_buf_g (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_a_buf_g_clk),
-    .A      (line_a_buf_g_a),
-    .D      (line_a_buf_g_d),
-    .Q      (line_a_buf_g_q),
-    .GWEN   (line_a_buf_g_gwen),
-    .CEN    (line_a_buf_g_cen),
-    .WEN    (line_a_buf_g_wen)
-);
+            .wb_clk_i (wb_clk_i),
+            .wb_rst_i (wb_rst_i),
+            .wbs_cyc_i (wbs_cyc_i),
+            .wbs_stb_i (tri_wbs_stb_i[i]),
+            .wbs_we_i (wbs_we_i),
+            .wbs_sel_i (wbs_sel_i),
+            .wbs_adr_i (wbs_adr_i[3:2]),
+            .wbs_dat_i (wbs_dat_i),
+            .wbs_ack_o (tri_wbs_ack_o[i]),
 
-gf180_ram_256x8_wrapper line_a_buf_b (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_a_buf_b_clk),
-    .A      (line_a_buf_b_a),
-    .D      (line_a_buf_b_d),
-    .Q      (line_a_buf_b_q),
-    .GWEN   (line_a_buf_b_gwen),
-    .CEN    (line_a_buf_b_cen),
-    .WEN    (line_a_buf_b_wen)
-);
-
-gf180_ram_256x8_wrapper line_a_buf_d (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_a_buf_d_clk),
-    .A      (line_a_buf_d_a),
-    .D      (line_a_buf_d_d),
-    .Q      (line_a_buf_d_q),
-    .GWEN   (line_a_buf_d_gwen),
-    .CEN    (line_a_buf_d_cen),
-    .WEN    (line_a_buf_d_wen)
-);
-
-gf180_ram_256x8_wrapper line_b_buf_r (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_b_buf_r_clk),
-    .A      (line_b_buf_r_a),
-    .D      (line_b_buf_r_d),
-    .Q      (line_b_buf_r_q),
-    .GWEN   (line_b_buf_r_gwen),
-    .CEN    (line_b_buf_r_cen),
-    .WEN    (line_b_buf_r_wen)
-);
-
-gf180_ram_256x8_wrapper line_b_buf_g (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_b_buf_g_clk),
-    .A      (line_b_buf_g_a),
-    .D      (line_b_buf_g_d),
-    .Q      (line_b_buf_g_q),
-    .GWEN   (line_b_buf_g_gwen),
-    .CEN    (line_b_buf_g_cen),
-    .WEN    (line_b_buf_g_wen)
-);
-
-gf180_ram_256x8_wrapper line_b_buf_b (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_b_buf_b_clk),
-    .A      (line_b_buf_b_a),
-    .D      (line_b_buf_b_d),
-    .Q      (line_b_buf_b_q),
-    .GWEN   (line_b_buf_b_gwen),
-    .CEN    (line_b_buf_b_cen),
-    .WEN    (line_b_buf_b_wen)
-);
-
-gf180_ram_256x8_wrapper line_b_buf_d (
-`ifdef USE_POWER_PINS
-    .VDD    (vdd),
-    .VSS    (vss),
-`endif
-    .CLK    (line_b_buf_d_clk),
-    .A      (line_b_buf_d_a),
-    .D      (line_b_buf_d_d),
-    .Q      (line_b_buf_d_q),
-    .GWEN   (line_b_buf_d_gwen),
-    .CEN    (line_b_buf_d_cen),
-    .WEN    (line_b_buf_d_wen)
-);
+            .clk (user_clock2),
+            .y (y[((i + 1) * 8) - 1:i * 8]),
+            .x_start (x_start[((i + 1) * 8) - 1:i * 8]),
+            .x_end (x_end[((i + 1) * 8) - 1:i * 8])
+        );
+    end 
+endgenerate
 
 endmodule
 

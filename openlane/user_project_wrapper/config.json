@@ -12,40 +12,33 @@
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
 		"dir::../../verilog/gl/tjrpu.v",
-		"dir::../../verilog/gl/gf180_ram_256x8_wrapper.v"
+		"dir::../../verilog/gl/interp_tri.v"
 	],
 	"EXTRA_LEFS": [
 		"dir::../../lef/tjrpu.lef",
-		"dir::../../lef/gf180_ram_256x8_wrapper.lef"
+		"dir::../../lef/interp_tri.lef"
 	],
 	"EXTRA_GDS_FILES": [
 		"dir::../../gds/tjrpu.gds",
-		"dir::../../gds/gf180_ram_256x8_wrapper.gds"
+		"dir::../../gds/interp_tri.gds"
 	],
 	"EXTRA_LIBS": [
 		"dir::../../lib/tjrpu.lib",
-		"dir::../../lib/gf180_ram_256x8_wrapper.lib"
+		"dir::../../lib/interp_tri.lib"
 	],
 	"EXTRA_SPEFS": [
 		"tjrpu",
 		"dir::../../spef/multicorner/tjrpu.min.spef",
 		"dir::../../spef/multicorner/tjrpu.nom.spef",
 		"dir::../../spef/multicorner/tjrpu.max.spef",
-		"gf180_ram_256x8_wrapper",
-		"dir::../../spef/multicorner/gf180_ram_256x8_wrapper.min.spef",
-		"dir::../../spef/multicorner/gf180_ram_256x8_wrapper.nom.spef",
-		"dir::../../spef/multicorner/gf180_ram_256x8_wrapper.max.spef"
+		"interp_tri",
+		"dir::../../spef/multicorner/interp_tri.min.spef",
+		"dir::../../spef/multicorner/interp_tri.nom.spef",
+		"dir::../../spef/multicorner/interp_tri.max.spef"
 	],
 	"FP_PDN_MACRO_HOOKS": [
 		"mprj vdd vss vdd vss,",
-		"line_a_buf_r vdd vss VDD VSS,",
-		"line_a_buf_g vdd vss VDD VSS,",
-		"line_a_buf_b vdd vss VDD VSS,",
-		"line_a_buf_d vdd vss VDD VSS,",
-		"line_b_buf_r vdd vss VDD VSS,",
-		"line_b_buf_g vdd vss VDD VSS,",
-		"line_b_buf_b vdd vss VDD VSS,",
-		"line_b_buf_d vdd vss VDD VSS"
+		".*trip vdd vss vdd vss"
 	],
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,
