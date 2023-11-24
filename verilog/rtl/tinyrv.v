@@ -57,7 +57,17 @@
 `define RD_MUX_ALU_OUT          2'b00
 `define RD_MUX_IMM              2'b01
 `define RD_MUX_PC_PLUS_4        2'b10
-`define RD_MUX_MEM_LOAD_OUT     2'b11
+`define RD_MUX_MEM_LD_DAT       2'b11
+
+`define LD_MUX_BYTE             3'b000
+`define LD_MUX_HALF             3'b001
+`define LD_MUX_WORD             3'b010
+`define LD_MUX_BYTE_U           3'b100
+`define LD_MUX_HALF_U           3'b101
+
+`define ST_MUX_BYTE             3'b000
+`define ST_MUX_HALF             3'b001
+`define ST_MUX_WORD             3'b010
 
 module tinyrv (
 `ifdef USE_POWER_PINS
@@ -70,7 +80,14 @@ module tinyrv (
     input  wire [31:0]  pc,
 
     output reg  [31:0]  pc_next,
-    input  wire [31:0]  mem_load_out,
+
+    output wire [31:2]  mem_addr,
+    output wire         mem_ld_en,
+    output reg  [3:0]   mem_ld_mask,
+    input  wire [31:0]  mem_ld_dat,
+    output wire         mem_st_en,
+    output reg  [3:0]   mem_st_mask,
+    output reg  [31:0]  mem_st_dat,
 
     output wire [31:0] alu_out_out  // Used to force generation
 );
@@ -89,9 +106,19 @@ wire alu_in1_mux, alu_in2_mux;
 wire [1:0] rd_mux;
 wire rd_we;
 wire [1:0] pc_mux;
+wire [2:0] ld_mux;
+wire [2:0] st_mux;
 
 reg  [31:0] alu_in1, alu_in2;
 wire [31:0] alu_out;
+
+wire [31:0] pc_plus_4, pc_plus_imm, alu_out_masked;
+
+wire [1:0]  addr_shift;
+reg  [1:0]  addr_shift_ld, addr_shift_st;
+wire [4:0]  addr_shift_ld_bits, addr_shift_st_bits;
+reg  [31:0] ld_dat;
+reg  [31:0] st_dat;
 
 control control (
     .inst (inst),
@@ -105,7 +132,11 @@ control control (
     .alu_in2_mux (alu_in2_mux),
     .rd_mux (rd_mux),
     .rd_we (rd_we),
-    .pc_mux (pc_mux)
+    .pc_mux (pc_mux),
+    .ld_mux (ld_mux),
+    .st_mux (st_mux),
+    .ld_en (mem_ld_en),
+    .st_en (mem_st_en)
 );
 
 imm_decode imm_decode (
@@ -136,39 +167,109 @@ reg_file reg_file (
     .rd_dat     (rd_dat)
 );
 
-wire [31:0] pc_plus_4, pc_plus_imm, alu_out_masked;
 assign pc_plus_4 = pc + 32'd4;
 assign pc_plus_imm = pc + imm;
 assign alu_out_masked = alu_out & ~32'b1;
 
-always @(*) begin
-    case (pc_mux)
-        `PC_MUX_PC_PLUS_4:      pc_next = pc_plus_4;
-        `PC_MUX_PC_PLUS_IMM:    pc_next = pc_plus_imm;
-        `PC_MUX_ALU_OUT_MASKED: pc_next = alu_out_masked;
-        default:                pc_next = 32'bx;
-    endcase
+assign mem_addr[31:2] = alu_out[31:2];
+assign addr_shift[1:0] = alu_out[1:0];
+assign st_dat = rs2_dat;
+assign addr_shift_ld_bits = addr_shift_ld * 8;
+assign addr_shift_st_bits = addr_shift_st * 8;
 
-    case (alu_in1_mux)
-        `ALU_IN1_MUX_RS1:       alu_in1 = rs1_dat;
-        `ALU_IN1_MUX_PC:        alu_in1 = pc;
-        default:                alu_in1 = 32'bx;
-    endcase
+always @(*) case (pc_mux)
+    `PC_MUX_PC_PLUS_4:      pc_next = pc_plus_4;
+    `PC_MUX_PC_PLUS_IMM:    pc_next = pc_plus_imm;
+    `PC_MUX_ALU_OUT_MASKED: pc_next = alu_out_masked;
+    default:                pc_next = 32'bx;
+endcase
 
-    case (alu_in2_mux)
-        `ALU_IN2_MUX_RS2:       alu_in2 = rs2_dat;
-        `ALU_IN2_MUX_IMM:       alu_in2 = imm;
-        default:                alu_in2 = 32'bx;
-    endcase
+always @(*) case (alu_in1_mux)
+    `ALU_IN1_MUX_RS1:       alu_in1 = rs1_dat;
+    `ALU_IN1_MUX_PC:        alu_in1 = pc;
+    default:                alu_in1 = 32'bx;
+endcase
 
-    case (rd_mux)
-        `RD_MUX_ALU_OUT:        rd_dat = alu_out;
-        `RD_MUX_IMM:            rd_dat = imm;
-        `RD_MUX_PC_PLUS_4:      rd_dat = pc_plus_4;
-        `RD_MUX_MEM_LOAD_OUT:   rd_dat = mem_load_out;
-        default:                rd_dat = 32'bx;
-    endcase
-end
+always @(*) case (alu_in2_mux)
+    `ALU_IN2_MUX_RS2:       alu_in2 = rs2_dat;
+    `ALU_IN2_MUX_IMM:       alu_in2 = imm;
+    default:                alu_in2 = 32'bx;
+endcase
+
+always @(*) case (rd_mux)
+    `RD_MUX_ALU_OUT:        rd_dat = alu_out;
+    `RD_MUX_IMM:            rd_dat = imm;
+    `RD_MUX_PC_PLUS_4:      rd_dat = pc_plus_4;
+    `RD_MUX_MEM_LD_DAT:     rd_dat = ld_dat;
+    default:                rd_dat = 32'bx;
+endcase
+
+    // TODO: Decide on endianness
+    // TODO: These don't handle misaligned addresses
+
+always @(*) case (ld_mux)
+    `LD_MUX_BYTE: begin
+        addr_shift_ld = addr_shift & 2'b11;
+        ld_dat = {{24{mem_ld_dat[addr_shift_ld_bits + 7]}}, mem_ld_dat[addr_shift_ld_bits+:8]};
+        mem_ld_mask = 4'b0001 << addr_shift_ld;
+    end
+
+    `LD_MUX_HALF: begin
+        addr_shift_ld = addr_shift & 2'b10;
+        ld_dat = {{16{mem_ld_dat[addr_shift_ld_bits + 15]}}, mem_ld_dat[addr_shift_ld_bits+:16]};
+        mem_ld_mask = 4'b0011 << addr_shift_ld;
+    end
+
+    `LD_MUX_WORD: begin
+        addr_shift_ld = addr_shift & 2'b00;
+        ld_dat = {{0{mem_ld_dat[addr_shift_ld_bits + 31]}}, mem_ld_dat[addr_shift_ld_bits+:32]};
+        mem_ld_mask = 4'b1111 << addr_shift_ld;
+    end
+
+    `LD_MUX_BYTE_U: begin
+        addr_shift_ld = addr_shift & 2'b11;
+        ld_dat = {{24{1'b0}}, mem_ld_dat[addr_shift_ld_bits+:8]};
+        mem_ld_mask = 4'b0001 << addr_shift_ld;
+    end
+
+    `LD_MUX_HALF_U: begin
+        addr_shift_ld = addr_shift & 2'b10;
+        ld_dat = {{16{1'b0}}, mem_ld_dat[addr_shift_ld_bits+:16]};
+        mem_ld_mask = 4'b0011 << addr_shift_ld;
+    end
+
+    default: begin
+        addr_shift_ld = 2'bxx;
+        ld_dat = 32'bx;
+        mem_ld_mask = 4'bxxxx;
+    end
+endcase
+
+always @(*) case (st_mux)
+    `ST_MUX_BYTE: begin
+        addr_shift_st = addr_shift & 2'b11;
+        mem_st_dat = {st_dat[ 7:0], st_dat[ 7:0], st_dat[ 7:0], st_dat[ 7:0]};
+        mem_st_mask = 4'b0001 << addr_shift_st;
+    end
+
+    `ST_MUX_HALF: begin
+        addr_shift_st = addr_shift & 2'b10;
+        mem_st_dat = {st_dat[15:0], st_dat[15:0]};
+        mem_st_mask = 4'b0011 << addr_shift_st;
+    end
+
+    `ST_MUX_WORD: begin
+        addr_shift_st = addr_shift & 2'b00;
+        mem_st_dat = {st_dat[31:0]};
+        mem_st_mask = 4'b1111 << addr_shift_st;
+    end
+
+    default: begin
+        addr_shift_st = 2'bxx;
+        mem_st_dat = 32'bx;
+        mem_st_mask = 4'bxxxx;
+    end
+endcase
 
 endmodule
 
@@ -226,7 +327,11 @@ module control (
     output reg          alu_in2_mux,
     output reg  [1:0]   rd_mux,
     output reg          rd_we,
-    output reg  [1:0]   pc_mux
+    output reg  [1:0]   pc_mux,
+    output reg  [2:0]   ld_mux,
+    output reg  [2:0]   st_mux,
+    output reg          ld_en,
+    output reg          st_en
 );
 
 reg [6:0] opcode;
@@ -310,6 +415,10 @@ always @(*) begin
     rd_mux = 2'bx;
     rd_we = 1'b0;
     pc_mux = `PC_MUX_PC_PLUS_4;
+    ld_mux = 3'bx;
+    st_mux = 3'bx;
+    ld_en = 1'b0;
+    st_en = 1'b0;
 
     if (inst[1:0] != 2'b11) begin
         // Is a 16b instruction
@@ -388,22 +497,26 @@ always @(*) begin
                 alu_funct = `ALU_FUNCT_ADD;
                 alu_in1_mux = `ALU_IN1_MUX_RS1;
                 alu_in2_mux = `ALU_IN2_MUX_IMM;
-                rd_mux = `RD_MUX_MEM_LOAD_OUT;
+                rd_mux = `RD_MUX_MEM_LD_DAT;
                 rd_we = 1'b1;
+                ld_mux = funct3;
+                ld_en = 1'b1;
             end
 
             `OPCODE_STORE: begin
                 alu_funct = `ALU_FUNCT_ADD;
                 alu_in1_mux = `ALU_IN1_MUX_RS1;
                 alu_in2_mux = `ALU_IN2_MUX_IMM;
+                st_mux = funct3;
+                st_en = 1'b1;
             end
 
             `OPCODE_MISC_MEM: begin
-                // TODO
+                // No-op
             end
 
             `OPCODE_SYSTEM: begin
-                // TODO
+                // No-op
             end
 
             default: begin
