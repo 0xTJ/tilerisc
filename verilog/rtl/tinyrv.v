@@ -57,7 +57,7 @@
 `define RD_MUX_ALU_OUT          2'b00
 `define RD_MUX_IMM              2'b01
 `define RD_MUX_PC_PLUS_4        2'b10
-`define RD_MUX_MEM_LOAD_OUT         2'b11
+`define RD_MUX_MEM_LOAD_OUT     2'b11
 
 module tinyrv (
 `ifdef USE_POWER_PINS
@@ -65,28 +65,22 @@ module tinyrv (
     inout vss,	// User area 1 digital ground
 `endif
 
-    input clk,
-    input wire [31:0] inst_in,
-    input wire [31:0] mem_load_out,
+    input  wire         clk,
+    input  wire [31:0]  inst,
+    input  wire [31:0]  pc,
 
-    output wire [31:0] alu_out_out
+    output reg  [31:0]  pc_next,
+    input  wire [31:0]  mem_load_out,
+
+    output wire [31:0] alu_out_out  // Used to force generation
 );
 
 assign alu_out_out = alu_out;
-assign inst = inst_in;
-
-reg  [31:0] pc; // TODO: Add reset
-wire [31:0] inst;
-
-wire [6:0] opcode;
-wire [2:0] funct3;
-wire [6:0] funct7;
 
 wire [4:0] rd, rs1, rs2;
 reg  [31:0] rd_dat;
 wire [31:0] rs1_dat, rs2_dat;
 
-wire [31:0] inst;
 wire [5:0]  inst_type;
 wire [31:0] imm;
 
@@ -96,7 +90,6 @@ wire [1:0] rd_mux;
 wire rd_we;
 wire [1:0] pc_mux;
 
-reg  [31:0] pc_next;
 reg  [31:0] alu_in1, alu_in2;
 wire [31:0] alu_out;
 
@@ -118,7 +111,7 @@ control control (
 imm_decode imm_decode (
     .inst_type  (inst_type),
     .inst       (inst),
-    .imm        (imm),
+    .imm        (imm)
 );
 
 alu alu (
@@ -144,7 +137,6 @@ reg_file reg_file (
 );
 
 wire [31:0] pc_plus_4, pc_plus_imm, alu_out_masked;
-
 assign pc_plus_4 = pc + 32'd4;
 assign pc_plus_imm = pc + imm;
 assign alu_out_masked = alu_out & ~32'b1;
@@ -160,11 +152,13 @@ always @(*) begin
     case (alu_in1_mux)
         `ALU_IN1_MUX_RS1:       alu_in1 = rs1_dat;
         `ALU_IN1_MUX_PC:        alu_in1 = pc;
+        default:                alu_in1 = 32'bx;
     endcase
 
     case (alu_in2_mux)
         `ALU_IN2_MUX_RS2:       alu_in2 = rs2_dat;
         `ALU_IN2_MUX_IMM:       alu_in2 = imm;
+        default:                alu_in2 = 32'bx;
     endcase
 
     case (rd_mux)
@@ -172,11 +166,8 @@ always @(*) begin
         `RD_MUX_IMM:            rd_dat = imm;
         `RD_MUX_PC_PLUS_4:      rd_dat = pc_plus_4;
         `RD_MUX_MEM_LOAD_OUT:   rd_dat = mem_load_out;
+        default:                rd_dat = 32'bx;
     endcase
-end
-
-always @(posedge clk) begin
-    pc <= pc_next;
 end
 
 endmodule
@@ -279,31 +270,31 @@ always @(*) begin
             // TODO: Handle default
         endcase
 
-        if (inst_type & (`INST_TYPE_R | `INST_TYPE_I | `INST_TYPE_U | `INST_TYPE_J)) begin
+        if (|(inst_type & (`INST_TYPE_R | `INST_TYPE_I | `INST_TYPE_U | `INST_TYPE_J))) begin
             rd = inst[11:7];
         end else begin
             rd = 5'bx;
         end
 
-        if (inst_type & (`INST_TYPE_R | `INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B)) begin
+        if (|(inst_type & (`INST_TYPE_R | `INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B))) begin
             rs1 = inst[19:15];
         end else begin
             rs1 = 5'bx;
         end
 
-        if (inst_type & (`INST_TYPE_R | `INST_TYPE_S | `INST_TYPE_B)) begin
+        if (|(inst_type & (`INST_TYPE_R | `INST_TYPE_S | `INST_TYPE_B))) begin
             rs2 = inst[24:20];
         end else begin
             rs2 = 5'bx;
         end
 
-        if (inst_type & (`INST_TYPE_R | `INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B)) begin
+        if (|(inst_type & (`INST_TYPE_R | `INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B))) begin
             funct3 = inst[14:12];
         end else begin
             funct3 = 3'bx;
         end
 
-        if (inst_type & (`INST_TYPE_R)) begin
+        if (|(inst_type & (`INST_TYPE_R))) begin
             funct7 = inst[31:25];
         end else begin
             funct7 = 7'bx;
@@ -350,7 +341,7 @@ always @(*) begin
             end
 
             `OPCODE_OP: begin
-                alu_funct = {inst[30], funct3};
+                alu_funct = {funct7[5], funct3};
                 alu_in1_mux = `ALU_IN1_MUX_RS1;
                 alu_in2_mux = `ALU_IN2_MUX_RS2;
                 rd_mux = `RD_MUX_ALU_OUT;
