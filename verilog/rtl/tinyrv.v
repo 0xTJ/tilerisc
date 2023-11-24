@@ -1,29 +1,29 @@
 // Opcode bits 6:2
-`define OPCODE_LOAD         5'b00000
-`define OPCODE_LOAD_FP      5'b00001
-`define OPCODE_CUSTOM_0     5'b00010
-`define OPCODE_MISC_MEM     5'b00011
-`define OPCODE_OP_IMM       5'b00100
-`define OPCODE_AUIPC        5'b00101
-`define OPCODE_OP_IMM_32    5'b00110
-`define OPCODE_STORE        5'b01000
-`define OPCODE_STORE_FP     5'b01001
-`define OPCODE_CUSTOM_1     5'b01010
-`define OPCODE_AMO          5'b01011
-`define OPCODE_OP           5'b01100
-`define OPCODE_LUI          5'b01101
-`define OPCODE_OP_32        5'b01110
-`define OPCODE_MADD         5'b10000
-`define OPCODE_MSUB         5'b10001
-`define OPCODE_NMSUB        5'b10010
-`define OPCODE_NMADD        5'b10011
-`define OPCODE_OP_FP        5'b10100
-`define OPCODE_CUSTOM_2     5'b10110
-`define OPCODE_BRANCH       5'b11000
-`define OPCODE_JALR         5'b11001
-`define OPCODE_JAL          5'b11011
-`define OPCODE_SYSTEM       5'b11100
-`define OPCODE_CUSTOM_3     5'b11110
+`define OPCODE_LOAD         7'b0000011
+`define OPCODE_LOAD_FP      7'b0000111
+`define OPCODE_CUSTOM_0     7'b0001011
+`define OPCODE_MISC_MEM     7'b0001111
+`define OPCODE_OP_IMM       7'b0010011
+`define OPCODE_AUIPC        7'b0010111
+`define OPCODE_OP_IMM_32    7'b0011011
+`define OPCODE_STORE        7'b0100011
+`define OPCODE_STORE_FP     7'b0100111
+`define OPCODE_CUSTOM_1     7'b0101011
+`define OPCODE_AMO          7'b0101111
+`define OPCODE_OP           7'b0110011
+`define OPCODE_LUI          7'b0110111
+`define OPCODE_OP_32        7'b0111011
+`define OPCODE_MADD         7'b1000011
+`define OPCODE_MSUB         7'b1000111
+`define OPCODE_NMSUB        7'b1001011
+`define OPCODE_NMADD        7'b1001111
+`define OPCODE_OP_FP        7'b1010011
+`define OPCODE_CUSTOM_2     7'b1011011
+`define OPCODE_BRANCH       7'b1100011
+`define OPCODE_JALR         7'b1100111
+`define OPCODE_JAL          7'b1101111
+`define OPCODE_SYSTEM       7'b1110011
+`define OPCODE_CUSTOM_3     7'b1111011
 
 `define INST_TYPE_R 6'b000001
 `define INST_TYPE_I 6'b000010
@@ -255,7 +255,7 @@ always @(*) begin
         if (opcode[4:2] == 3'b111) begin
             // Is a >32b instruction
             // TODO: Handle this
-        end else case (opcode[6:2])
+        end else case (opcode)
             `OPCODE_OP_IMM:     inst_type = `INST_TYPE_I;
             `OPCODE_AUIPC:      inst_type = `INST_TYPE_U;
             `OPCODE_LUI:        inst_type = `INST_TYPE_U;
@@ -318,7 +318,7 @@ always @(*) begin
         if (opcode[4:2] == 3'b111) begin
             // Is a >32b instruction
             // TODO: Handle this
-        end else case (opcode[6:2])
+        end else case (opcode)
             `OPCODE_OP_IMM: begin
                 alu_funct = {inst[30], funct3};
                 alu_in1_mux = `ALU_IN1_MUX_RS1;
@@ -379,7 +379,7 @@ always @(*) begin
                 alu_in1_mux = `ALU_IN1_MUX_RS1;
                 alu_in2_mux = `ALU_IN2_MUX_RS2;
                 // funct3[0] is 0 for true condition, 1 for false condition
-                if (alu_out_0 != funct3[0]) begin
+                if (alu_out_0 ^ funct3[0]) begin
                     pc_mux = `PC_MUX_PC_PLUS_IMM;
                 end
             end
