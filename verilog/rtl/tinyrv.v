@@ -78,21 +78,16 @@ module tinyrv (
     input  wire         clk,
     input  wire [31:0]  inst,
     input  wire [31:0]  pc,
-
     output reg  [31:0]  pc_next,
 
-    output wire [31:2]  mem_addr,
+    output wire [31:0]  mem_addr,
     output wire         mem_ld_en,
     output reg  [3:0]   mem_ld_mask,
     input  wire [31:0]  mem_ld_dat,
     output wire         mem_st_en,
     output reg  [3:0]   mem_st_mask,
     output reg  [31:0]  mem_st_dat,
-
-    output wire [31:0] alu_out_out  // Used to force generation
 );
-
-assign alu_out_out = alu_out;
 
 wire [4:0] rd, rs1, rs2;
 reg  [31:0] rd_dat;
@@ -118,7 +113,7 @@ wire [1:0]  addr_shift;
 reg  [1:0]  addr_shift_ld, addr_shift_st;
 wire [4:0]  addr_shift_ld_bits, addr_shift_st_bits;
 reg  [31:0] ld_dat;
-reg  [31:0] st_dat;
+wire [31:0] st_dat;
 
 control control (
     .inst (inst),
@@ -171,8 +166,8 @@ assign pc_plus_4 = pc + 32'd4;
 assign pc_plus_imm = pc + imm;
 assign alu_out_masked = alu_out & ~32'b1;
 
-assign mem_addr[31:2] = alu_out[31:2];
-assign addr_shift[1:0] = alu_out[1:0];
+assign mem_addr = alu_out;
+assign addr_shift = alu_out[1:0];
 assign st_dat = rs2_dat;
 assign addr_shift_ld_bits = addr_shift_ld * 8;
 assign addr_shift_st_bits = addr_shift_st * 8;
@@ -204,8 +199,8 @@ always @(*) case (rd_mux)
     default:                rd_dat = 32'bx;
 endcase
 
-    // TODO: Decide on endianness
-    // TODO: These don't handle misaligned addresses
+// TODO: Decide on endianness
+// TODO: These don't handle misaligned addresses
 
 always @(*) case (ld_mux)
     `LD_MUX_BYTE: begin
@@ -541,7 +536,7 @@ assign in1_s = in1;
 assign in2_s = in2;
 
 always @(*) begin
-    unique case (funct)
+    case (funct)
         `ALU_FUNCT_ADD:     out = in1 + in2;
         `ALU_FUNCT_SUB:     out = in1 - in2;
         `ALU_FUNCT_EQ:      out = (in1   == in2  ) ? 32'b1 : 32'b0;
@@ -566,74 +561,60 @@ module imm_decode (
 );
 
 always @(*) begin
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I)):
-            imm[0] = inst[20];
-        |(inst_type & (`INST_TYPE_S)):
-            imm[0] = inst[7];
-        |(inst_type & (`INST_TYPE_B | `INST_TYPE_U | `INST_TYPE_J)):
-            imm[0] = 1'b0;
-        default:
-            imm[0] = 1'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I)))
+        imm[0] = inst[20];
+    else if (|(inst_type & (`INST_TYPE_S)))
+        imm[0] = inst[7];
+    else if (|(inst_type & (`INST_TYPE_B | `INST_TYPE_U | `INST_TYPE_J)))
+        imm[0] = 1'b0;
+    else
+        imm[0] = 1'bx;
 
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I | `INST_TYPE_J)):
-            imm[4:1] = inst[24:21];
-        |(inst_type & (`INST_TYPE_S | `INST_TYPE_B)):
-            imm[4:1] = inst[11:8];
-        |(inst_type & (`INST_TYPE_U)):
-            imm[4:1] = 4'b0;
-        default:
-            imm[4:1] = 4'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I | `INST_TYPE_J)))
+        imm[4:1] = inst[24:21];
+    else if (|(inst_type & (`INST_TYPE_S | `INST_TYPE_B)))
+        imm[4:1] = inst[11:8];
+    else if (|(inst_type & (`INST_TYPE_U)))
+        imm[4:1] = 4'b0;
+    else
+        imm[4:1] = 4'bx;
 
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B | `INST_TYPE_J)):
-            imm[10:5] = inst[30:25];
-        |(inst_type & (`INST_TYPE_U)):
-            imm[10:5] = 6'b0;
-        default:
-            imm[10:5] = 6'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B | `INST_TYPE_J)))
+        imm[10:5] = inst[30:25];
+    else if (|(inst_type & (`INST_TYPE_U)))
+        imm[10:5] = 6'b0;
+    else
+        imm[10:5] = 6'bx;
 
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I | `INST_TYPE_S)):
-            imm[11] = inst[31];
-        |(inst_type & (`INST_TYPE_B)):
-            imm[11] = inst[7];
-        |(inst_type & (`INST_TYPE_U)):
-            imm[11] = 1'b0;
-        |(inst_type & (`INST_TYPE_J)):
-            imm[11] = inst[20];
-        default:
-            imm[11] = 1'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I | `INST_TYPE_S)))
+        imm[11] = inst[31];
+    else if (|(inst_type & (`INST_TYPE_B)))
+        imm[11] = inst[7];
+    else if (|(inst_type & (`INST_TYPE_U)))
+        imm[11] = 1'b0;
+    else if (|(inst_type & (`INST_TYPE_J)))
+        imm[11] = inst[20];
+    else
+        imm[11] = 1'bx;
 
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B)):
-            imm[19:12] = {8{inst[31]}};
-        |(inst_type & (`INST_TYPE_U | `INST_TYPE_J)):
-            imm[19:12] = inst[19:12];
-        default:
-            imm[19:12] = 8'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B)))
+        imm[19:12] = {8{inst[31]}};
+    else if (|(inst_type & (`INST_TYPE_U | `INST_TYPE_J)))
+        imm[19:12] = inst[19:12];
+    else
+        imm[19:12] = 8'bx;
 
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B | `INST_TYPE_J)):
-            imm[30:20] = {11{inst[31]}};
-        |(inst_type & (`INST_TYPE_U)):
-            imm[30:20] = inst[30:20];
-        default:
-            imm[30:20] = 11'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B | `INST_TYPE_J)))
+        imm[30:20] = {11{inst[31]}};
+    else if (|(inst_type & (`INST_TYPE_U)))
+        imm[30:20] = inst[30:20];
+    else
+        imm[30:20] = 11'bx;
 
-    unique case (1'b1)
-        |(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B | `INST_TYPE_U | `INST_TYPE_J)):
-            imm[31] = {1{inst[31]}};
-        default:
-            imm[31] = 1'bx;
-    endcase
+    if      (|(inst_type & (`INST_TYPE_I | `INST_TYPE_S | `INST_TYPE_B | `INST_TYPE_U | `INST_TYPE_J)))
+        imm[31] = {1{inst[31]}};
+    else
+        imm[31] = 1'bx;
 end
 
 endmodule

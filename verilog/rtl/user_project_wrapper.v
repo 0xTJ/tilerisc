@@ -29,10 +29,6 @@
  *-------------------------------------------------------------
  */
 
-// TODO: Handle as parameters?
-localparam RAM_A_BITS = 8;
-localparam RAM_D_BITS = 8;
-
 module user_project_wrapper #(
     parameter BITS = 32
 ) (

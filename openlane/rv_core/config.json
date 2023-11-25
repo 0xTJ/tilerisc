@@ -10,7 +10,7 @@
 	"CLOCK_PORT": "clk",
 	"CLOCK_PERIOD": 25,
 	"FP_SIZING": "absolute",
-	"DIE_AREA": "0 0 500 600",
+	"DIE_AREA": "0 0 550 600",
 	"FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
 	"PL_BASIC_PLACEMENT": 0,
 	"PL_TARGET_DENSITY": 0.45,
