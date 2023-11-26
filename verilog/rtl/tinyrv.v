@@ -24,6 +24,7 @@
 `define OPCODE_JAL          7'b1101111
 `define OPCODE_SYSTEM       7'b1110011
 `define OPCODE_CUSTOM_3     7'b1111011
+`define OPCODE_GPU          OPCODE_CUSTOM_0
 
 `define INST_TYPE_R 6'b000001
 `define INST_TYPE_I 6'b000010
@@ -71,8 +72,8 @@
 
 module tinyrv (
 `ifdef USE_POWER_PINS
-    inout vdd,	// User area 1 5.0 V supply
-    inout vss,	// User area 1 digital ground
+    inout vdd,	// User area 5.0 V supply
+    inout vss,	// User area digital ground
 `endif
 
     input  wire         clk,
@@ -367,6 +368,7 @@ always @(*) begin
             `OPCODE_STORE:      inst_type = `INST_TYPE_R;
             `OPCODE_MISC_MEM:   inst_type = `INST_TYPE_I;
             `OPCODE_SYSTEM:     inst_type = `INST_TYPE_I;
+            `OPCODE_GPU:        inst_type = `INST_TYPE_R;
             // TODO: Handle default
         endcase
 
@@ -512,6 +514,11 @@ always @(*) begin
 
             `OPCODE_SYSTEM: begin
                 // No-op
+            end
+
+            `OPCODE_GPU: begin
+                alu_in1_mux = `ALU_IN1_MUX_RS1;
+                alu_in2_mux = `ALU_IN2_MUX_RS2;
             end
 
             default: begin

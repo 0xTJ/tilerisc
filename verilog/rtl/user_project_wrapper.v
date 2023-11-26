@@ -72,8 +72,8 @@ module user_project_wrapper #(
 
 tjrpu mprj (
 `ifdef USE_POWER_PINS
-	.vdd(vdd),	// User area 1 5.0 V power
-	.vss(vss),	// User area 1 digital ground
+	.vdd(vdd),	// User area 5.0 V power
+	.vss(vss),	// User area digital ground
 `endif
 
     .wb_clk_i(wb_clk_i),

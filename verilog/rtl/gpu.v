@@ -26,8 +26,8 @@ endmodule
 
 module interp_tri (
 `ifdef USE_POWER_PINS
-    inout vdd,	// User area 1 5.0 V supply
-    inout vss,	// User area 1 digital ground
+    inout vdd,	// User area 5.0 V supply
+    inout vss,	// User area digital ground
 `endif
 
     input  wire wb_clk_i,
@@ -39,12 +39,13 @@ module interp_tri (
     input  wire [31:0] wbs_dat_i,
     input  wire [3:2] wbs_adr_i,
     output reg  wbs_ack_o,
-    // output reg  [31:0] wbs_dat_o,
+    output reg  [31:0] wbs_dat_o,
 
     input wire clk,
     input wire [7:0] y,
     output wire [7:0] x_start,
-    output wire [7:0] x_end
+    output wire [7:0] x_end,
+    output wire active
 );
 
 reg         [7:0]   a [1:0];
@@ -53,7 +54,7 @@ reg         [7:0]   c [1:0];
 reg signed  [9:0]   delta_t;
 reg                 bflip;
 
-reg  [31:0] wbs_dat_o;
+assign active = active_reg;
 
 always @(*) begin
     wbs_ack_o = wbs_cyc_i && wbs_stb_i;

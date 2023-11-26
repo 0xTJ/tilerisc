@@ -26,8 +26,8 @@
 
 module tjrpu (
 `ifdef USE_POWER_PINS
-    inout vdd,	// User area 1 5.0 V supply
-    inout vss,	// User area 1 digital ground
+    inout vdd,	// User area 5.0 V supply
+    inout vss,	// User area digital ground
 `endif
 
     // Wishbone Slave ports (WB MI A)
