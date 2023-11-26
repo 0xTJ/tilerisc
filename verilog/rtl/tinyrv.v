@@ -24,7 +24,7 @@
 `define OPCODE_JAL          7'b1101111
 `define OPCODE_SYSTEM       7'b1110011
 `define OPCODE_CUSTOM_3     7'b1111011
-`define OPCODE_GPU          OPCODE_CUSTOM_0
+`define OPCODE_GPU          `OPCODE_CUSTOM_0
 
 `define INST_TYPE_R 6'b000001
 `define INST_TYPE_I 6'b000010
@@ -55,10 +55,11 @@
 `define ALU_IN2_MUX_RS2         1'b0
 `define ALU_IN2_MUX_IMM         1'b1
 
-`define RD_MUX_ALU_OUT          2'b00
-`define RD_MUX_IMM              2'b01
-`define RD_MUX_PC_PLUS_4        2'b10
-`define RD_MUX_MEM_LD_DAT       2'b11
+`define RD_MUX_ALU_OUT          3'b000
+`define RD_MUX_IMM              3'b001
+`define RD_MUX_PC_PLUS_4        3'b010
+`define RD_MUX_MEM_LD_DAT       3'b011
+`define RD_MUX_GPU              3'b100
 
 `define LD_MUX_BYTE             3'b000
 `define LD_MUX_HALF             3'b001
@@ -99,7 +100,7 @@ wire [31:0] imm;
 
 wire [3:0] alu_funct;
 wire alu_in1_mux, alu_in2_mux;
-wire [1:0] rd_mux;
+wire [2:0] rd_mux;
 wire rd_we;
 wire [1:0] pc_mux;
 wire [2:0] ld_mux;
@@ -115,6 +116,12 @@ reg  [1:0]  addr_shift_ld, addr_shift_st;
 wire [4:0]  addr_shift_ld_bits, addr_shift_st_bits;
 reg  [31:0] ld_dat;
 wire [31:0] st_dat;
+
+wire gpu_we;
+wire [2:0] gpu_funct;
+wire [1:0] gpu_mat;
+wire [1:0] gpu_rc;
+wire [31:0] gpu_dat_out;
 
 control control (
     .inst (inst),
@@ -132,7 +139,11 @@ control control (
     .ld_mux (ld_mux),
     .st_mux (st_mux),
     .ld_en (mem_ld_en),
-    .st_en (mem_st_en)
+    .st_en (mem_st_en),
+    .gpu_we (gpu_we),
+    .gpu_funct (gpu_funct),
+    .gpu_mat (gpu_mat),
+    .gpu_rc (gpu_rc)
 );
 
 imm_decode imm_decode (
@@ -161,6 +172,19 @@ reg_file reg_file (
     .rs1_dat    (rs1_dat),
     .rs2_dat    (rs2_dat),
     .rd_dat     (rd_dat)
+);
+
+gpu_unit gpu_unit (
+    .clk (clk),
+
+    .we (gpu_we),
+    .funct (gpu_funct),
+    .mat (gpu_mat),
+    .rc (gpu_rc),
+
+    .dat_in1 (rs1_dat),
+    .dat_in2 (rs2_dat),
+    .dat_out (gpu_dat_out)
 );
 
 assign pc_plus_4 = pc + 32'd4;
@@ -197,6 +221,7 @@ always @(*) case (rd_mux)
     `RD_MUX_IMM:            rd_dat = imm;
     `RD_MUX_PC_PLUS_4:      rd_dat = pc_plus_4;
     `RD_MUX_MEM_LD_DAT:     rd_dat = ld_dat;
+    `RD_MUX_GPU:            rd_dat = gpu_dat_out;
     default:                rd_dat = 32'bx;
 endcase
 
@@ -321,13 +346,17 @@ module control (
     output reg  [3:0]   alu_funct,
     output reg          alu_in1_mux,
     output reg          alu_in2_mux,
-    output reg  [1:0]   rd_mux,
+    output reg  [2:0]   rd_mux,
     output reg          rd_we,
     output reg  [1:0]   pc_mux,
     output reg  [2:0]   ld_mux,
     output reg  [2:0]   st_mux,
     output reg          ld_en,
-    output reg          st_en
+    output reg          st_en,
+    output reg  [2:0]   gpu_funct,
+    output reg          gpu_we,
+    output reg  [1:0]   gpu_mat,
+    output reg  [1:0]   gpu_rc
 );
 
 reg [6:0] opcode;
@@ -409,13 +438,17 @@ always @(*) begin
     alu_funct = 4'bx;
     alu_in1_mux = 1'bx;
     alu_in2_mux = 1'bx;
-    rd_mux = 2'bx;
+    rd_mux = 3'bx;
     rd_we = 1'b0;
     pc_mux = `PC_MUX_PC_PLUS_4;
     ld_mux = 3'bx;
     st_mux = 3'bx;
     ld_en = 1'b0;
     st_en = 1'b0;
+    gpu_funct = 3'bx;
+    gpu_we = 1'b0;
+    gpu_mat = 2'bx;
+    gpu_rc = 2'bx;
 
     if (inst[1:0] != 2'b11) begin
         // Is a 16b instruction
@@ -517,8 +550,11 @@ always @(*) begin
             end
 
             `OPCODE_GPU: begin
-                alu_in1_mux = `ALU_IN1_MUX_RS1;
-                alu_in2_mux = `ALU_IN2_MUX_RS2;
+                rd_mux = `RD_MUX_GPU;
+                rd_we = 1'b1;
+                gpu_funct = funct3;
+                gpu_mat = funct7[1:0];
+                gpu_rc = funct7[3:2];
             end
 
             default: begin
@@ -526,6 +562,132 @@ always @(*) begin
             end
         endcase
     end
+end
+
+endmodule
+
+module gpu_unit (
+    input wire clk,
+    
+    input wire  we,
+    input wire  [2:0] funct,
+    input wire  [1:0] mat,
+    input wire  [1:0] rc,
+
+    input  wire [31:0] dat_in1,
+    input  wire [31:0] dat_in2,
+    output reg  [31:0] dat_out
+);
+
+//               mat   row   col
+reg [7:0] mats [3:0] [3:0] [3:0];
+
+reg  [7:0] mat_xform [3:0] [3:0];
+wire [7:0] mac    [3:0]; 
+
+assign mac[0] = 
+    dat_in2[ 0+:8] +
+    dat_in1[ 0+:8] * mat_xform[0][0] +
+    dat_in1[ 8+:8] * mat_xform[0][1] +
+    dat_in1[16+:8] * mat_xform[0][2] +
+    dat_in1[24+:8] * mat_xform[0][3];
+assign mac[1] = 
+    dat_in2[ 0+:8] +
+    dat_in1[ 0+:8] * mat_xform[1][0] +
+    dat_in1[ 8+:8] * mat_xform[1][1] +
+    dat_in1[16+:8] * mat_xform[1][2] +
+    dat_in1[24+:8] * mat_xform[1][3];
+assign mac[2] = 
+    dat_in2[ 0+:8] +
+    dat_in1[ 0+:8] * mat_xform[2][0] +
+    dat_in1[ 8+:8] * mat_xform[2][1] +
+    dat_in1[16+:8] * mat_xform[2][2] +
+    dat_in1[24+:8] * mat_xform[2][3];
+assign mac[3] = 
+    dat_in2[ 0+:8] +
+    dat_in1[ 0+:8] * mat_xform[3][0] +
+    dat_in1[ 8+:8] * mat_xform[3][1] +
+    dat_in1[16+:8] * mat_xform[3][2] +
+    dat_in1[24+:8] * mat_xform[3][3];
+
+always @(*) begin
+    dat_out = 32'bx;
+
+    case (funct[0])
+        1'b0: begin
+            // Don't transpose
+            mat_xform[0][0] = mats[mat][0][0];
+            mat_xform[0][1] = mats[mat][0][1];
+            mat_xform[0][2] = mats[mat][0][2];
+            mat_xform[0][3] = mats[mat][0][3];
+            mat_xform[1][0] = mats[mat][1][0];
+            mat_xform[1][1] = mats[mat][1][1];
+            mat_xform[1][2] = mats[mat][1][2];
+            mat_xform[1][3] = mats[mat][1][3];
+            mat_xform[2][0] = mats[mat][2][0];
+            mat_xform[2][1] = mats[mat][2][1];
+            mat_xform[2][2] = mats[mat][2][2];
+            mat_xform[2][3] = mats[mat][2][3];
+            mat_xform[3][0] = mats[mat][3][0];
+            mat_xform[3][1] = mats[mat][3][1];
+            mat_xform[3][2] = mats[mat][3][2];
+            mat_xform[3][3] = mats[mat][3][3];
+        end
+
+        1'b1: begin
+            // Transpose
+            mat_xform[0][0] = mats[mat][0][0];
+            mat_xform[0][1] = mats[mat][1][0];
+            mat_xform[0][2] = mats[mat][2][0];
+            mat_xform[0][3] = mats[mat][3][0];
+            mat_xform[1][0] = mats[mat][0][1];
+            mat_xform[1][1] = mats[mat][1][1];
+            mat_xform[1][2] = mats[mat][2][1];
+            mat_xform[1][3] = mats[mat][3][1];
+            mat_xform[2][0] = mats[mat][0][2];
+            mat_xform[2][1] = mats[mat][1][2];
+            mat_xform[2][2] = mats[mat][2][2];
+            mat_xform[2][3] = mats[mat][3][2];
+            mat_xform[3][0] = mats[mat][0][3];
+            mat_xform[3][1] = mats[mat][1][3];
+            mat_xform[3][2] = mats[mat][2][3];
+            mat_xform[3][3] = mats[mat][3][3];
+        end
+    endcase
+
+    casez (funct[2:1])
+        2'b00: begin
+            dat_out[ 0+:8] = mat_xform[0][rc];
+            dat_out[ 8+:8] = mat_xform[1][rc];
+            dat_out[16+:8] = mat_xform[2][rc];
+            dat_out[24+:8] = mat_xform[3][rc];
+        end
+
+        2'b01: begin
+            dat_out[ 0+:8] = mac[0];
+            dat_out[ 8+:8] = mac[1];
+            dat_out[16+:8] = mac[2];
+            dat_out[24+:8] = mac[3];
+        end
+    endcase
+end
+
+always @(posedge clk) begin
+    case (funct)
+        3'b010: begin
+            mats[mat][0][rc] <= dat_in1[ 0+:8];
+            mats[mat][1][rc] <= dat_in1[ 8+:8];
+            mats[mat][2][rc] <= dat_in1[16+:8];
+            mats[mat][3][rc] <= dat_in1[24+:8];
+        end
+
+        3'b011: begin
+            mats[mat][rc][0] <= dat_in1[ 0+:8];
+            mats[mat][rc][1] <= dat_in1[ 8+:8];
+            mats[mat][rc][2] <= dat_in1[16+:8];
+            mats[mat][rc][3] <= dat_in1[24+:8];
+        end
+    endcase
 end
 
 endmodule
