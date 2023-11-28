@@ -1,7 +1,7 @@
 {
 	"PDK": "gf180mcuD",
 	"STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
-	"DESIGN_NAME": "interp_tri",
+	"DESIGN_NAME": "gpu_core",
 	"VERILOG_FILES": [
 		"dir::../../verilog/rtl/defines.v",
 		"dir::../../verilog/rtl/gpu.v"
@@ -10,8 +10,8 @@
 	"CLOCK_PORT": "clk",
 	"CLOCK_PERIOD": 25,
 	"FP_SIZING": "absolute",
-	"DIE_AREA": "0 0 250 400",
-	"FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+	"DIE_AREA": "0 0 2500 4000",
+	"COMMENT_FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
 	"PL_BASIC_PLACEMENT": 0,
 	"PL_TARGET_DENSITY": 0.45,
 	"FP_CORE_UTIL": 40,
