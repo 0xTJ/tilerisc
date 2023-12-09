@@ -103,12 +103,10 @@ end
 
 always @(*) begin
     mat_we = 4'b0;
-
     mat_col_in = 64'bx;
 
     fmadd_in1 = 64'bx;
     fmadd_in2 = 16'bx;
-
     fmadd_reset_sum = 1'b0;
     fmadd_do_acc = 1'b0;
 
@@ -193,7 +191,7 @@ always @(*) begin
                         next_mat_c_idx      = command_mat_c_idx;
                         next_ack = 1'b1;
                     end
-        
+
                     default: begin
                         // Invalid command, ignore it
                         next_state = `GPU_CORE_STATE_IDLE;
@@ -268,9 +266,7 @@ end
 mat_reg mat0 (
     .clk (clk),
     .we (mat_we[0]),
-
     .col_idx (mat_col_idx[0]),
-
     .col_in (mat_col_in),
     .col_out (mat_col_out[0])
 );
@@ -278,9 +274,7 @@ mat_reg mat0 (
 mat_reg mat1 (
     .clk (clk),
     .we (mat_we[1]),
-
     .col_idx (mat_col_idx[1]),
-
     .col_in (mat_col_in),
     .col_out (mat_col_out[1])
 );
@@ -288,9 +282,7 @@ mat_reg mat1 (
 mat_reg mat2 (
     .clk (clk),
     .we (mat_we[2]),
-
     .col_idx (mat_col_idx[2]),
-
     .col_in (mat_col_in),
     .col_out (mat_col_out[2])
 );
@@ -298,9 +290,7 @@ mat_reg mat2 (
 mat_reg mat3 (
     .clk (clk),
     .we (mat_we[3]),
-
     .col_idx (mat_col_idx[3]),
-
     .col_in (mat_col_in),
     .col_out (mat_col_out[3])
 );
@@ -403,13 +393,9 @@ endmodule
 module mat_reg (
     input  wire         clk,
     input  wire         we,
-
-    input  wire [1:0]   col_idx/*,
-    input  wire [1:0]   row_idx*/,
-
+    input  wire [1:0]   col_idx,
     input  wire [63:0]  col_in,
-    output reg  [63:0]  col_out/*,
-    output reg  [63:0]  row_out*/
+    output reg  [63:0]  col_out
 );
 
 //   bit             row   col

@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 5
-timestamp 1701952483
+timestamp 1701966172
 << obsm1 >>
 rect 672 1538 149296 148206
 << metal2 >>
@@ -750,7 +750,7 @@ string FIXED_BBOX 0 0 150000 150000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 32787446
-string GDS_FILE /home/thomas/Documents/Projects/tilerisc/openlane/gpu_core/runs/23_12_07_07_14/results/signoff/gpu_core.magic.gds
+string GDS_FILE /home/thomas/Documents/Projects/tilerisc/openlane/gpu_core/runs/23_12_07_11_00/results/signoff/gpu_core.magic.gds
 string GDS_START 565772
 << end >>
 
