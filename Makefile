@@ -13,7 +13,6 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
-
 MAKEFLAGS+=--warn-undefined-variables
 
 export CARAVEL_ROOT?=$(PWD)/caravel
@@ -26,6 +25,7 @@ CARAVEL_LITE?=1
 
 # PDK switch varient
 export PDK?=gf180mcuD
+#export PDK?=gf180mcuC
 export PDKPATH?=$(PDK_ROOT)/$(PDK)
 
 PYTHON_BIN ?= python3
@@ -182,20 +182,13 @@ clean-targets=$(blocks:%=clean-%)
 .PHONY: $(clean-targets)
 $(clean-targets): clean-% :
 	rm -f ./verilog/gl/$*.v
-	rm -f ./verilog/gl/$*.nl.v
 	rm -f ./spef/$*.spef
-	rm -f ./spef/multicorner/$*.*.spef
 	rm -f ./sdc/$*.sdc
 	rm -f ./sdf/$*.sdf
-	rm -f ./sdf/multicorner/*/$*.*.sdf
 	rm -f ./gds/$*.gds
 	rm -f ./mag/$*.mag
 	rm -f ./lef/$*.lef
-	rm -f ./maglef/$*.mag
-	rm -f ./lib/$*.lib
-	rm -f ./def/$*.def
-	rm -f ./spi/lvs/$*.spice
-	rm -rf ./signoff/$*
+	rm -f ./maglef/*.maglef
 
 make_what=setup $(blocks) $(dv-targets-rtl) $(dv-targets-gl) $(dv-targets-gl-sdf) $(clean-targets)
 .PHONY: what
@@ -248,7 +241,7 @@ precheck:
 	fi
 	@echo "Installing Precheck.."
 	@git clone --depth=1 --branch $(MPW_TAG) https://github.com/efabless/mpw_precheck.git $(PRECHECK_ROOT)
-#	@docker pull efabless/mpw_precheck:latest
+	@docker pull efabless/mpw_precheck:latest
 
 .PHONY: run-precheck
 run-precheck: check-pdk check-precheck

@@ -26,12 +26,35 @@
 `define GPU_CORE_STATE_MUL_MAT_VEC_1    16'b0000000000000100
 `define GPU_CORE_STATE_MUL_MAT_VEC_2    16'b0000000000001000
 `define GPU_CORE_STATE_MUL_MAT_VEC_3    16'b0000000000010000
-`define GPU_CORE_STATE_DATA_READ        16'b0000000000100000
-`define GPU_CORE_STATE_DATA_WRITE       16'b0000000001000000
+`define GPU_CORE_STATE_MUL_MAT_VEC_4    16'b0000000000100000
+`define GPU_CORE_STATE_DATA_READ        16'b0000001000000000
+`define GPU_CORE_STATE_DATA_WRITE       16'b0000010000000000
 
 `define COMMAND_OP_DATA_READ    4'b0000
 `define COMMAND_OP_DATA_WRITE   4'b0001
 `define COMMAND_OP_MUL_MAT_VEC  4'b0010
+
+module gpu (
+    // Wishbone Slave ports (WB MI A)
+    input wb_clk_i,
+    input wb_rst_i,
+    input wbs_stb_i,
+    input wbs_cyc_i,
+    input wbs_we_i,
+    input [3:0] wbs_sel_i,
+    input [31:0] wbs_dat_i,
+    input [31:0] wbs_adr_i,
+    output reg wbs_ack_o,
+    output wire [31:0] wbs_dat_o,
+
+    input wire user_clock2
+);
+
+gpu_core gpu_core (
+
+);
+
+endmodule
 
 module gpu_core #(
     parameter                   MAT_COUNT = 4
@@ -47,6 +70,11 @@ module gpu_core #(
 
 reg [15:0] state;
 reg [15:0] next_state;
+
+reg         next_fmadd_reset_sum;
+reg         next_fmadd_do_acc;
+reg  [63:0] next_fmadd_in1;
+reg  [15:0] next_fmadd_in2;
 
 reg         fmadd_reset_sum;
 reg         fmadd_do_acc;
@@ -105,40 +133,43 @@ always @(*) begin
     mat_we = 4'b0;
     mat_col_in = 64'bx;
 
-    fmadd_in1 = 64'bx;
-    fmadd_in2 = 16'bx;
-    fmadd_reset_sum = 1'b0;
-    fmadd_do_acc = 1'b0;
+    next_fmadd_in1 = 64'bx;
+    next_fmadd_in2 = 16'bx;
+    next_fmadd_reset_sum = 1'b0;
+    next_fmadd_do_acc = 1'b0;
 
     data_out = 64'bx;
 
     case (state)
         `GPU_CORE_STATE_MUL_MAT_VEC_0: begin
-            fmadd_reset_sum = 1'b1;
-            fmadd_do_acc = 1'b1;
-            fmadd_in1 = mat_col_out[mat_a_idx];
-            fmadd_in2 = mat_col_out[mat_b_idx][ 0+:16];
+            next_fmadd_reset_sum = 1'b1;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][ 0+:16];
         end
 
         `GPU_CORE_STATE_MUL_MAT_VEC_1: begin
-            fmadd_reset_sum = 1'b0;
-            fmadd_do_acc = 1'b1;
-            fmadd_in1 = mat_col_out[mat_a_idx];
-            fmadd_in2 = mat_col_out[mat_b_idx][16+:16];
+            next_fmadd_reset_sum = 1'b0;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][16+:16];
         end
 
         `GPU_CORE_STATE_MUL_MAT_VEC_2: begin
-            fmadd_reset_sum = 1'b0;
-            fmadd_do_acc = 1'b1;
-            fmadd_in1 = mat_col_out[mat_a_idx];
-            fmadd_in2 = mat_col_out[mat_b_idx][32+:16];
+            next_fmadd_reset_sum = 1'b0;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][32+:16];
         end
 
         `GPU_CORE_STATE_MUL_MAT_VEC_3: begin
-            fmadd_reset_sum = 1'b0;
-            fmadd_do_acc = 1'b1;
-            fmadd_in1 = mat_col_out[mat_a_idx];
-            fmadd_in2 = mat_col_out[mat_b_idx][48+:16];
+            next_fmadd_reset_sum = 1'b0;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][48+:16];
+        end
+
+        `GPU_CORE_STATE_MUL_MAT_VEC_4: begin
             mat_col_in = fmadd_out;
             mat_we[mat_c_idx] = 1'b1;
         end
@@ -234,6 +265,12 @@ always @(*) begin
         end
         
         `GPU_CORE_STATE_MUL_MAT_VEC_3: begin
+            next_state = `GPU_CORE_STATE_MUL_MAT_VEC_4;
+            next_mat_c_col_idx  = mat_c_col_idx;
+            next_mat_c_idx      = mat_c_idx;
+        end
+        
+        `GPU_CORE_STATE_MUL_MAT_VEC_4: begin
             next_state = `GPU_CORE_STATE_IDLE;
         end
         
@@ -258,6 +295,11 @@ always @(posedge clk) begin
     mat_b_idx      <= next_mat_b_idx;
     mat_c_col_idx  <= next_mat_c_col_idx;
     mat_c_idx      <= next_mat_c_idx;
+
+    fmadd_reset_sum <= next_fmadd_reset_sum;
+    fmadd_do_acc    <= next_fmadd_do_acc;
+    fmadd_in1       <= next_fmadd_in1;
+    fmadd_in2       <= next_fmadd_in2;
 
     ack <= next_ack;
     state <= next_state;

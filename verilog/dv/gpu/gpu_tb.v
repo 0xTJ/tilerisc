@@ -32,7 +32,7 @@ module gpu_tb;
 	end
 
 	initial begin
-		$dumpfile("gpu_core.vcd");
+		$dumpfile("gpu.vcd");
 		$dumpvars(0, gpu_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
