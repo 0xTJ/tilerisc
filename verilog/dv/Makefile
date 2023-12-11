@@ -20,7 +20,7 @@
 # .SILENT: clean all
 
 
-PATTERNS = tinyrv
+PATTERNS = gpu
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
