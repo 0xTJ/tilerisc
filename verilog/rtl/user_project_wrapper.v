@@ -108,48 +108,8 @@ tjrpu mprj (
     .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
 
     // IRQ
-    .irq(user_irq),
-
-    .gpu_clk (user_clock2),
-    .y (y),
-    .x_start (x_start),
-    .x_end (x_end)
+    .irq(user_irq)
 );
-
-wire [63:0] tri_wbs_stb_i;
-wire [63:0] tri_wbs_ack_o;
-
-// wire [31:0] tri_wbs_dat_o [63:0];
-wire [(64 * 8) - 1:0]  y;
-wire [(64 * 8) - 1:0]  x_start;
-wire [(64 * 8) - 1:0]  x_end;
-
-genvar i;
-generate
-    for (i=0; i<64; i=i+1) begin
-        interp_tri trip (
-`ifdef USE_POWER_PINS
-            .vdd (vdd),
-            .vss (vss),
-`endif
-
-            .wb_clk_i (wb_clk_i),
-            .wb_rst_i (wb_rst_i),
-            .wbs_cyc_i (wbs_cyc_i),
-            .wbs_stb_i (tri_wbs_stb_i[i]),
-            .wbs_we_i (wbs_we_i),
-            .wbs_sel_i (wbs_sel_i),
-            .wbs_adr_i (wbs_adr_i[3:2]),
-            .wbs_dat_i (wbs_dat_i),
-            .wbs_ack_o (tri_wbs_ack_o[i]),
-
-            .clk (user_clock2),
-            .y (y[((i + 1) * 8) - 1:i * 8]),
-            .x_start (x_start[((i + 1) * 8) - 1:i * 8]),
-            .x_end (x_end[((i + 1) * 8) - 1:i * 8])
-        );
-    end 
-endgenerate
 
 endmodule
 

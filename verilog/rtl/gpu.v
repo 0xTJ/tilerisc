@@ -21,6 +21,12 @@
 
 `define MAT_BITS ($clog2(MAT_COUNT))
 
+`define GPU_WB_STATE_IDLE       5'b00001
+`define GPU_WB_STATE_READ       5'b00010
+`define GPU_WB_STATE_READ_DONE  5'b00100
+`define GPU_WB_STATE_WRITE      5'b01000
+`define GPU_WB_STATE_COMMAND    5'b10000
+
 `define GPU_CORE_STATE_IDLE             16'b0000000000000001
 `define GPU_CORE_STATE_MUL_MAT_VEC_0    16'b0000000000000010
 `define GPU_CORE_STATE_MUL_MAT_VEC_1    16'b0000000000000100
@@ -35,6 +41,11 @@
 `define COMMAND_OP_MUL_MAT_VEC  4'b0010
 
 module gpu (
+`ifdef USE_POWER_PINS
+    inout vdd,	// User area 5.0 V supply
+    inout vss,	// User area digital ground
+`endif
+
     // Wishbone Slave ports (WB MI A)
     input wb_clk_i,
     input wb_rst_i,
@@ -43,18 +54,167 @@ module gpu (
     input wbs_we_i,
     input [3:0] wbs_sel_i,
     input [31:0] wbs_dat_i,
-    input [31:0] wbs_adr_i,
+    input [31:2] wbs_adr_i,
     output reg wbs_ack_o,
-    output wire [31:0] wbs_dat_o,
+    output reg [31:0] wbs_dat_o,
 
     input wire user_clock2
 );
 
-gpu_core gpu_core (
+reg [4:0] wb_state;
+reg [4:0] next_wb_state;
 
+wire [31:0] dat_i;
+assign dat_i[ 0+:8] = wbs_sel_i[0] ? wbs_dat_i[ 0+:8] : 8'b0;
+assign dat_i[ 8+:8] = wbs_sel_i[1] ? wbs_dat_i[ 8+:8] : 8'b0;
+assign dat_i[16+:8] = wbs_sel_i[2] ? wbs_dat_i[16+:8] : 8'b0;
+assign dat_i[24+:8] = wbs_sel_i[3] ? wbs_dat_i[24+:8] : 8'b0;
+
+reg [31:0] core_command;
+
+reg  [31:0] core_data_in_lo;
+reg  [31:0] core_data_in_hi;
+wire [63:0] core_data_in;
+reg  [31:0] core_data_out_lo;
+reg  [31:0] core_data_out_hi;
+wire [63:0] core_data_out;
+
+assign core_data_in = {core_data_in_hi,core_data_in_lo};
+
+reg read_out;
+reg write_in_lo;
+reg write_in_hi;
+
+reg core_stb;
+wire core_ack;
+
+always @(*) begin
+    core_command = 32'bx;
+
+    core_stb = 1'b0;
+
+    read_out = 1'b0;
+    write_in_lo = 1'b0;
+    write_in_hi = 1'b0;
+
+    wbs_dat_o = 32'bx;
+    wbs_ack_o = 1'b0;
+
+    // TODO: Allow aborted cycle
+
+    if (!wb_rst_i && wbs_cyc_i && wbs_stb_i) begin
+        case (wb_state)
+            `GPU_WB_STATE_IDLE: begin
+                if (wbs_adr_i[31:7] == 25'b0 && wbs_we_i == 1'b0) begin
+                    // Data Read
+                    if (wbs_adr_i[2] == 1'b0) begin
+                        // Fetch data and read lower word
+                        core_command = {16'b0,`COMMAND_OP_DATA_READ,4'b00_00,wbs_adr_i[6:3],4'b00_00};
+                        core_stb = 1'b1;
+                        next_wb_state = `GPU_WB_STATE_READ;
+                    end else begin
+                        // Read upper word
+                        wbs_dat_o = core_data_out_hi;
+                        wbs_ack_o = 1'b1;
+                        next_wb_state = `GPU_WB_STATE_IDLE;
+                    end
+                end else if (wbs_adr_i[31:7] == 25'b0 && wbs_we_i == 1'b1) begin
+                    // Data Write
+                    if (wbs_adr_i[2] == 1'b0) begin
+                        // Write lower word
+                        write_in_lo = 1'b1;
+                        wbs_ack_o = 1'b1;
+                        next_wb_state = `GPU_WB_STATE_IDLE;
+                    end else begin
+                        // Write upper word then update data
+                        write_in_hi = 1'b1;
+                        core_command = {16'b0,`COMMAND_OP_DATA_WRITE,wbs_adr_i[6:3],4'b00_00,4'b00_00};
+                        next_wb_state = `GPU_WB_STATE_WRITE;
+                    end
+                end else if (wbs_adr_i[31:2] == 30'b100000 && wbs_we_i == 1'b1) begin
+                    // Command
+                    core_command = dat_i;
+                    core_stb = 1'b1;
+                    next_wb_state = `GPU_WB_STATE_COMMAND;
+                end else begin
+                    // Invalid address, no-op
+                    next_wb_state = `GPU_WB_STATE_IDLE;
+                    if (wbs_we_i == 1'b0) wbs_dat_o = 32'b0;
+                    wbs_ack_o = 1'b1;
+                end
+            end
+
+            `GPU_WB_STATE_READ: begin
+                core_command = {16'b0,`COMMAND_OP_DATA_READ,4'b00_00,wbs_adr_i[6:3],4'b00_00};
+                core_stb = 1'b1;
+
+                read_out = 1'b1;
+
+                next_wb_state = core_ack ? `GPU_WB_STATE_READ_DONE : `GPU_WB_STATE_READ;
+            end
+
+            `GPU_WB_STATE_READ_DONE: begin
+                wbs_dat_o = core_data_out_lo;
+                wbs_ack_o = 1'b1;
+
+                next_wb_state = `GPU_WB_STATE_IDLE;
+            end
+
+            `GPU_WB_STATE_WRITE: begin
+                core_command = {16'b0,`COMMAND_OP_DATA_WRITE,wbs_adr_i[6:3],4'b00_00,4'b00_00};
+                core_stb = 1'b1;
+
+                wbs_ack_o = core_ack;
+
+                next_wb_state = core_ack ? `GPU_WB_STATE_IDLE : `GPU_WB_STATE_WRITE;
+            end
+
+            `GPU_WB_STATE_COMMAND: begin
+                core_command = dat_i;
+                core_stb = 1'b1;
+
+                wbs_ack_o = core_ack;
+
+                next_wb_state = core_ack ? `GPU_WB_STATE_IDLE : `GPU_WB_STATE_COMMAND;
+            end
+
+            default: begin
+                next_wb_state = `GPU_WB_STATE_IDLE;
+            end
+        endcase
+    end else begin
+        next_wb_state = `GPU_WB_STATE_IDLE;
+    end
+end
+
+always @(posedge wb_clk_i) begin
+    if (read_out) begin
+        core_data_out_lo <= core_data_out[31:0];
+        core_data_out_hi <= core_data_out[63:32];
+    end
+    if (write_in_lo) begin
+        core_data_in_lo <= dat_i;
+    end
+    if (write_in_hi) begin
+        core_data_in_hi <= dat_i;
+    end
+
+    wb_state <= next_wb_state;
+end
+
+gpu_core gpu_core (
+    .clk (wb_clk_i),
+
+    .command (core_command),
+    .data_in (core_data_in),
+    .data_out (core_data_out),
+    .stb (core_stb),
+    .ack (core_ack)
 );
 
 endmodule
+
+// TODO: Add reset to gpu_core
 
 module gpu_core #(
     parameter                   MAT_COUNT = 4
@@ -131,56 +291,30 @@ end
 
 always @(*) begin
     mat_we = 4'b0;
-    mat_col_in = 64'bx;
-
-    next_fmadd_in1 = 64'bx;
-    next_fmadd_in2 = 16'bx;
-    next_fmadd_reset_sum = 1'b0;
-    next_fmadd_do_acc = 1'b0;
-
-    data_out = 64'bx;
 
     case (state)
-        `GPU_CORE_STATE_MUL_MAT_VEC_0: begin
-            next_fmadd_reset_sum = 1'b1;
-            next_fmadd_do_acc = 1'b1;
-            next_fmadd_in1 = mat_col_out[mat_a_idx];
-            next_fmadd_in2 = mat_col_out[mat_b_idx][ 0+:16];
-        end
-
-        `GPU_CORE_STATE_MUL_MAT_VEC_1: begin
-            next_fmadd_reset_sum = 1'b0;
-            next_fmadd_do_acc = 1'b1;
-            next_fmadd_in1 = mat_col_out[mat_a_idx];
-            next_fmadd_in2 = mat_col_out[mat_b_idx][16+:16];
-        end
-
-        `GPU_CORE_STATE_MUL_MAT_VEC_2: begin
-            next_fmadd_reset_sum = 1'b0;
-            next_fmadd_do_acc = 1'b1;
-            next_fmadd_in1 = mat_col_out[mat_a_idx];
-            next_fmadd_in2 = mat_col_out[mat_b_idx][32+:16];
-        end
-
-        `GPU_CORE_STATE_MUL_MAT_VEC_3: begin
-            next_fmadd_reset_sum = 1'b0;
-            next_fmadd_do_acc = 1'b1;
-            next_fmadd_in1 = mat_col_out[mat_a_idx];
-            next_fmadd_in2 = mat_col_out[mat_b_idx][48+:16];
-        end
-
         `GPU_CORE_STATE_MUL_MAT_VEC_4: begin
             mat_col_in = fmadd_out;
             mat_we[mat_c_idx] = 1'b1;
+            data_out = 64'bx;
         end
 
         `GPU_CORE_STATE_DATA_READ: begin
+            mat_col_in = 64'bx;
+            mat_we[mat_c_idx] = 1'b0;
             data_out = mat_col_out[mat_b_idx];
         end
 
         `GPU_CORE_STATE_DATA_WRITE: begin
             mat_col_in = data_in;
             mat_we[mat_c_idx] = 1'b1;
+            data_out = 64'bx;
+        end
+
+        default: begin
+            mat_col_in = 64'bx;
+            mat_we[mat_c_idx] = 1'b0;
+            data_out = 64'bx;
         end
     endcase
 end
@@ -194,38 +328,50 @@ always @(*) begin
     next_mat_c_idx      = {`MAT_BITS{1'bx}};
     next_ack = 1'b0;
 
+    next_fmadd_in1 = 64'bx;
+    next_fmadd_in2 = 16'bx;
+    next_fmadd_reset_sum = 1'b0;
+    next_fmadd_do_acc = 1'b0;
+
     case (state)
         `GPU_CORE_STATE_IDLE: begin
             if (stb) begin
                 case (command_op)
                     `COMMAND_OP_DATA_READ: begin
                         next_state = `GPU_CORE_STATE_DATA_READ;
+
                         next_mat_b_col_idx = command_mat_b_col_idx;
                         next_mat_b_idx = command_mat_b_idx;
+
                         next_ack = 1'b1;
                     end
     
                     `COMMAND_OP_DATA_WRITE: begin
                         next_state = `GPU_CORE_STATE_DATA_WRITE;
+                    
                         next_mat_c_col_idx = command_mat_c_col_idx;
                         next_mat_c_idx = command_mat_c_idx;
+            
                         next_ack = 1'b1;
                     end
 
                     `COMMAND_OP_MUL_MAT_VEC: begin
                         next_state = `GPU_CORE_STATE_MUL_MAT_VEC_0;
+
                         next_mat_a_col_idx  = 2'd0;
                         next_mat_a_idx      = command_mat_a_idx;
                         next_mat_b_col_idx  = command_mat_b_col_idx;
                         next_mat_b_idx      = command_mat_b_idx;
                         next_mat_c_col_idx  = command_mat_c_col_idx;
                         next_mat_c_idx      = command_mat_c_idx;
+
                         next_ack = 1'b1;
                     end
 
                     default: begin
                         // Invalid command, ignore it
                         next_state = `GPU_CORE_STATE_IDLE;
+
                         next_ack = 1'b1;
                     end
                 endcase
@@ -236,38 +382,62 @@ always @(*) begin
 
         `GPU_CORE_STATE_MUL_MAT_VEC_0: begin
             next_state = `GPU_CORE_STATE_MUL_MAT_VEC_1;
+
             next_mat_a_col_idx  = 2'd1;
             next_mat_a_idx      = mat_a_idx;
             next_mat_b_col_idx  = mat_b_col_idx;
             next_mat_b_idx      = mat_b_idx;
             next_mat_c_col_idx  = mat_c_col_idx;
             next_mat_c_idx      = mat_c_idx;
+
+            next_fmadd_reset_sum = 1'b1;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][ 0+:16];
         end
         
         `GPU_CORE_STATE_MUL_MAT_VEC_1: begin
             next_state = `GPU_CORE_STATE_MUL_MAT_VEC_2;
+
             next_mat_a_col_idx  = 2'd2;
             next_mat_a_idx      = mat_a_idx;
             next_mat_b_col_idx  = mat_b_col_idx;
             next_mat_b_idx      = mat_b_idx;
             next_mat_c_col_idx  = mat_c_col_idx;
             next_mat_c_idx      = mat_c_idx;
+
+            next_fmadd_reset_sum = 1'b0;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][16+:16];
         end
         
         `GPU_CORE_STATE_MUL_MAT_VEC_2: begin
             next_state = `GPU_CORE_STATE_MUL_MAT_VEC_3;
+
             next_mat_a_col_idx  = 2'd3;
             next_mat_a_idx      = mat_a_idx;
             next_mat_b_col_idx  = mat_b_col_idx;
             next_mat_b_idx      = mat_b_idx;
             next_mat_c_col_idx  = mat_c_col_idx;
             next_mat_c_idx      = mat_c_idx;
+
+            next_fmadd_reset_sum = 1'b0;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][32+:16];
         end
         
         `GPU_CORE_STATE_MUL_MAT_VEC_3: begin
             next_state = `GPU_CORE_STATE_MUL_MAT_VEC_4;
+
             next_mat_c_col_idx  = mat_c_col_idx;
             next_mat_c_idx      = mat_c_idx;
+
+            next_fmadd_reset_sum = 1'b0;
+            next_fmadd_do_acc = 1'b1;
+            next_fmadd_in1 = mat_col_out[mat_a_idx];
+            next_fmadd_in2 = mat_col_out[mat_b_idx][48+:16];
         end
         
         `GPU_CORE_STATE_MUL_MAT_VEC_4: begin

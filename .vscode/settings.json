@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "firmware_apis.h": "c",
+        "timer0.h": "c"
+    }
+}
