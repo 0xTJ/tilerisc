@@ -188,7 +188,7 @@ $(clean-targets): clean-% :
 	rm -f ./gds/$*.gds
 	rm -f ./mag/$*.mag
 	rm -f ./lef/$*.lef
-	rm -f ./maglef/*.maglef
+	rm -f ./maglef/$*.maglef
 
 make_what=setup $(blocks) $(dv-targets-rtl) $(dv-targets-gl) $(dv-targets-gl-sdf) $(clean-targets)
 .PHONY: what
