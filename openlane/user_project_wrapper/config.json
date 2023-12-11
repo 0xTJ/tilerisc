@@ -11,35 +11,18 @@
 	"CLOCK_PERIOD": 25,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
-		"dir::../../verilog/gl/tjrpu.v",
-		"dir::../../verilog/gl/interp_tri.v"
+		"dir::../../verilog/gl/tjrpu.v"
 	],
-	"EXTRA_LEFS": [
-		"dir::../../lef/tjrpu.lef",
-		"dir::../../lef/interp_tri.lef"
-	],
-	"EXTRA_GDS_FILES": [
-		"dir::../../gds/tjrpu.gds",
-		"dir::../../gds/interp_tri.gds"
-	],
-	"EXTRA_LIBS": [
-		"dir::../../lib/tjrpu.lib",
-		"dir::../../lib/interp_tri.lib"
-	],
+	"EXTRA_LEFS": "dir::../../lef/tjrpu.lef",
+	"EXTRA_GDS_FILES": "dir::../../gds/tjrpu.gds",
+	"EXTRA_LIBS": "dir::../../lib/tjrpu.lib",
 	"EXTRA_SPEFS": [
 		"tjrpu",
 		"dir::../../spef/multicorner/tjrpu.min.spef",
 		"dir::../../spef/multicorner/tjrpu.nom.spef",
-		"dir::../../spef/multicorner/tjrpu.max.spef",
-		"interp_tri",
-		"dir::../../spef/multicorner/interp_tri.min.spef",
-		"dir::../../spef/multicorner/interp_tri.nom.spef",
-		"dir::../../spef/multicorner/interp_tri.max.spef"
+		"dir::../../spef/multicorner/tjrpu.max.spef"
 	],
-	"FP_PDN_MACRO_HOOKS": [
-		"mprj vdd vss vdd vss,",
-		".*trip vdd vss vdd vss"
-	],
+	"FP_PDN_MACRO_HOOKS": "mprj vdd vss vdd vss",
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,
 	"SYNTH_ELABORATE_ONLY": 1,

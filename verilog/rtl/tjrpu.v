@@ -39,11 +39,8 @@ module tjrpu (
     input [3:0] wbs_sel_i,
     input [31:0] wbs_dat_i,
     input [31:0] wbs_adr_i,
-    output reg wbs_ack_o,
+    output wire wbs_ack_o,
     output wire [31:0] wbs_dat_o,
-
-    output reg  [`MYRANMGE] tri_wbs_stb_i,
-    input  wire [`MYRANMGE] tri_wbs_ack_o,
 
     // Logic Analyzer Signals
     input  [63:0] la_data_in,
@@ -55,25 +52,36 @@ module tjrpu (
     output [15:0] io_out,
     output [15:0] io_oeb,
 
-    // IRQ
-    output [2:0] irq,
+    input wire user_clock2,
 
-    input  wire gpu_clk,
-    input  wire [(64 * 8) - 1:0]  y,
-    input  wire [(64 * 8) - 1:0]  x_start,
-    input  wire [(64 * 8) - 1:0]  x_end
+    // IRQ
+    output [2:0] irq
 );
 
-assign wbs_dat_o = 32'h00000000;
 assign io_out = 16'b0;
 assign io_oeb = 16'b0;
 assign la_data_out = 64'b0;
 assign irq = 3'b000;
 
-always @(*) begin
-    tri_wbs_stb_i = {63'b0, wbs_stb_i} << wbs_adr_i[9:4];
-    wbs_ack_o = tri_wbs_ack_o[wbs_adr_i[9:4]];
-end
+gpu gpu (
+`ifdef USE_POWER_PINS
+    .vdd (vdd),	// User area 5.0 V supply
+    .vss (vss),	// User area digital ground
+`endif
+
+    .wb_clk_i (wb_clk_i),
+    .wb_rst_i (wb_rst_i),
+    .wbs_stb_i (wbs_stb_i),
+    .wbs_cyc_i (wbs_cyc_i),
+    .wbs_we_i (wbs_we_i),
+    .wbs_sel_i (wbs_sel_i),
+    .wbs_dat_i (wbs_dat_i),
+    .wbs_adr_i (wbs_adr_i[31:2]),
+    .wbs_ack_o (wbs_ack_o),
+    .wbs_dat_o (wbs_dat_o),
+
+    .user_clock2 (user_clock2)
+);
 
 endmodule
 

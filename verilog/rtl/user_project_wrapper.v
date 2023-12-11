@@ -90,11 +90,6 @@ tjrpu mprj (
     .wbs_ack_o(wbs_ack_o),
     .wbs_dat_o(wbs_dat_o),
 
-    // Decoded Core Wishbone Slaves
-
-    .tri_wbs_stb_i (tri_wbs_stb_i),
-    .tri_wbs_ack_o (tri_wbs_ack_o),
-
     // Logic Analyzer
 
     .la_data_in(la_data_in),
@@ -106,6 +101,8 @@ tjrpu mprj (
     .io_in ({io_in[37:30],io_in[7:0]}),
     .io_out({io_out[37:30],io_out[7:0]}),
     .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
+
+    .user_clock2(user_clock2),
 
     // IRQ
     .irq(user_irq)
