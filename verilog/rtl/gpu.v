@@ -54,7 +54,7 @@ module gpu (
     input wbs_we_i,
     input [3:0] wbs_sel_i,
     input [31:0] wbs_dat_i,
-    input [31:2] wbs_adr_i,
+    input [31:0] wbs_adr_i,
     output reg wbs_ack_o,
     output reg [31:0] wbs_dat_o,
 
@@ -105,7 +105,7 @@ always @(*) begin
     if (!wb_rst_i && wbs_cyc_i && wbs_stb_i) begin
         case (wb_state)
             `GPU_WB_STATE_IDLE: begin
-                if (wbs_adr_i[31:7] == 25'b0 && wbs_we_i == 1'b0) begin
+                if (wbs_adr_i[31:28] == 4'h3 && wbs_adr_i[27:7] == 21'b0 && wbs_we_i == 1'b0) begin
                     // Data Read
                     if (wbs_adr_i[2] == 1'b0) begin
                         // Fetch data and read lower word
@@ -118,7 +118,7 @@ always @(*) begin
                         wbs_ack_o = 1'b1;
                         next_wb_state = `GPU_WB_STATE_IDLE;
                     end
-                end else if (wbs_adr_i[31:7] == 25'b0 && wbs_we_i == 1'b1) begin
+                end else if (wbs_adr_i[31:28] == 4'h3 && wbs_adr_i[27:7] == 21'b0 && wbs_we_i == 1'b1) begin
                     // Data Write
                     if (wbs_adr_i[2] == 1'b0) begin
                         // Write lower word
@@ -131,7 +131,7 @@ always @(*) begin
                         core_command = {16'b0,`COMMAND_OP_DATA_WRITE,wbs_adr_i[6:3],4'b00_00,4'b00_00};
                         next_wb_state = `GPU_WB_STATE_WRITE;
                     end
-                end else if (wbs_adr_i[31:2] == 30'b100000 && wbs_we_i == 1'b1) begin
+                end else if (wbs_adr_i[31:28] == 4'h3 && wbs_adr_i[27:2] == 26'b100000 && wbs_we_i == 1'b1) begin
                     // Command
                     core_command = dat_i;
                     core_stb = 1'b1;

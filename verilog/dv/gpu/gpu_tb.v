@@ -17,6 +17,8 @@
 
 `timescale 1 ns / 1 ps
 
+// TODO: Fix address port size having changed
+
 module gpu_tb;
     reg wb_clk_i;
     reg wb_rst_i;
@@ -178,7 +180,7 @@ module gpu_tb;
 		next_wbs_stb_i = 1'b0;
 		next_wbs_cyc_i = 1'b0;
 
-		// Fill matrix
+		// Fill vector
 		next_wbs_cyc_i = 1'b1;
 		next_wbs_stb_i = 1'b1;
 		next_wbs_we_i = 1'b1;

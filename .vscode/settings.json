@@ -1,6 +1,17 @@
 {
     "files.associations": {
         "firmware_apis.h": "c",
-        "timer0.h": "c"
+        "timer0.h": "c",
+        "mgmt_gpio.h": "c",
+        "irq_api.h": "c",
+        "uart_api.h": "c",
+        "gpios.h": "c",
+        "uart.h": "c",
+        "defs.h": "c",
+        "spi_master.h": "c",
+        "user_space.h": "c",
+        "cstdint": "c",
+        "*.tcc": "c",
+        "stdint.h": "c"
     }
 }
